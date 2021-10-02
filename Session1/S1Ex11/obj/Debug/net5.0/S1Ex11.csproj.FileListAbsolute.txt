@@ -1,0 +1,16 @@
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session1\S1Ex11\bin\Debug\net5.0\S1Ex11.exe
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session1\S1Ex11\bin\Debug\net5.0\S1Ex11.deps.json
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session1\S1Ex11\bin\Debug\net5.0\S1Ex11.runtimeconfig.json
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session1\S1Ex11\bin\Debug\net5.0\S1Ex11.runtimeconfig.dev.json
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session1\S1Ex11\bin\Debug\net5.0\S1Ex11.dll
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session1\S1Ex11\bin\Debug\net5.0\ref\S1Ex11.dll
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session1\S1Ex11\bin\Debug\net5.0\S1Ex11.pdb
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session1\S1Ex11\obj\Debug\net5.0\S1Ex11.csproj.AssemblyReference.cache
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session1\S1Ex11\obj\Debug\net5.0\S1Ex11.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session1\S1Ex11\obj\Debug\net5.0\S1Ex11.AssemblyInfoInputs.cache
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session1\S1Ex11\obj\Debug\net5.0\S1Ex11.AssemblyInfo.cs
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session1\S1Ex11\obj\Debug\net5.0\S1Ex11.csproj.CoreCompileInputs.cache
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session1\S1Ex11\obj\Debug\net5.0\S1Ex11.dll
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session1\S1Ex11\obj\Debug\net5.0\ref\S1Ex11.dll
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session1\S1Ex11\obj\Debug\net5.0\S1Ex11.pdb
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session1\S1Ex11\obj\Debug\net5.0\S1Ex11.genruntimeconfig.cache

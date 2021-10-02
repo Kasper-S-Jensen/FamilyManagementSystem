@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "S3Ex03Server/1.0.0": {
+        "runtime": {
+          "S3Ex03Server.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "S3Ex03Server/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

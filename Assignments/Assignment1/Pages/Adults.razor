@@ -1,0 +1,109 @@
+﻿@page "/Adults"
+@using Assignment1.Data
+@using global::Models
+
+@inject NavigationManager NavigationManager
+@inject IAdultData AdultData
+
+<h3>Adults</h3>
+
+<p> Filter by name: <input type="text" @oninput="@(arg => FilterByName(arg))" style="width:200px"/> </p>
+
+@if (adultsToShow == null)
+{
+    <p>
+        <em>Loading...</em>
+    </p>
+}
+else if (!adultsToShow.Any())
+{
+    <p>
+        <em>No adults exist. Please add some.</em>
+    </p>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Person ID</th> <th>Firstname</th> <th>Lastname</th> <th>Haircolor</th><th>Eyecolor</th><th>Age</th> <th>Weight</th><th>Height</th><th>Sex</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var adult in adultsToShow)
+        {
+            <tr>
+                <td>@adult.Id</td>
+                <td>@adult.FirstName</td>
+                <td>@adult.LastName</td>
+                <td>@adult.HairColor</td>
+                <td>@adult.EyeColor</td>
+                <td>@adult.Age</td>
+                <td>@adult.Weight</td>
+                <td>@adult.Height</td>
+                <td>@adult.Sex</td>
+                
+
+                <td>
+                    <button @onclick="@(() => RemoveAdult(adult.Id))">
+                        <i class="oi oi-trash" style="color:red"/>
+                    </button>
+                </td>
+                <td>
+                    <button @onclick="@(() => Edit(adult.Id))">
+                        <i class="oi oi-pencil" style="color:#1b6ec2"/>
+                    </button>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+@code {
+
+    private IList<Adult> adultsToShow;
+    private IList<Adult> allAdults;
+    private string? filterByString;
+
+    private void FilterByName(ChangeEventArgs changeEventArgs)
+    {
+        filterByString = null;
+        try
+        {
+            filterByString = changeEventArgs.Value.ToString();
+        }
+        catch (Exception e)
+        {
+        }
+        ExecuteFilter();
+    }
+
+    private void ExecuteFilter()
+    {
+        adultsToShow = allAdults.Where(A => (filterByString != null && A.FirstName.ToLower().StartsWith(filterByString.ToLower()) || A.LastName.ToLower().StartsWith(filterByString.ToLower()) ||filterByString == null)).ToList();
+    }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        allAdults = AdultData.GetAdults();
+        adultsToShow = allAdults;
+    }
+
+    private void RemoveAdult(int adultId)
+    {
+        Adult adultToRemove = allAdults.First(a => a.Id == adultId);
+        AdultData.RemoveAdult(adultId);
+        allAdults.Remove(adultToRemove);
+        adultsToShow.Remove(adultToRemove);
+    }
+
+    private void Edit(int id)
+    {
+        NavigationManager.NavigateTo($"Edit/{id}");
+    }
+
+
+
+}

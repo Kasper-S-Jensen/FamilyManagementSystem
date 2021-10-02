@@ -1,0 +1,16 @@
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session03\S3Ex05Server\bin\Debug\net5.0\S3Ex05Server.exe
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session03\S3Ex05Server\bin\Debug\net5.0\S3Ex05Server.deps.json
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session03\S3Ex05Server\bin\Debug\net5.0\S3Ex05Server.runtimeconfig.json
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session03\S3Ex05Server\bin\Debug\net5.0\S3Ex05Server.runtimeconfig.dev.json
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session03\S3Ex05Server\bin\Debug\net5.0\S3Ex05Server.dll
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session03\S3Ex05Server\bin\Debug\net5.0\ref\S3Ex05Server.dll
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session03\S3Ex05Server\bin\Debug\net5.0\S3Ex05Server.pdb
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session03\S3Ex05Server\obj\Debug\net5.0\S3Ex05Server.csproj.AssemblyReference.cache
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session03\S3Ex05Server\obj\Debug\net5.0\S3Ex05Server.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session03\S3Ex05Server\obj\Debug\net5.0\S3Ex05Server.AssemblyInfoInputs.cache
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session03\S3Ex05Server\obj\Debug\net5.0\S3Ex05Server.AssemblyInfo.cs
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session03\S3Ex05Server\obj\Debug\net5.0\S3Ex05Server.csproj.CoreCompileInputs.cache
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session03\S3Ex05Server\obj\Debug\net5.0\S3Ex05Server.dll
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session03\S3Ex05Server\obj\Debug\net5.0\ref\S3Ex05Server.dll
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session03\S3Ex05Server\obj\Debug\net5.0\S3Ex05Server.pdb
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session03\S3Ex05Server\obj\Debug\net5.0\S3Ex05Server.genruntimeconfig.cache

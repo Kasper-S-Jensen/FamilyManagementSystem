@@ -1,0 +1,41 @@
+[
+  {
+    "FirstName": "Michael",
+    "LastName": "Jensen",
+    "Age": 40,
+    "Height": 1.8,
+    "IsMarried": false,
+    "Sex": "M",
+    "Hobbies": [
+      "football",
+      "Fishing",
+      "Drawing"
+    ]
+  },
+  {
+    "FirstName": "Lars",
+    "LastName": "Hansen",
+    "Age": 50,
+    "Height": 2.8,
+    "IsMarried": true,
+    "Sex": "M",
+    "Hobbies": [
+      "football",
+      "diving",
+      "crying"
+    ]
+  },
+  {
+    "FirstName": "Cecilie",
+    "LastName": "Bomsen",
+    "Age": 20,
+    "Height": 1.5,
+    "IsMarried": true,
+    "Sex": "F",
+    "Hobbies": [
+      "skating",
+      "flirting",
+      "dancing"
+    ]
+  }
+]
