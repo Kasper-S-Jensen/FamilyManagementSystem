@@ -104,7 +104,7 @@ using Microsoft.AspNetCore.Components;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 40 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Assignments\Assignment1\Pages\Login.razor"
+#line 42 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Assignments\Assignment1\Pages\Login.razor"
        
     private string username;
     private string password;

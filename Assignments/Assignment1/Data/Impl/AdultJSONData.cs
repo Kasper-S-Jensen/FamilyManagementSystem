@@ -47,7 +47,7 @@ namespace Assignment1.Data.Impl
         public void RemoveAdult(int adultId)
         {
             Adult toRemove = adults.First(a => a.Id == adultId);
-            familyFile.Adults.Remove(toRemove);
+            adults.Remove(toRemove);
             
            familyFile.SaveChanges();
         }
