@@ -3,14 +3,16 @@
 @inject NavigationManager NavigationManager
 
 <div class="page">
-    <div class="sidebar">
-        <NavMenu/>
-    </div>
-
+ <AuthorizeView>
+     <div class="sidebar">
+         <NavMenu/>
+     </div>
+     
+ </AuthorizeView>
     <div class="main">
+      <login/>
         <div class="top-row px-4">
-            <login/>
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+          
         </div>
 
         <div class="content px-4">

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Assignment1.Authentication;
 using Assignment1.Data;
 using Assignment1.Data.Impl;
+using Assignment1.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
@@ -35,6 +36,7 @@ namespace Assignment1
             services.AddScoped<IUserService, InMemoryUserService>();
             services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
             services.AddScoped<IAdultData, AdultJSONData>();
+            services.AddScoped<FileContext>();
 
             services.AddAuthorization(options =>
             {

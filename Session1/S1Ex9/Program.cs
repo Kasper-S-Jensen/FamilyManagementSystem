@@ -8,7 +8,7 @@ namespace S1Ex9
         {
             Stringcutter stringcutter = new Stringcutter();
             Console.WriteLine("Hello World!");
-            Console.WriteLine(stringcutter.CutTheString("bibliotek", 4));
+            Console.WriteLine(stringcutter.CutTheString("bibliotek", 3));
             
         }
     }

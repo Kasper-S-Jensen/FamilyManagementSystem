@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Models {
+namespace Assignment1.Models {
 public class Person {
     
     public int Id { get; set; }
@@ -12,6 +12,7 @@ public class Person {
     public float Weight { get; set; }
     public int Height { get; set; }
     public string Sex { get; set; }
+    
 }
 
 

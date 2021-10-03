@@ -1,53 +1,55 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
 using Assignment1.Pages;
-using Models;
+using Assignment1.Models;
 using Assignment1.Persistence;
+
+
 
 namespace Assignment1.Data.Impl
 {
     public class AdultJSONData : IAdultData
     {
-        private FileContext adultFile;
-        private IList<Adult> _adults;
-        private string fileName = "adults.json";
-        public AdultJSONData()
+        private FileContext familyFile;
+        IList<Adult> adults = new List<Adult>();
+
+        public AdultJSONData(FileContext familyFile)
         {
-            adultFile = new FileContext();
-            if (!File.Exists(fileName))
-            {
-                adultFile.SaveChanges();
-            }
-            else
-            {
-                string content = File.ReadAllText(fileName);
-                _adults = JsonSerializer.Deserialize<List<Adult>>(content);
-            }
+            this.familyFile = familyFile;
         }
 
         public IList<Adult> GetAdults()
         {
-            List<Adult> adultlist = new List<Adult>(_adults);
-            return adultlist;
+           
+            Console.WriteLine("inside get adults");
+            foreach (var VARIABLE in familyFile.Families)
+            {
+                foreach (var adult in VARIABLE.Adults)
+                {
+                    adults.Add(adult);
+                }
+            }
+
+            return adults;
         }
 
         public void AddAdult(Adult adult)
         {
-            int max = _adults.Max(adult => adult.Id);
-            adult.Id = (++max);
-            _adults.Add(adult);
-            
-            adultFile.SaveChanges();
+          //  int max = _adults.Max(adult => adult.Id);
+           // adult.Id = (++max);
+           adults.Add(adult);
+           familyFile.SaveChanges();
         }
 
         public void RemoveAdult(int adultId)
         {
-            Adult toRemove = _adults.First(a => a.Id == adultId);
-            _adults.Remove(toRemove);
+            Adult toRemove = adults.First(a => a.Id == adultId);
+            familyFile.Adults.Remove(toRemove);
             
-           adultFile.SaveChanges();
+           familyFile.SaveChanges();
         }
 
         public void Update(Adult adult)

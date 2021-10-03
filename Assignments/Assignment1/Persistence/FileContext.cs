@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
-using Models;
+using Assignment1.Models;
 
 namespace Assignment1.Persistence
 {
@@ -12,17 +12,18 @@ namespace Assignment1.Persistence
         public IList<Adult> Adults { get; private set; }
 
         private readonly string familiesFile = "families.json";
-        private readonly string adultsFile = "adults.json";
+        private readonly string adultsFile = "C:\\Users\\kaspe\\OneDrive - ViaUC\\Diplomingenioer\\3.sem\\DNP\\Solutions\\DNP1\\Assignments\\Assignment1\\adults.json";
 
         public FileContext()
         {
             Families = File.Exists(familiesFile) ? ReadData<Family>(familiesFile) : new List<Family>();
             Adults = File.Exists(adultsFile) ? ReadData<Adult>(adultsFile) : new List<Adult>();
+            
         }
 
         private IList<T> ReadData<T>(string s)
         {
-            using (var jsonReader = File.OpenText(familiesFile))
+            using (var jsonReader = File.OpenText(s))
             {
                 return JsonSerializer.Deserialize<List<T>>(jsonReader.ReadToEnd());
             }
