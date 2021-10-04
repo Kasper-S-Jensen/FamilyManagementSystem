@@ -1185,5 +1185,29 @@
       }
     ],
     "Pets": []
+  },
+  {
+    "StreetName": "kroavengt",
+    "HouseNumber": 4,
+    "Adults": [
+      {
+        "JobTitle": {
+          "JobTitle": "skraldemand",
+          "Salary": 500
+        },
+        "Id": 23,
+        "FirstName": "bob",
+        "LastName": "bobsen",
+        "HairColor": "red",
+        "EyeColor": "red",
+        "Age": 12,
+        "Weight": 12,
+        "Height": 12,
+        "Sex": "M"
+      }
+    ],
+    "Children": null,
+    "Pets": null
   }
+  
 ]

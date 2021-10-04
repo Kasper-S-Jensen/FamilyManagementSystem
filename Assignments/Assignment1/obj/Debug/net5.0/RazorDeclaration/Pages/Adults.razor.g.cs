@@ -112,7 +112,7 @@ using Assignment1.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 75 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Assignments\Assignment1\Pages\Adults.razor"
+#line 84 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Assignments\Assignment1\Pages\Adults.razor"
        
 
     private IList<Adult> adultsToShow;
@@ -148,7 +148,7 @@ using Assignment1.Models;
     private void RemoveAdult(int adultId)
     {
         Adult adultToRemove = allAdults.First(a => a.Id == adultId);
-        AdultData.RemoveAdult(adultId);
+    // AdultData.RemoveAdult(adultId);
         allAdults.Remove(adultToRemove);
         adultsToShow.Remove(adultToRemove);
     }

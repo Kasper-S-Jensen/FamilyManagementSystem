@@ -6,8 +6,9 @@ namespace Assignment1.Data
     public interface IAdultData
     {
         IList<Adult> GetAdults();
-        void AddAdult(Adult adult);
-        void RemoveAdult(int adultId);
+        IList<Child> GetChildren();
+        void AddFamily(Family family);
+        void RemoveFamily(int houseNumber, string StreetName);
         void Update(Adult adult);
         Adult Get(int id);
     }

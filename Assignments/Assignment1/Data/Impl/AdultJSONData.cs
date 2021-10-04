@@ -15,6 +15,7 @@ namespace Assignment1.Data.Impl
     {
         private FileContext familyFile;
         IList<Adult> adults = new List<Adult>();
+        IList<Child> children = new List<Child>();
 
         public AdultJSONData(FileContext familyFile)
         {
@@ -36,20 +37,35 @@ namespace Assignment1.Data.Impl
             return adults;
         }
 
-        public void AddAdult(Adult adult)
+        public IList<Child> GetChildren()
+        {
+            Console.WriteLine("inside get adults");
+            foreach (var VARIABLE in familyFile.Families)
+            {
+                foreach (var child in VARIABLE.Children)
+                {
+                    children.Add(child);
+                }
+            }
+
+            return children;
+        }
+
+        public void AddFamily(Family family)
         {
           //  int max = _adults.Max(adult => adult.Id);
            // adult.Id = (++max);
-           adults.Add(adult);
+          
+           familyFile.Families.Add(family);
            familyFile.SaveChanges();
         }
 
-        public void RemoveAdult(int adultId)
+        public void RemoveFamily(int houseNumber, string StreetName)
         {
-            Adult toRemove = adults.First(a => a.Id == adultId);
+            /*Adult toRemove = adults.First(a => a.Id == adultId);
             adults.Remove(toRemove);
             
-           familyFile.SaveChanges();
+           familyFile.SaveChanges();*/
         }
 
         public void Update(Adult adult)

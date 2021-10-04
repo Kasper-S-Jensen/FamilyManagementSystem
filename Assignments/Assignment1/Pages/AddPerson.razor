@@ -50,11 +50,19 @@
 </div>
 <div class="form-group">
     Job:<br/>
-    <InputTextArea rows="4" @bind-Value="newAdult.JobTitle.JobTitle"/>
+    <InputTextArea rows="4" @bind-Value="newJob.JobTitle"/>
 </div>
 <div class="form-group">
     Salary:<br/>
-    <InputNumber rows="4" @bind-Value="newAdult.JobTitle.Salary"/>
+    <InputNumber rows="4" @bind-Value="newJob.Salary"/>
+</div>
+<div class="form-group">
+    StreetnName:<br/>
+    <InputTextArea rows="4" @bind-Value="newFamily.StreetName"/>
+</div>
+<div class="form-group">
+    house number:<br/>
+    <InputNumber rows="4" @bind-Value="newFamily.HouseNumber"/>
 </div>
 
 
@@ -66,11 +74,38 @@
 
 @code {
     private Adult newAdult = new Adult();
+    private Family newFamily = new Family();
+    private Job newJob = new Job();
+    private int housenumber;
+    private string streetName;
 
     private void AddNewAdult()
     {
-        adultData.AddAdult(newAdult);
-        NavigationManager.NavigateTo("/adults");
+        newAdult.JobTitle = newJob;
+        newFamily.Adults.Add(newAdult); 
+        
+        foreach (var familyItem in FileContext.Families)
+        {
+            streetName = familyItem.StreetName;
+            housenumber = familyItem.HouseNumber;
+            if (familyItem.HouseNumber==newFamily.HouseNumber && familyItem.StreetName==newFamily.StreetName)
+            {
+               
+                Console.WriteLine("inside equals");
+                familyItem.Adults.Add(newAdult);
+                NavigationManager.NavigateTo("/adults");
+                break;
+                
+            }
+        }
+        if (housenumber != newFamily.HouseNumber && streetName != newFamily.StreetName)
+        {
+            adultData.AddFamily(newFamily);
+
+            NavigationManager.NavigateTo("/adults");
+        }
+
+      
     }
 
 }

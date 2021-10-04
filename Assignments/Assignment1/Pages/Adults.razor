@@ -29,12 +29,13 @@ else
     <table class="table table-hover table-striped thead-dark">
         <thead>
         <tr>
-            <th>Person ID</th> <th>Firstname</th> <th>Lastname</th> <th>Haircolor</th><th>Eyecolor</th><th>Age</th> <th>Weight</th><th>Height</th><th>Sex</th><th>Job</th><th>Salary</th>
+           <th>Housenumber</th> <th>Streetname</th> <th>Person ID</th> <th>Firstname</th> <th>Lastname</th> <th>Haircolor</th><th>Eyecolor</th><th>Age</th> <th>Weight</th><th>Height</th><th>Sex</th><th>Job</th><th>Salary</th>
         </tr>
         </thead>
         <tbody>
+        @*
         @foreach (var adult in adultsToShow)
-        {
+        
             <tr>
                 <td>@adult.Id</td>
                 <td>@adult.FirstName</td>
@@ -42,24 +43,35 @@ else
                 <td>@adult.HairColor</td>
                 <td>@adult.EyeColor</td>
                 <td>@adult.Age</td>
-                <td>@adult.Weight</td>
+                <td>@adult.</td>
                 <td>@adult.Height</td>
                 <td>@adult.Sex</td>
-                <td>
-                    <button data-toggle="collapse" data-target="#demo">Collapsible</button>
-                   
-                </td>
+                *@
 
-
-                <td>@adult.JobTitle.JobTitle</td>
-                 <td>@adult.JobTitle.Salary</td>
-
-
-                <td>
-                    <button @onclick="@(() => RemoveAdult(adult.Id))">
-                        <i class="oi oi-trash" style="color:red"/>
-                    </button>
-                </td>
+        @foreach (var family in FileContext.Families)
+        {
+            <tr>
+                <td>@family.HouseNumber</td>
+                <td>@family.StreetName</td>
+                @foreach (var adult in family.Adults)
+                {
+                    <td>@adult.Id</td>
+                    <td>@adult.FirstName</td>
+                    <td>@adult.LastName</td>
+                    <td>@adult.HairColor</td>
+                    <td>@adult.EyeColor</td>
+                    <td>@adult.Age</td>
+                    <td>@adult.Weight</td>
+                    <td>@adult.Height</td>
+                    <td>@adult.Sex</td>
+                    <td>@adult.JobTitle.JobTitle</td>
+                    <td>@adult.JobTitle.Salary</td>
+                    <td>
+                        <button @onclick="@(() => RemoveAdult(adult.Id))">
+                            <i class="oi oi-trash" style="color:red"/>
+                        </button>
+                    </td>
+                }
             </tr>
         }
         </tbody>
@@ -67,11 +79,8 @@ else
 }
 
 <button @onclick="@(() => AddPerson())" class="btn btn-primary"> Add adult </button>
-<div>
-    <div id="demo" class="collapse">Lorem ipsum dolor text....</div>
-</div>
- 
-    
+
+
 @code {
 
     private IList<Adult> adultsToShow;
@@ -107,7 +116,7 @@ else
     private void RemoveAdult(int adultId)
     {
         Adult adultToRemove = allAdults.First(a => a.Id == adultId);
-        AdultData.RemoveAdult(adultId);
+    // AdultData.RemoveAdult(adultId);
         allAdults.Remove(adultToRemove);
         adultsToShow.Remove(adultToRemove);
     }
