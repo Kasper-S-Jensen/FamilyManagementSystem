@@ -8,7 +8,7 @@ namespace Assignment1.Data
         IList<Adult> GetAdults();
         IList<Child> GetChildren();
         void AddFamily(Family family);
-        void RemoveFamily(int houseNumber, string StreetName);
+        void RemoveAdult(int ID);
         void Update(Adult adult);
         Adult Get(int id);
     }

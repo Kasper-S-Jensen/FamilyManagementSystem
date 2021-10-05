@@ -7,62 +7,62 @@
 @inject NavigationManager NavigationManager
 @inject FileContext FileContext
 
-<h3>AddPerson</h3>
+<h3>Add Person</h3>
 
 <EditForm Model="@newAdult" OnValidSubmit="@AddNewAdult">
 <DataAnnotationsValidator/>
 <ValidationSummary/>
 <div class="form-group">
     ID:<br/>
-    <InputNumber @bind-Value="newAdult.Id"/>
+    <InputNumber rows="1" @bind-Value="newAdult.Id"/>
 </div>
 <div class="form-group">
     Firstname:<br/>
-    <InputTextArea rows="4" @bind-Value="newAdult.FirstName"/>
+    <InputTextArea rows="1" @bind-Value="newAdult.FirstName"/>
 </div>
 <div class="form-group">
     Lastname:<br/>
-    <InputTextArea rows="4" @bind-Value="newAdult.LastName"/>
+    <InputTextArea rows="1" @bind-Value="newAdult.LastName"/>
 </div>
 <div class="form-group">
     Haircolor:<br/>
-    <InputTextArea rows="4" @bind-Value="newAdult.HairColor"/>
+    <InputTextArea rows="1" @bind-Value="newAdult.HairColor"/>
 </div>
 <div class="form-group">
     Eyecolor:<br/>
-    <InputTextArea rows="4" @bind-Value="newAdult.EyeColor"/>
+    <InputTextArea rows="1" @bind-Value="newAdult.EyeColor"/>
 </div>
 <div class="form-group">
     Age:<br/>
-    <InputNumber rows="4" @bind-Value="newAdult.Age"/>
+    <InputNumber rows="1" @bind-Value="newAdult.Age"/>
 </div>
 <div class="form-group">
     Weight:<br/>
-    <InputNumber rows="4" @bind-Value="newAdult.Weight"/>
+    <InputNumber rows="1" @bind-Value="newAdult.Weight"/>
 </div>
 <div class="form-group">
     Height:<br/>
-    <InputNumber rows="4" @bind-Value="newAdult.Height"/>
+    <InputNumber rows="1" @bind-Value="newAdult.Height"/>
 </div>
 <div class="form-group">
     Sex:<br/>
-    <InputTextArea rows="4" @bind-Value="newAdult.Sex"/>
+    <InputTextArea rows="1" @bind-Value="newAdult.Sex"/>
 </div>
 <div class="form-group">
     Job:<br/>
-    <InputTextArea rows="4" @bind-Value="newJob.JobTitle"/>
+    <InputTextArea rows="1" @bind-Value="newJob.JobTitle"/>
 </div>
 <div class="form-group">
     Salary:<br/>
-    <InputNumber rows="4" @bind-Value="newJob.Salary"/>
+    <InputNumber rows="1" @bind-Value="newJob.Salary"/>
 </div>
 <div class="form-group">
     StreetnName:<br/>
-    <InputTextArea rows="4" @bind-Value="newFamily.StreetName"/>
+    <InputTextArea rows="1" @bind-Value="newFamily.StreetName"/>
 </div>
 <div class="form-group">
     house number:<br/>
-    <InputNumber rows="4" @bind-Value="newFamily.HouseNumber"/>
+    <InputNumber rows="1" @bind-Value="newFamily.HouseNumber"/>
 </div>
 
 
@@ -81,6 +81,8 @@
 
     private void AddNewAdult()
     {
+        int max = adultData.GetAdults().Max(adult => adult.Id);
+        newAdult.Id = (++max);
         newAdult.JobTitle = newJob;
         newFamily.Adults.Add(newAdult); 
         
@@ -95,7 +97,7 @@
                 familyItem.Adults.Add(newAdult);
                 NavigationManager.NavigateTo("/adults");
                 break;
-                
+                return;
             }
         }
         if (housenumber != newFamily.HouseNumber && streetName != newFamily.StreetName)

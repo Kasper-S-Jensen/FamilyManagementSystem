@@ -26,9 +26,9 @@ namespace Assignment1.Data.Impl
         {
            
             Console.WriteLine("inside get adults");
-            foreach (var VARIABLE in familyFile.Families)
+            foreach (var family in familyFile.Families)
             {
-                foreach (var adult in VARIABLE.Adults)
+                foreach (var adult in family.Adults)
                 {
                     adults.Add(adult);
                 }
@@ -39,33 +39,42 @@ namespace Assignment1.Data.Impl
 
         public IList<Child> GetChildren()
         {
-            Console.WriteLine("inside get adults");
-            foreach (var VARIABLE in familyFile.Families)
+            Console.WriteLine("inside get children");
+            foreach (var family in familyFile.Families)
             {
-                foreach (var child in VARIABLE.Children)
+                Console.WriteLine("inside first loop");
+                foreach (var child in family.Children)
                 {
+                    Console.WriteLine(child.FirstName);
+                    Console.WriteLine("inside inner loop");
                     children.Add(child);
+                    
                 }
             }
 
+            foreach (var VARIABLE in children)
+            {
+                Console.WriteLine(VARIABLE.FirstName + "HEEEEEEEEEEEEEEEEEEEEEEEEEEEEEY");
+            }
             return children;
         }
 
         public void AddFamily(Family family)
         {
-          //  int max = _adults.Max(adult => adult.Id);
-           // adult.Id = (++max);
+          //  int max = adults.Max(adult => adult.Id);
+          //  adult.Id = (++max);
           
            familyFile.Families.Add(family);
            familyFile.SaveChanges();
         }
 
-        public void RemoveFamily(int houseNumber, string StreetName)
+        public void RemoveAdult(int ID)
         {
-            /*Adult toRemove = adults.First(a => a.Id == adultId);
+            Adult toRemove = adults.First(a => a.Id == ID);
             adults.Remove(toRemove);
+          
             
-           familyFile.SaveChanges();*/
+           familyFile.SaveChanges();
         }
 
         public void Update(Adult adult)

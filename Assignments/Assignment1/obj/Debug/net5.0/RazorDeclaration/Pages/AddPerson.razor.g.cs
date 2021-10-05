@@ -128,6 +128,8 @@ using Microsoft.AspNetCore.Components;
 
     private void AddNewAdult()
     {
+        int max = adultData.GetAdults().Max(adult => adult.Id);
+        newAdult.Id = (++max);
         newAdult.JobTitle = newJob;
         newFamily.Adults.Add(newAdult); 
         
@@ -142,7 +144,7 @@ using Microsoft.AspNetCore.Components;
                 familyItem.Adults.Add(newAdult);
                 NavigationManager.NavigateTo("/adults");
                 break;
-                
+                return;
             }
         }
         if (housenumber != newFamily.HouseNumber && streetName != newFamily.StreetName)
