@@ -112,7 +112,7 @@ using Assignment1.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 80 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Assignments\Assignment1\Pages\Adults.razor"
+#line 81 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Assignments\Assignment1\Pages\Adults.razor"
            
 
         private IList<Family> familiesToShow;
