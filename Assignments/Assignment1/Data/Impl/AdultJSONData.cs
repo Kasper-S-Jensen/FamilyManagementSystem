@@ -70,8 +70,16 @@ namespace Assignment1.Data.Impl
 
         public void RemoveAdult(int ID)
         {
-            Adult toRemove = adults.First(a => a.Id == ID);
-            adults.Remove(toRemove);
+            Adult toRemove = new Adult();
+            foreach (var family in familyFile.Families)
+            {
+               toRemove= family.Adults.First(a => a.Id == ID);
+               family.Adults.Remove(toRemove);
+
+            }
+           // Adult toRemove = adults.First(a => a.Id == ID);
+            
+           //adults.Remove(toRemove);
           
             
            familyFile.SaveChanges();

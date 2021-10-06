@@ -182,3 +182,27 @@ a {
         margin: 0px 15px
     }
 }
+
+.page-holder {
+    min-height: 100vh;
+}
+
+.bg-cover {
+    background-size: cover !important;
+}
+.bg-image {
+    /* The image used */
+    background-image: url(https://cdn-dk-en-in.clio.me/Family_Mommiesandme.png);
+
+    /* Add the blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

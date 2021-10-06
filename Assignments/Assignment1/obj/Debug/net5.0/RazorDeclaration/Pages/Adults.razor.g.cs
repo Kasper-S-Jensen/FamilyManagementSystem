@@ -112,62 +112,61 @@ using Assignment1.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 81 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Assignments\Assignment1\Pages\Adults.razor"
-           
+#line 89 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Assignments\Assignment1\Pages\Adults.razor"
+       
 
-        private IList<Family> familiesToShow;
-        private IList<Family> allFamilies;
-        FileContext familyfile;
-        private IList<Adult> adultsToShow;
-        private IList<Adult> allAdults;
-        private string? filterByString;
+    private IList<Family> familiesToShow;
+    private IList<Family> allFamilies;
+    FileContext familyfile;
+    private IList<Adult> adultsToShow;
+    private IList<Adult> allAdults;
+    private string? filterByString;
 
 
-        protected override async Task OnInitializedAsync()
+    protected override async Task OnInitializedAsync()
+    {
+    // allFamilies = FileContext.Families;
+    //familiesToShow = allFamilies;
+
+        allAdults = AdultData.GetAdults();
+        adultsToShow = allAdults;
+    }
+
+    private void FilterByName(ChangeEventArgs changeEventArgs)
+    {
+        filterByString = null;
+        try
         {
-            allFamilies = FileContext.Families;
-            familiesToShow = allFamilies;
-
-            allAdults = AdultData.GetAdults();
-            adultsToShow = allAdults;
+            filterByString = changeEventArgs.Value.ToString();
         }
-
-        private void FilterByName(ChangeEventArgs changeEventArgs)
+        catch (Exception e)
         {
-            filterByString = null;
-            try
-            {
-                filterByString = changeEventArgs.Value.ToString();
-            }
-            catch (Exception e)
-            {
-            }
-            ExecuteFilter();
         }
+        ExecuteFilter();
+    }
 
-        private void ExecuteFilter()
-        {
-            adultsToShow = allAdults.Where(A => (filterByString != null && A.FirstName.ToLower().StartsWith(filterByString.ToLower()) ||
-                                                 A.LastName.ToLower().StartsWith(filterByString.ToLower()) || filterByString == null)).ToList();
-        }
-
-
-        private void RemoveAdult(int adultId)
-        {
-            Adult adultToRemove = allAdults.First(a => a.Id == adultId);
-         AdultData.RemoveAdult(adultId);
-            allAdults.Remove(adultToRemove);
-            adultsToShow.Remove(adultToRemove);
-        }
-
-        private void AddPerson()
-        {
-            NavigationManager.NavigateTo("/AddPerson");
-        }
+    private void ExecuteFilter()
+    {
+        adultsToShow = allAdults.Where(A => (filterByString != null && A.FirstName.ToLower().StartsWith(filterByString.ToLower()) ||
+                                             A.LastName.ToLower().StartsWith(filterByString.ToLower()) || filterByString == null)).ToList();
+    }
 
 
+    private void RemoveAdult(int adultId)
+    {
+        Adult adultToRemove = allAdults.First(a => a.Id == adultId);
+        AdultData.RemoveAdult(adultId);
+        allAdults.Remove(adultToRemove);
+        adultsToShow.Remove(adultToRemove);
+    }
 
-    
+    private void AddPerson()
+    {
+        NavigationManager.NavigateTo("/AddPerson");
+    }
+
+
+
 
 #line default
 #line hidden

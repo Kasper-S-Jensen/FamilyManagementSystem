@@ -26,17 +26,17 @@ public class Child : Person {
     }
     public  string petsToString()
     {
-        string s = "";
+        string ss = "";
         foreach (var pet in Pets)
         {
-            s += pet.Species + ", ";
+            ss += pet.Species + ", ";
             
         }
-        if (s.EndsWith(", "))
+        if (ss.EndsWith(", "))
         {
-           s= s.Remove(s.Length - 2);
+           ss= ss.Remove(ss.Length - 2);
         }
-        return s;
+        return ss;
     }
 }
 }

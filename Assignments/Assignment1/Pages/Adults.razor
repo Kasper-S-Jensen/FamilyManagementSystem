@@ -7,8 +7,8 @@
 @inject IAdultData AdultData
 @inject FileContext FileContext
 
-
-<h3>Adults</h3>
+<div style="background: url(https://dk-flow-cdn.clio.me/5418e57a8149ad827325ea9a963d5a10b84afb32/6698e2547f55088c75945db92b9269e5a6969d6f.jpg) " class="page-holder bg-cover">
+<h2>Adults</h2>
 
 <p> Filter by name: <input type="text" @oninput="@(arg => FilterByName(arg))" style="width:200px"/> </p>
 
@@ -26,110 +26,118 @@ else if (!adultsToShow.Any())
 }
 else
 {
-    <table class="table table-hover table-striped thead-dark">
-    <thead>
-    <tr>
-       <th>Person ID</th> <th>Firstname</th> <th>Lastname</th><th>Age</th><th>Job</th><th>Salary</th>
-    </tr>
-    </thead>
-    <tbody>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <table class="table table-hover table-striped thead-dark table-light table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Person ID</th> <th>Firstname</th> <th>Lastname</th><th>Age</th><th>Job</th><th>Salary</th>
+                    </tr>
+                    </thead>
+                    <tbody>
 
-          @*
-          @foreach (var adult in adultsToShow)
-             {
-        <tr>
-            <td>@adult..Id</td>
-            <td>@adult.FirstName</td>
-            <td>@adult.LastName</td>
-            <td>@adult.HairColor</td>
-            <td>@adult.EyeColor</td>
-            <td>@adult.Age</td>
-            <td>@adult.</td>
-            <td>@adult.Height</td>
-            <td>@adult.Sex</td>
-            
-            }*@
-
-            @foreach (var adult in adultsToShow)
-        {
-            <tr>
-               
-                    
-                    <td>@adult.Id</td>
+                    @*
+                  @foreach (var adult in adultsToShow)
+                     {
+                <tr>
+                    <td>@adult..Id</td>
                     <td>@adult.FirstName</td>
                     <td>@adult.LastName</td>
+                    <td>@adult.HairColor</td>
+                    <td>@adult.EyeColor</td>
                     <td>@adult.Age</td>
-                <td>@adult.JobTitle.JobTitle</td>
-                    <td>@adult.JobTitle.Salary</td>
-                        <td>
-                            <button @onclick="@(() => RemoveAdult(adult.Id))">
-                                <i class="oi oi-trash" style="color:red"/>
-                            </button>
-                        </td>
-                        
-                
-            </tr>
-        }
-       
-        </tbody>
-        </table>
+                    <td>@adult.</td>
+                    <td>@adult.Height</td>
+                    <td>@adult.Sex</td>
+                    
+                    }*@
+
+                    @foreach (var adult in adultsToShow)
+                    {
+                        <tr>
+
+
+                            <td>@adult.Id</td>
+                            <td>@adult.FirstName</td>
+                            <td>@adult.LastName</td>
+                            <td>@adult.Age</td>
+                            <td>@adult.JobTitle.JobTitle</td>
+                            <td>@adult.JobTitle.Salary</td>
+                            <td>
+                                <button @onclick="@(() => RemoveAdult(adult.Id))">
+                                    <i class="oi oi-trash" style="color:red"/>
+                                </button>
+                            </td>
+
+
+                        </tr>
+                    }
+
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="col-sm-4">
+                <button @onclick="@(() => AddPerson())" class="btn btn-primary"> Add adult </button>
+                </div>
+            </div>
+        </div>
+}
+</div>
+
+@code {
+
+    private IList<Family> familiesToShow;
+    private IList<Family> allFamilies;
+    FileContext familyfile;
+    private IList<Adult> adultsToShow;
+    private IList<Adult> allAdults;
+    private string? filterByString;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+    // allFamilies = FileContext.Families;
+    //familiesToShow = allFamilies;
+
+        allAdults = AdultData.GetAdults();
+        adultsToShow = allAdults;
     }
 
-    <button @onclick="@(() => AddPerson())" class="btn btn-primary"> Add adult </button>
-
-
-    @code {
-
-        private IList<Family> familiesToShow;
-        private IList<Family> allFamilies;
-        FileContext familyfile;
-        private IList<Adult> adultsToShow;
-        private IList<Adult> allAdults;
-        private string? filterByString;
-
-
-        protected override async Task OnInitializedAsync()
+    private void FilterByName(ChangeEventArgs changeEventArgs)
+    {
+        filterByString = null;
+        try
         {
-            allFamilies = FileContext.Families;
-            familiesToShow = allFamilies;
-
-            allAdults = AdultData.GetAdults();
-            adultsToShow = allAdults;
+            filterByString = changeEventArgs.Value.ToString();
         }
-
-        private void FilterByName(ChangeEventArgs changeEventArgs)
+        catch (Exception e)
         {
-            filterByString = null;
-            try
-            {
-                filterByString = changeEventArgs.Value.ToString();
-            }
-            catch (Exception e)
-            {
-            }
-            ExecuteFilter();
         }
-
-        private void ExecuteFilter()
-        {
-            adultsToShow = allAdults.Where(A => (filterByString != null && A.FirstName.ToLower().StartsWith(filterByString.ToLower()) ||
-                                                 A.LastName.ToLower().StartsWith(filterByString.ToLower()) || filterByString == null)).ToList();
-        }
-
-
-        private void RemoveAdult(int adultId)
-        {
-            Adult adultToRemove = allAdults.First(a => a.Id == adultId);
-         AdultData.RemoveAdult(adultId);
-            allAdults.Remove(adultToRemove);
-            adultsToShow.Remove(adultToRemove);
-        }
-
-        private void AddPerson()
-        {
-            NavigationManager.NavigateTo("/AddPerson");
-        }
-
-
-
+        ExecuteFilter();
     }
+
+    private void ExecuteFilter()
+    {
+        adultsToShow = allAdults.Where(A => (filterByString != null && A.FirstName.ToLower().StartsWith(filterByString.ToLower()) ||
+                                             A.LastName.ToLower().StartsWith(filterByString.ToLower()) || filterByString == null)).ToList();
+    }
+
+
+    private void RemoveAdult(int adultId)
+    {
+        Adult adultToRemove = allAdults.First(a => a.Id == adultId);
+        AdultData.RemoveAdult(adultId);
+        allAdults.Remove(adultToRemove);
+        adultsToShow.Remove(adultToRemove);
+    }
+
+    private void AddPerson()
+    {
+        NavigationManager.NavigateTo("/AddPerson");
+    }
+
+
+
+}
