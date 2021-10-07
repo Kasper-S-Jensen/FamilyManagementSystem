@@ -616,21 +616,6 @@
         "Weight": 102.5,
         "Height": 164,
         "Sex": "F"
-      },
-      {
-        "JobTitle": {
-          "JobTitle": "Casino Host",
-          "Salary": 35445
-        },
-        "Id": 10,
-        "FirstName": "Lester",
-        "LastName": "Cruz",
-        "HairColor": "White",
-        "EyeColor": "Amber",
-        "Age": 39,
-        "Weight": 126.2,
-        "Height": 179,
-        "Sex": "M"
       }
     ],
     "Children": [
@@ -1184,6 +1169,29 @@
         "Sex": "F"
       }
     ],
+    "Pets": []
+  },
+  {
+    "StreetName": "asdvf",
+    "HouseNumber": 32,
+    "Adults": [
+      {
+        "JobTitle": {
+          "JobTitle": "asdfv",
+          "Salary": 234
+        },
+        "Id": 15,
+        "FirstName": "1dsfc",
+        "LastName": "asdcf",
+        "HairColor": "asdcf",
+        "EyeColor": "asdcf",
+        "Age": 22,
+        "Weight": 23,
+        "Height": 234234,
+        "Sex": "d"
+      }
+    ],
+    "Children": [],
     "Pets": []
   }
 ]

@@ -28,7 +28,7 @@ else
 {
     <div class="container">
         <div class="row">
-            <div class="col-sm-8">
+            <div class="col-sm-8 justify-content-center">
                 <table class="table table-hover table-striped thead-dark table-light table-bordered">
                     <thead>
                     <tr>
@@ -78,9 +78,11 @@ else
                 </table>
 
             </div>
+            <AuthorizeView Policy="SecurityLevel5">
             <div class="col-sm-4">
                 <button @onclick="@(() => AddPerson())" class="btn btn-primary"> Add adult </button>
-                </div>
+            </div>
+            </AuthorizeView>
             </div>
         </div>
 }

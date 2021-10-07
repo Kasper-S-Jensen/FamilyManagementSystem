@@ -26,13 +26,19 @@ namespace Assignment1.Data.Impl
         {
            
             Console.WriteLine("inside get adults");
-            foreach (var family in familyFile.Families)
+           adults.Clear();
             {
-                foreach (var adult in family.Adults)
+                
+                foreach (var family in familyFile.Families)
                 {
-                    adults.Add(adult);
+                    
+                    foreach (var adult in family.Adults)
+                    {
+                        adults.Add(adult);
+                    }
                 }
             }
+            
 
             return adults;
         }
@@ -40,22 +46,22 @@ namespace Assignment1.Data.Impl
         public IList<Child> GetChildren()
         {
             Console.WriteLine("inside get children");
-            foreach (var family in familyFile.Families)
+           children.Clear();
             {
-                Console.WriteLine("inside first loop");
-                foreach (var child in family.Children)
+                foreach (var family in familyFile.Families)
                 {
-                    Console.WriteLine(child.FirstName);
-                    Console.WriteLine("inside inner loop");
-                    children.Add(child);
+                    Console.WriteLine("inside first loop");
+                    foreach (var child in family.Children)
+                    {
+                        Console.WriteLine(child.FirstName);
+                        Console.WriteLine("inside inner loop");
+                        children.Add(child);
                     
-                }
+                    }
             }
-
-            foreach (var VARIABLE in children)
-            {
-                Console.WriteLine(VARIABLE.FirstName + "HEEEEEEEEEEEEEEEEEEEEEEEEEEEEEY");
+           
             }
+            
             return children;
         }
 
@@ -70,16 +76,21 @@ namespace Assignment1.Data.Impl
 
         public void RemoveAdult(int ID)
         {
-            Adult toRemove = new Adult();
+            
+            Adult toRemove;
             foreach (var family in familyFile.Families)
             {
-               toRemove= family.Adults.First(a => a.Id == ID);
-               family.Adults.Remove(toRemove);
-
+                toRemove = family.Adults.FirstOrDefault(a => a.Id == ID);
+               
+                if (toRemove!=null)
+                {
+                    family.Adults.Remove(toRemove);
+                }
             }
-           // Adult toRemove = adults.First(a => a.Id == ID);
-            
-           //adults.Remove(toRemove);
+
+
+          //  Adult toRemove = adults.First(a => a.Id == ID);
+            //adults.Remove(toRemove);
           
             
            familyFile.SaveChanges();

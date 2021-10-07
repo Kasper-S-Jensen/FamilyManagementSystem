@@ -118,10 +118,16 @@ using Microsoft.AspNetCore.Components;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 75 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Assignments\Assignment1\Pages\AddPerson.razor"
+#line 76 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Assignments\Assignment1\Pages\AddPerson.razor"
        
     private Adult newAdult = new Adult();
-    private Family newFamily = new Family();
+
+    private Family newFamily = new Family()
+    {
+        Children = new List<Child>(),
+        Pets = new List<Pet>()
+    };
+    
     private Job newJob = new Job();
     private int housenumber;
     private string streetName;
@@ -143,7 +149,6 @@ using Microsoft.AspNetCore.Components;
                 Console.WriteLine("inside equals");
                 familyItem.Adults.Add(newAdult);
                 NavigationManager.NavigateTo("/adults");
-                break;
                 return;
             }
         }

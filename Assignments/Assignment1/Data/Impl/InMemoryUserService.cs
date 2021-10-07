@@ -21,7 +21,7 @@ namespace Assignment1.Data.Impl
                 },
                 new User
                 {
-                   UserName = "Gæst",
+                   UserName = "Guest",
                    Password = "123456",
                    SecurityLevel = 1
                 }
