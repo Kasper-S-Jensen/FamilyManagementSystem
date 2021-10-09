@@ -7,71 +7,72 @@
 @inject NavigationManager NavigationManager
 @inject FileContext FileContext
 
-<h3>Add Person</h3>
+<h3>Add Adult</h3>
 
-<EditForm Model="@newAdult" OnValidSubmit="@AddNewAdult">
-<DataAnnotationsValidator/>
-<ValidationSummary/>
-<div class="form-group">
-    ID:<br/>
-    <InputNumber rows="1" @bind-Value="newAdult.Id"/>
-</div>
-<div class="form-group">
-    Firstname:<br/>
-    <InputTextArea rows="1" @bind-Value="newAdult.FirstName"/>
-</div>
-<div class="form-group">
-    Lastname:<br/>
-    <InputTextArea rows="1" @bind-Value="newAdult.LastName"/>
-</div>
-<div class="form-group">
-    Haircolor:<br/>
-    <InputTextArea rows="1" @bind-Value="newAdult.HairColor"/>
-</div>
-<div class="form-group">
-    Eyecolor:<br/>
-    <InputTextArea rows="1" @bind-Value="newAdult.EyeColor"/>
-</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 justify-content-center">
+            <EditForm Model="@newAdult" OnValidSubmit="@AddNewAdult">
+                <DataAnnotationsValidator/>
+                <ValidationSummary/>
+                <div class="form-group">
+                    Firstname:<br/>
+                    <InputTextArea rows="1" @bind-Value="newAdult.FirstName"/>
+                </div>
+                <div class="form-group">
+                    Lastname:<br/>
+                    <InputTextArea rows="1" @bind-Value="newAdult.LastName"/>
+                </div>
+                <div class="form-group">
+                    Haircolor:<br/>
+                    <InputTextArea rows="1" @bind-Value="newAdult.HairColor"/>
+                </div>
+                <div class="form-group">
+                    Eyecolor:<br/>
+                    <InputTextArea rows="1" @bind-Value="newAdult.EyeColor"/>
+                </div>
 
-<div class="form-group">
-    Age:<br/>
-    <InputNumber rows="1" @bind-Value="newAdult.Age"/>
-</div>
-<div class="form-group">
-    Weight:<br/>
-    <InputNumber rows="1" @bind-Value="newAdult.Weight"/>
-</div>
-<div class="form-group">
-    Height:<br/>
-    <InputNumber rows="1" @bind-Value="newAdult.Height"/>
-</div>
-<div class="form-group">
-    Sex:<br/>
-    <InputTextArea rows="1" @bind-Value="newAdult.Sex"/>
-</div>
-<div class="form-group">
-    Job:<br/>
-    <InputTextArea rows="1" @bind-Value="newJob.JobTitle"/>
-</div>
-<div class="form-group">
-    Salary:<br/>
-    <InputNumber rows="1" @bind-Value="newJob.Salary"/>
-</div>
-<div class="form-group">
-    StreetnName:<br/>
-    <InputTextArea rows="1" @bind-Value="newFamily.StreetName"/>
-</div>
-<div class="form-group">
-    house number:<br/>
-    <InputNumber rows="1" @bind-Value="newFamily.HouseNumber"/>
-</div>
-
+                <div class="form-group">
+                    Age:<br/>
+                    <InputNumber rows="1" @bind-Value="newAdult.Age"/>
+                </div>
+                <div class="form-group">
+                    Weight:<br/>
+                    <InputNumber rows="1" @bind-Value="newAdult.Weight"/>
+                </div>
+                <div class="form-group">
+                    Height:<br/>
+                    <InputNumber rows="1" @bind-Value="newAdult.Height"/>
+                </div>
+                <div class="form-group">
+                    Sex:<br/>
+                    <InputTextArea rows="1" @bind-Value="newAdult.Sex"/>
+                </div>
+                <div class="form-group">
+                    Job:<br/>
+                    <InputTextArea rows="1" @bind-Value="newJob.JobTitle"/>
+                </div>
+                <div class="form-group">
+                    Salary:<br/>
+                    <InputNumber rows="1" @bind-Value="newJob.Salary"/>
+                </div>
+                <div class="form-group">
+                    Streetname:<br/>
+                    <InputTextArea rows="1" @bind-Value="newFamily.StreetName"/>
+                </div>
+                <div class="form-group">
+                    House number:<br/>
+                    <InputNumber rows="1" @bind-Value="newFamily.HouseNumber"/>
+                </div>
 
 
-<p class="actions">
-    <button class="btn btn-outline-dark" type="submit">Create</button>
-</p> </EditForm>
-
+                <p class="actions">
+                    <button class="btn btn-outline-dark btn-primary" type="submit">Create</button>
+                </p>
+            </EditForm>
+        </div>
+    </div>
+</div>
 
 @code {
     private Adult newAdult = new Adult();
@@ -81,7 +82,7 @@
         Children = new List<Child>(),
         Pets = new List<Pet>()
     };
-    
+
     private Job newJob = new Job();
     private int housenumber;
     private string streetName;
@@ -91,15 +92,14 @@
         int max = adultData.GetAdults().Max(adult => adult.Id);
         newAdult.Id = (++max);
         newAdult.JobTitle = newJob;
-        newFamily.Adults.Add(newAdult); 
-        
+        newFamily.Adults.Add(newAdult);
+
         foreach (var familyItem in FileContext.Families)
         {
             streetName = familyItem.StreetName;
             housenumber = familyItem.HouseNumber;
-            if (familyItem.HouseNumber==newFamily.HouseNumber && familyItem.StreetName==newFamily.StreetName)
+            if (familyItem.HouseNumber == newFamily.HouseNumber && familyItem.StreetName == newFamily.StreetName)
             {
-               
                 Console.WriteLine("inside equals");
                 familyItem.Adults.Add(newAdult);
                 NavigationManager.NavigateTo("/adults");
@@ -112,8 +112,6 @@
 
             NavigationManager.NavigateTo("/adults");
         }
-
-      
     }
 
 }

@@ -8,90 +8,65 @@
 @inject FileContext FileContext
 
 <div style="background: url(https://dk-flow-cdn.clio.me/5418e57a8149ad827325ea9a963d5a10b84afb32/6698e2547f55088c75945db92b9269e5a6969d6f.jpg) " class="page-holder bg-cover">
-<h2>Adults</h2>
+    <h2>Adults</h2>
 
-<p> Filter by name: <input type="text" @oninput="@(arg => FilterByName(arg))" style="width:200px"/> </p>
+    <p> Filter by name: <input type="text" @oninput="@(arg => FilterByName(arg))" style="width:200px"/> </p>
 
-@if (adultsToShow == null)
-{
-    <p>
-        <em>Loading...</em>
-    </p>
-}
-else if (!adultsToShow.Any())
-{
-    <p>
-        <em>No adults exist. Please add some.</em>
-    </p>
-}
-else
-{
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-8 justify-content-center">
-                <table class="table table-hover table-striped thead-dark table-light table-bordered">
-                    <thead>
-                    <tr>
-                        <th>Person ID</th> <th>Firstname</th> <th>Lastname</th><th>Age</th><th>Job</th><th>Salary</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-
-                    @*
-                  @foreach (var adult in adultsToShow)
-                     {
-                <tr>
-                    <td>@adult..Id</td>
-                    <td>@adult.FirstName</td>
-                    <td>@adult.LastName</td>
-                    <td>@adult.HairColor</td>
-                    <td>@adult.EyeColor</td>
-                    <td>@adult.Age</td>
-                    <td>@adult.</td>
-                    <td>@adult.Height</td>
-                    <td>@adult.Sex</td>
-                    
-                    }*@
-
-                    @foreach (var adult in adultsToShow)
-                    {
+    @if (adultsToShow == null)
+    {
+        <p>
+            <em>Loading...</em>
+        </p>
+    }
+    else if (!adultsToShow.Any())
+    {
+        <p>
+            <em>No adults exist. Please add some.</em>
+        </p>
+    }
+    else
+    {
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 justify-content-center">
+                    <table class="table table-hover table-striped thead-dark table-light table-bordered">
+                        <thead>
                         <tr>
-
-
-                            <td>@adult.Id</td>
-                            <td>@adult.FirstName</td>
-                            <td>@adult.LastName</td>
-                            <td>@adult.Age</td>
-                            <td>@adult.JobTitle.JobTitle</td>
-                            <td>@adult.JobTitle.Salary</td>
-                            <td>
-                                <button @onclick="@(() => RemoveAdult(adult.Id))">
-                                    <i class="oi oi-trash" style="color:red"/>
-                                </button>
-                            </td>
-
-
+                            <th>Firstname</th> <th>Lastname</th><th>Age</th><th>Job</th><th>Salary</th>
                         </tr>
-                    }
+                        </thead>
+                        <tbody>
+                        @foreach (var adult in adultsToShow)
+                        {
+                            <tr>
+                                <td>@adult.FirstName</td>
+                                <td>@adult.LastName</td>
+                                <td>@adult.Age</td>
+                                <td>@adult.JobTitle.JobTitle</td>
+                                <td>@adult.JobTitle.Salary</td>
+                                <td>
+                                    <button @onclick="@(() => RemoveAdult(adult.Id))">
+                                        <i class="oi oi-trash" style="color:red"/>
+                                    </button>
+                                </td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
 
-                    </tbody>
-                </table>
-
-            </div>
-            <AuthorizeView Policy="SecurityLevel5">
-            <div class="col-sm-4">
-                <button @onclick="@(() => AddPerson())" class="btn btn-primary"> Add adult </button>
-            </div>
-            </AuthorizeView>
+                </div>
+                <AuthorizeView Policy="SecurityLevel5">
+                    <div class="col-sm-4">
+                        <button @onclick="@(() => AddPerson())" class="btn btn-primary"> Add adult </button>
+                    </div>
+                </AuthorizeView>
             </div>
         </div>
-}
+    }
 </div>
 
 @code {
 
-    private IList<Family> familiesToShow;
-    private IList<Family> allFamilies;
     FileContext familyfile;
     private IList<Adult> adultsToShow;
     private IList<Adult> allAdults;
@@ -100,9 +75,6 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-    // allFamilies = FileContext.Families;
-    //familiesToShow = allFamilies;
-
         allAdults = AdultData.GetAdults();
         adultsToShow = allAdults;
     }

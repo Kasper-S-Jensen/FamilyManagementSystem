@@ -104,7 +104,7 @@ using Microsoft.AspNetCore.Components;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 41 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Assignments\Assignment1\Pages\Login.razor"
+#line 48 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Assignments\Assignment1\Pages\Login.razor"
        
     private string username;
     private string password;
@@ -118,7 +118,7 @@ using Microsoft.AspNetCore.Components;
             ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
             username = "";
             password = "";
-     NavigationManager.NavigateTo("/");
+            NavigationManager.NavigateTo("/");
         }
         catch (Exception e)
         {

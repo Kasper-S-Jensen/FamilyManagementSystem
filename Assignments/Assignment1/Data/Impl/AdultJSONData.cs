@@ -8,7 +8,6 @@ using Assignment1.Models;
 using Assignment1.Persistence;
 
 
-
 namespace Assignment1.Data.Impl
 {
     public class AdultJSONData : IAdultData
@@ -24,76 +23,53 @@ namespace Assignment1.Data.Impl
 
         public IList<Adult> GetAdults()
         {
-           
-            Console.WriteLine("inside get adults");
-           adults.Clear();
+            adults.Clear();
             {
-                
                 foreach (var family in familyFile.Families)
                 {
-                    
                     foreach (var adult in family.Adults)
                     {
                         adults.Add(adult);
                     }
                 }
             }
-            
-
             return adults;
         }
 
         public IList<Child> GetChildren()
         {
-            Console.WriteLine("inside get children");
-           children.Clear();
+            children.Clear();
             {
                 foreach (var family in familyFile.Families)
                 {
-                    Console.WriteLine("inside first loop");
                     foreach (var child in family.Children)
                     {
-                        Console.WriteLine(child.FirstName);
-                        Console.WriteLine("inside inner loop");
                         children.Add(child);
-                    
                     }
+                }
             }
-           
-            }
-            
             return children;
         }
 
         public void AddFamily(Family family)
         {
-          //  int max = adults.Max(adult => adult.Id);
-          //  adult.Id = (++max);
-          
-           familyFile.Families.Add(family);
-           familyFile.SaveChanges();
+            familyFile.Families.Add(family);
+            familyFile.SaveChanges();
         }
 
         public void RemoveAdult(int ID)
         {
-            
             Adult toRemove;
             foreach (var family in familyFile.Families)
             {
                 toRemove = family.Adults.FirstOrDefault(a => a.Id == ID);
-               
-                if (toRemove!=null)
+
+                if (toRemove != null)
                 {
                     family.Adults.Remove(toRemove);
                 }
             }
-
-
-          //  Adult toRemove = adults.First(a => a.Id == ID);
-            //adults.Remove(toRemove);
-          
-            
-           familyFile.SaveChanges();
+            familyFile.SaveChanges();
         }
 
         public void Update(Adult adult)

@@ -1,42 +1,45 @@
 using System;
 using System.Collections.Generic;
 
-namespace Assignment1.Models {
-public class Child : Person {
-    
-    public List<Interest> Interests { get; set; }
-    public List<Pet> Pets { get; set; }
-
-    public  string InterestToString()
+namespace Assignment1.Models
+{
+    public class Child : Person
     {
-        string s = "";
-        foreach (var interest in Interests)
+        public List<Interest> Interests { get; set; }
+        public List<Pet> Pets { get; set; }
+
+        public string InterestToString()
         {
-            s += interest.Type + ", ";
-           
-        }
-        if (s.EndsWith(", "))
-        {
-            Console.WriteLine("test");
-            s= s.Remove(s.Length - 2);
+            string s = "";
+            foreach (var interest in Interests)
+            {
+                s += interest.Type + ", ";
+            }
+
+            if (s.EndsWith(", "))
+            {
+                Console.WriteLine("test");
+                s = s.Remove(s.Length - 2);
+            }
+
+            Console.WriteLine(s);
+            return s;
         }
 
-        Console.WriteLine(s);
-        return s;
-    }
-    public  string petsToString()
-    {
-        string ss = "";
-        foreach (var pet in Pets)
+        public string petsToString()
         {
-            ss += pet.Species + ", ";
-            
+            string ss = "";
+            foreach (var pet in Pets)
+            {
+                ss += pet.Species + ", ";
+            }
+
+            if (ss.EndsWith(", "))
+            {
+                ss = ss.Remove(ss.Length - 2);
+            }
+
+            return ss;
         }
-        if (ss.EndsWith(", "))
-        {
-           ss= ss.Remove(ss.Length - 2);
-        }
-        return ss;
     }
-}
 }

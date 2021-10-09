@@ -911,7 +911,14 @@
             "Description": "Young, genetically modified, secret assassin tortoise"
           }
         ],
-        "Pets": [],
+        "Pets": [
+          {
+            "Id": 8,
+            "Species": "Fish",
+            "Name": "Chessie",
+            "Age": 2
+          }
+        ],
         "Id": 24,
         "FirstName": "Ellie",
         "LastName": "Huffman",
@@ -929,7 +936,14 @@
             "Description": "Old sport with bow and arrow"
           }
         ],
-        "Pets": [],
+        "Pets": [
+          {
+            "Id": 9,
+            "Species": "Cat",
+            "Name": "Chessie",
+            "Age": 2
+          }
+        ],
         "Id": 25,
         "FirstName": "Anaiyah",
         "LastName": "Huffman",
@@ -983,7 +997,20 @@
             "Description": "Slightly more narrow than book reading"
           }
         ],
-        "Pets": [],
+        "Pets": [
+          {
+            "Id": 10,
+            "Species": "Mouse",
+            "Name": "Chessie",
+            "Age": 2
+          },
+          {
+            "Id": 11,
+            "Species": "Parakeet",
+            "Name": "Chessie",
+            "Age": 2
+          }
+        ],
         "Id": 26,
         "FirstName": "Fisher",
         "LastName": "Vaughn",
@@ -1174,21 +1201,28 @@
   {
     "StreetName": "asdvf",
     "HouseNumber": 32,
+    "Adults": [],
+    "Children": [],
+    "Pets": []
+  },
+  {
+    "StreetName": "sadv",
+    "HouseNumber": 234,
     "Adults": [
       {
         "JobTitle": {
-          "JobTitle": "asdfv",
-          "Salary": 234
+          "JobTitle": "afb",
+          "Salary": 342
         },
         "Id": 15,
-        "FirstName": "1dsfc",
-        "LastName": "asdcf",
-        "HairColor": "asdcf",
-        "EyeColor": "asdcf",
-        "Age": 22,
-        "Weight": 23,
-        "Height": 234234,
-        "Sex": "d"
+        "FirstName": "Niels",
+        "LastName": " B\u00F8rge",
+        "HairColor": "green",
+        "EyeColor": "grey",
+        "Age": 23,
+        "Weight": 423,
+        "Height": 324,
+        "Sex": "n"
       }
     ],
     "Children": [],

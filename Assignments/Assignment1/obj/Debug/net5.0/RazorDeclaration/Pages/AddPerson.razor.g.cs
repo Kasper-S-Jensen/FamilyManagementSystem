@@ -118,7 +118,7 @@ using Microsoft.AspNetCore.Components;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 76 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Assignments\Assignment1\Pages\AddPerson.razor"
+#line 77 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Assignments\Assignment1\Pages\AddPerson.razor"
        
     private Adult newAdult = new Adult();
 
@@ -127,7 +127,7 @@ using Microsoft.AspNetCore.Components;
         Children = new List<Child>(),
         Pets = new List<Pet>()
     };
-    
+
     private Job newJob = new Job();
     private int housenumber;
     private string streetName;
@@ -137,15 +137,14 @@ using Microsoft.AspNetCore.Components;
         int max = adultData.GetAdults().Max(adult => adult.Id);
         newAdult.Id = (++max);
         newAdult.JobTitle = newJob;
-        newFamily.Adults.Add(newAdult); 
-        
+        newFamily.Adults.Add(newAdult);
+
         foreach (var familyItem in FileContext.Families)
         {
             streetName = familyItem.StreetName;
             housenumber = familyItem.HouseNumber;
-            if (familyItem.HouseNumber==newFamily.HouseNumber && familyItem.StreetName==newFamily.StreetName)
+            if (familyItem.HouseNumber == newFamily.HouseNumber && familyItem.StreetName == newFamily.StreetName)
             {
-               
                 Console.WriteLine("inside equals");
                 familyItem.Adults.Add(newAdult);
                 NavigationManager.NavigateTo("/adults");
@@ -158,8 +157,6 @@ using Microsoft.AspNetCore.Components;
 
             NavigationManager.NavigateTo("/adults");
         }
-
-      
     }
 
 
