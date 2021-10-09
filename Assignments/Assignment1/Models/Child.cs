@@ -18,11 +18,9 @@ namespace Assignment1.Models
 
             if (s.EndsWith(", "))
             {
-                Console.WriteLine("test");
                 s = s.Remove(s.Length - 2);
             }
 
-            Console.WriteLine(s);
             return s;
         }
 
