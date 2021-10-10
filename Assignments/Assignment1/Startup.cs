@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Assignment1.Authentication;
 using Assignment1.Data;
 using Assignment1.Data.Impl;
+using Assignment1.Models;
 using Assignment1.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;

@@ -1208,21 +1208,28 @@
   {
     "StreetName": "sadv",
     "HouseNumber": 234,
+    "Adults": [],
+    "Children": [],
+    "Pets": []
+  },
+  {
+    "StreetName": "Vej",
+    "HouseNumber": 23,
     "Adults": [
       {
         "JobTitle": {
-          "JobTitle": "afb",
-          "Salary": 342
+          "JobTitle": "Sailor",
+          "Salary": 233
         },
         "Id": 15,
         "FirstName": "Niels",
-        "LastName": " B\u00F8rge",
-        "HairColor": "green",
-        "EyeColor": "grey",
-        "Age": 23,
-        "Weight": 423,
-        "Height": 324,
-        "Sex": "n"
+        "LastName": "Hansen",
+        "HairColor": "Red",
+        "EyeColor": "Brown",
+        "Age": 21,
+        "Weight": 123,
+        "Height": 123,
+        "Sex": "M"
       }
     ],
     "Children": [],

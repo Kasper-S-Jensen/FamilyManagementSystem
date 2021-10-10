@@ -145,7 +145,6 @@ using Microsoft.AspNetCore.Components;
             housenumber = familyItem.HouseNumber;
             if (familyItem.HouseNumber == newFamily.HouseNumber && familyItem.StreetName == newFamily.StreetName)
             {
-                Console.WriteLine("inside equals");
                 familyItem.Adults.Add(newAdult);
                 NavigationManager.NavigateTo("/adults");
                 return;
