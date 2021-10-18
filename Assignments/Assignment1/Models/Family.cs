@@ -14,6 +14,23 @@ public class Family {
     public Family() {
         Adults = new List<Adult>();     
     }
+    
+    public string petsToString()
+    {
+        string ss = "";
+        foreach (var pet in Pets)
+        {
+            ss += pet.Species + ", ";
+        }
+
+        if (ss.EndsWith(", "))
+        {
+            ss = ss.Remove(ss.Length - 2);
+        }
+
+        return ss;
+    }
+    
 
 }
 

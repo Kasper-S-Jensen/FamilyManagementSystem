@@ -13,92 +13,99 @@ namespace Assignment1.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Assignments\Assignment1\_Imports.razor"
+#line 1 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Assignments\Assignment1\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Assignments\Assignment1\_Imports.razor"
+#line 2 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Assignments\Assignment1\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Assignments\Assignment1\_Imports.razor"
+#line 3 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Assignments\Assignment1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Assignments\Assignment1\_Imports.razor"
+#line 4 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Assignments\Assignment1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Assignments\Assignment1\_Imports.razor"
+#line 5 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Assignments\Assignment1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Assignments\Assignment1\_Imports.razor"
+#line 6 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Assignments\Assignment1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Assignments\Assignment1\_Imports.razor"
+#line 7 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Assignments\Assignment1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Assignments\Assignment1\_Imports.razor"
+#line 8 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Assignments\Assignment1\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Assignments\Assignment1\_Imports.razor"
+#line 9 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Assignments\Assignment1\_Imports.razor"
 using Assignment1;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Assignments\Assignment1\_Imports.razor"
+#line 10 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Assignments\Assignment1\_Imports.razor"
 using Assignment1.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Assignments\Assignment1\Pages\Adults.razor"
+#line 2 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Assignments\Assignment1\Pages\Adults.razor"
 using Assignment1.Data;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Assignments\Assignment1\Pages\Adults.razor"
+#line 3 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Assignments\Assignment1\Pages\Adults.razor"
 using Assignment1.Persistence;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Assignments\Assignment1\Pages\Adults.razor"
+#line 4 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Assignments\Assignment1\Pages\Adults.razor"
 using Assignment1.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Assignments\Assignment1\Pages\Adults.razor"
+using Microsoft.Net.Http.Headers;
 
 #line default
 #line hidden
@@ -112,60 +119,97 @@ using Assignment1.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 68 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Assignments\Assignment1\Pages\Adults.razor"
+#line 152 "C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Assignments\Assignment1\Pages\Adults.razor"
        
 
     FileContext familyfile;
-    private IList<Adult> adultsToShow;
-    private IList<Adult> allAdults;
+
+    private IList<Family> familiesToShow;
+    private IList<int> houseNumbers = new List<int>();
+    private IList<Family> allFamilies;
+    private IList<Family> distinctAllFamilies;
+    private IList<Child> childrenToShow;
+    private IList<Child> allChildren;
+
+    private Family currentFamily = new Family();
+    private string streetNamse;
+
     private string? filterByString;
 
 
     protected override async Task OnInitializedAsync()
     {
-        allAdults = AdultData.GetAdults();
-        adultsToShow = allAdults;
+        Updatefamilies();
+        UpdateChildren();
     }
 
-    private void FilterByName(ChangeEventArgs changeEventArgs)
+    private void Updatefamilies()
     {
-        filterByString = null;
-        try
-        {
-            filterByString = changeEventArgs.Value.ToString();
-        }
-        catch (Exception e)
-        {
-        }
-        ExecuteFilter();
+        allFamilies = AdultData.GetFamilies();
+        familiesToShow = null;
+        distinctAllFamilies = allFamilies.Distinct().ToList();
     }
 
-    private void ExecuteFilter()
+    private void UpdateChildren()
     {
-        adultsToShow = allAdults.Where(A => (filterByString != null && A.FirstName.ToLower().StartsWith(filterByString.ToLower()) ||
-                                             A.LastName.ToLower().StartsWith(filterByString.ToLower()) || filterByString == null)).ToList();
+        allChildren = AdultData.GetChildren();
+        childrenToShow = null;
+    }
+
+    private void FilterByFamily(string changeEventArgs)
+    {
+        currentFamily.StreetName = changeEventArgs;
+
+        houseNumbers.Clear();
+        foreach (var family in allFamilies)
+        {
+            if (family.StreetName.Equals(currentFamily.StreetName))
+            {
+                houseNumbers.Add(family.HouseNumber);
+            }
+           
+        }
+    }
+
+    private void Filterfamilies()
+    {
+       // currentFamily.HouseNumber = s;
+      
+        ExecuteFamilyFilter();
+       
+    }
+
+    private void ExecuteFamilyFilter()
+    {
+        Console.WriteLine(currentFamily.HouseNumber + " inseide executefamilyssd");
+        familiesToShow = allFamilies.Where(f => (currentFamily.StreetName.Equals(f.StreetName) && currentFamily.HouseNumber == f.HouseNumber && currentFamily.StreetName != null)).ToList();
     }
 
 
     private void RemoveAdult(int adultId)
     {
-        Adult adultToRemove = allAdults.First(a => a.Id == adultId);
+        Adult adultToRemove = AdultData.GetAdult(adultId);
         AdultData.RemoveAdult(adultId);
-        allAdults.Remove(adultToRemove);
-        adultsToShow.Remove(adultToRemove);
     }
 
-    private void AddPerson()
+    async Task RemoveFamily(string streetName, int houseNumber)
     {
-        NavigationManager.NavigateTo("/AddPerson");
-    }
+        if (!await JSRuntime.InvokeAsync<bool>("confirm", $"Are you sure you want to remove the family at '{currentFamily.StreetName} {currentFamily.HouseNumber}', and all of its members?"))
+            return;
+        Console.WriteLine(currentFamily.HouseNumber + currentFamily.StreetName);
 
+        Family familyToRemove = allFamilies.FirstOrDefault(f => (currentFamily.StreetName.Equals(f.StreetName) &&currentFamily.HouseNumber==f.HouseNumber && currentFamily.StreetName != null));
+        AdultData.RemoveFamily(streetName, houseNumber);
+        allFamilies.Remove(familyToRemove);
+        familiesToShow.Remove(familyToRemove);
+    }
 
 
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JSRuntime { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private FileContext FileContext { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAdultData AdultData { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }

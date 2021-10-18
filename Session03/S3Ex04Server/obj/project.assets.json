@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kaspe\\OneDrive - ViaUC\\Diplomingenioer\\3.sem\\DNP\\Solutions\\DNP1\\Session03\\S3Ex04Server\\S3Ex04Server.csproj",
+      "projectUniqueName": "C:\\Users\\kaspe\\OneDrive - ViaUC\\Diplomingenioer\\3.sem\\DNP\\Solutions\\Assignments\\Session03\\S3Ex04Server\\S3Ex04Server.csproj",
       "projectName": "S3Ex04Server",
-      "projectPath": "C:\\Users\\kaspe\\OneDrive - ViaUC\\Diplomingenioer\\3.sem\\DNP\\Solutions\\DNP1\\Session03\\S3Ex04Server\\S3Ex04Server.csproj",
+      "projectPath": "C:\\Users\\kaspe\\OneDrive - ViaUC\\Diplomingenioer\\3.sem\\DNP\\Solutions\\Assignments\\Session03\\S3Ex04Server\\S3Ex04Server.csproj",
       "packagesPath": "C:\\Users\\kaspe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kaspe\\OneDrive - ViaUC\\Diplomingenioer\\3.sem\\DNP\\Solutions\\DNP1\\Session03\\S3Ex04Server\\obj\\",
+      "outputPath": "C:\\Users\\kaspe\\OneDrive - ViaUC\\Diplomingenioer\\3.sem\\DNP\\Solutions\\Assignments\\Session03\\S3Ex04Server\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\kaspe\\AppData\\Roaming\\NuGet\\NuGet.Config"

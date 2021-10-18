@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kaspe\\OneDrive - ViaUC\\Diplomingenioer\\3.sem\\DNP\\Solutions\\DNP1\\Session1\\S1Ex1\\S1Ex1.csproj": {}
+    "C:\\Users\\kaspe\\OneDrive - ViaUC\\Diplomingenioer\\3.sem\\DNP\\Solutions\\Assignments\\Session1\\S1Ex1\\S1Ex1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kaspe\\OneDrive - ViaUC\\Diplomingenioer\\3.sem\\DNP\\Solutions\\DNP1\\Session1\\S1Ex1\\S1Ex1.csproj": {
+    "C:\\Users\\kaspe\\OneDrive - ViaUC\\Diplomingenioer\\3.sem\\DNP\\Solutions\\Assignments\\Session1\\S1Ex1\\S1Ex1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kaspe\\OneDrive - ViaUC\\Diplomingenioer\\3.sem\\DNP\\Solutions\\DNP1\\Session1\\S1Ex1\\S1Ex1.csproj",
+        "projectUniqueName": "C:\\Users\\kaspe\\OneDrive - ViaUC\\Diplomingenioer\\3.sem\\DNP\\Solutions\\Assignments\\Session1\\S1Ex1\\S1Ex1.csproj",
         "projectName": "S1Ex1",
-        "projectPath": "C:\\Users\\kaspe\\OneDrive - ViaUC\\Diplomingenioer\\3.sem\\DNP\\Solutions\\DNP1\\Session1\\S1Ex1\\S1Ex1.csproj",
+        "projectPath": "C:\\Users\\kaspe\\OneDrive - ViaUC\\Diplomingenioer\\3.sem\\DNP\\Solutions\\Assignments\\Session1\\S1Ex1\\S1Ex1.csproj",
         "packagesPath": "C:\\Users\\kaspe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kaspe\\OneDrive - ViaUC\\Diplomingenioer\\3.sem\\DNP\\Solutions\\DNP1\\Session1\\S1Ex1\\obj\\",
+        "outputPath": "C:\\Users\\kaspe\\OneDrive - ViaUC\\Diplomingenioer\\3.sem\\DNP\\Solutions\\Assignments\\Session1\\S1Ex1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kaspe\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kaspe\\OneDrive - ViaUC\\Diplomingenioer\\3.sem\\DNP\\Solutions\\DNP1\\Session04\\TodoProject\\TodoProject.csproj": {}
+    "C:\\Users\\kaspe\\OneDrive - ViaUC\\Diplomingenioer\\3.sem\\DNP\\Solutions\\Assignments\\Session04\\TodoProject\\TodoProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kaspe\\OneDrive - ViaUC\\Diplomingenioer\\3.sem\\DNP\\Solutions\\DNP1\\Session04\\TodoProject\\TodoProject.csproj": {
+    "C:\\Users\\kaspe\\OneDrive - ViaUC\\Diplomingenioer\\3.sem\\DNP\\Solutions\\Assignments\\Session04\\TodoProject\\TodoProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kaspe\\OneDrive - ViaUC\\Diplomingenioer\\3.sem\\DNP\\Solutions\\DNP1\\Session04\\TodoProject\\TodoProject.csproj",
+        "projectUniqueName": "C:\\Users\\kaspe\\OneDrive - ViaUC\\Diplomingenioer\\3.sem\\DNP\\Solutions\\Assignments\\Session04\\TodoProject\\TodoProject.csproj",
         "projectName": "TodoProject",
-        "projectPath": "C:\\Users\\kaspe\\OneDrive - ViaUC\\Diplomingenioer\\3.sem\\DNP\\Solutions\\DNP1\\Session04\\TodoProject\\TodoProject.csproj",
+        "projectPath": "C:\\Users\\kaspe\\OneDrive - ViaUC\\Diplomingenioer\\3.sem\\DNP\\Solutions\\Assignments\\Session04\\TodoProject\\TodoProject.csproj",
         "packagesPath": "C:\\Users\\kaspe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kaspe\\OneDrive - ViaUC\\Diplomingenioer\\3.sem\\DNP\\Solutions\\DNP1\\Session04\\TodoProject\\obj\\",
+        "outputPath": "C:\\Users\\kaspe\\OneDrive - ViaUC\\Diplomingenioer\\3.sem\\DNP\\Solutions\\Assignments\\Session04\\TodoProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kaspe\\AppData\\Roaming\\NuGet\\NuGet.Config"

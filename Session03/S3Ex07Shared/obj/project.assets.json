@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kaspe\\OneDrive - ViaUC\\Diplomingenioer\\3.sem\\DNP\\Solutions\\DNP1\\Session03\\S3Ex07Shared\\S3Ex07Shared.csproj",
+      "projectUniqueName": "C:\\Users\\kaspe\\OneDrive - ViaUC\\Diplomingenioer\\3.sem\\DNP\\Solutions\\Assignments\\Session03\\S3Ex07Shared\\S3Ex07Shared.csproj",
       "projectName": "S3Ex07Shared",
-      "projectPath": "C:\\Users\\kaspe\\OneDrive - ViaUC\\Diplomingenioer\\3.sem\\DNP\\Solutions\\DNP1\\Session03\\S3Ex07Shared\\S3Ex07Shared.csproj",
+      "projectPath": "C:\\Users\\kaspe\\OneDrive - ViaUC\\Diplomingenioer\\3.sem\\DNP\\Solutions\\Assignments\\Session03\\S3Ex07Shared\\S3Ex07Shared.csproj",
       "packagesPath": "C:\\Users\\kaspe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kaspe\\OneDrive - ViaUC\\Diplomingenioer\\3.sem\\DNP\\Solutions\\DNP1\\Session03\\S3Ex07Shared\\obj\\",
+      "outputPath": "C:\\Users\\kaspe\\OneDrive - ViaUC\\Diplomingenioer\\3.sem\\DNP\\Solutions\\Assignments\\Session03\\S3Ex07Shared\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\kaspe\\AppData\\Roaming\\NuGet\\NuGet.Config"

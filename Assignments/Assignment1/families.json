@@ -2,29 +2,13 @@
   {
     "StreetName": "Bay Avenue",
     "HouseNumber": 1,
-    "Adults": [
-      {
-        "JobTitle": {
-          "JobTitle": "Mascot",
-          "Salary": 99821
-        },
-        "Id": 0,
-        "FirstName": "Yasmine",
-        "LastName": "Baxter",
-        "HairColor": "Black",
-        "EyeColor": "Brown",
-        "Age": 58,
-        "Weight": 39.8,
-        "Height": 174,
-        "Sex": "F"
-      }
-    ],
+    "Adults": [],
     "Children": [],
     "Pets": []
   },
   {
     "StreetName": "Innovation Avenue",
-    "HouseNumber": 1,
+    "HouseNumber": 12,
     "Adults": [
       {
         "JobTitle": {
@@ -145,7 +129,7 @@
   },
   {
     "StreetName": "William Street",
-    "HouseNumber": 1,
+    "HouseNumber": 76,
     "Adults": [
       {
         "JobTitle": {
@@ -263,7 +247,7 @@
   },
   {
     "StreetName": "Mitch Cromwood Avenue",
-    "HouseNumber": 1,
+    "HouseNumber": 6,
     "Adults": [
       {
         "JobTitle": {
@@ -413,7 +397,7 @@
   },
   {
     "StreetName": "Elgin Avenue",
-    "HouseNumber": 1,
+    "HouseNumber": 5,
     "Adults": [
       {
         "JobTitle": {
@@ -600,7 +584,7 @@
   },
   {
     "StreetName": "Railway Street",
-    "HouseNumber": 1,
+    "HouseNumber": 15,
     "Adults": [
       {
         "JobTitle": {
@@ -753,7 +737,7 @@
   },
   {
     "StreetName": "Airport Avenue",
-    "HouseNumber": 1,
+    "HouseNumber": 21,
     "Adults": [
       {
         "JobTitle": {
@@ -865,7 +849,7 @@
   },
   {
     "StreetName": "Sycamore Drive",
-    "HouseNumber": 1,
+    "HouseNumber": 34,
     "Adults": [
       {
         "JobTitle": {
@@ -959,7 +943,7 @@
   },
   {
     "StreetName": "Hazlett Avenue",
-    "HouseNumber": 1,
+    "HouseNumber": 22,
     "Adults": [
       {
         "JobTitle": {
@@ -1134,7 +1118,7 @@
   },
   {
     "StreetName": "Easy Street",
-    "HouseNumber": 1,
+    "HouseNumber": 3,
     "Adults": [
       {
         "JobTitle": {
@@ -1199,40 +1183,40 @@
     "Pets": []
   },
   {
-    "StreetName": "asdvf",
-    "HouseNumber": 32,
+    "StreetName": "Lichtenbergsgade",
+    "HouseNumber": 4,
     "Adults": [],
-    "Children": [],
-    "Pets": []
-  },
-  {
-    "StreetName": "sadv",
-    "HouseNumber": 234,
-    "Adults": [],
-    "Children": [],
-    "Pets": []
-  },
-  {
-    "StreetName": "Vej",
-    "HouseNumber": 23,
-    "Adults": [
+    "Children": [
       {
-        "JobTitle": {
-          "JobTitle": "Sailor",
-          "Salary": 233
-        },
-        "Id": 15,
-        "FirstName": "Niels",
-        "LastName": "Hansen",
-        "HairColor": "Red",
-        "EyeColor": "Brown",
-        "Age": 21,
-        "Weight": 123,
-        "Height": 123,
+        "Interests": [
+          {
+            "Type": "Sleeping",
+            "Description": "Cartoons are for children, comics are for adults"
+          },
+          {
+            "Type": "Blive kl\u00F8et i nakken",
+            "Description": "Drive super duper fast"
+          }
+        ],
+        "Pets": [],
+        "Id": 26,
+        "FirstName": "Arnold",
+        "LastName": "Lisby",
+        "HairColor": "Grey",
+        "EyeColor": "Black",
+        "Age": 4,
+        "Weight": 5,
+        "Height": 20,
         "Sex": "M"
       }
     ],
-    "Children": [],
-    "Pets": []
+    "Pets": [
+      {
+        "Id": 10,
+        "Species": "Ragdoll, Zeus of Olympus",
+        "Name": "Zeus of Olympus",
+        "Age": 4
+      }
+    ]
   }
 ]
