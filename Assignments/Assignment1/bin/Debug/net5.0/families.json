@@ -2,23 +2,7 @@
   {
     "StreetName": "Bay Avenue",
     "HouseNumber": 1,
-    "Adults": [
-      {
-        "JobTitle": {
-          "JobTitle": "sdfg",
-          "Salary": 345
-        },
-        "Id": 0,
-        "FirstName": "ertyh",
-        "LastName": "drth",
-        "HairColor": "rdth",
-        "EyeColor": "drth",
-        "Age": 34,
-        "Weight": 34,
-        "Height": 345,
-        "Sex": "g"
-      }
-    ],
+    "Adults": [],
     "Children": [],
     "Pets": []
   },
@@ -1201,23 +1185,7 @@
   {
     "StreetName": "Lichtenbergsgade",
     "HouseNumber": 4,
-    "Adults": [
-      {
-        "JobTitle": {
-          "JobTitle": "Foders\u00E6lger",
-          "Salary": 99999
-        },
-        "Id": 0,
-        "FirstName": "Sarah",
-        "LastName": "Lisby",
-        "HairColor": "Leverpostej",
-        "EyeColor": "Kan ikke huske",
-        "Age": 22,
-        "Weight": 50,
-        "Height": 158,
-        "Sex": "Kvinde"
-      }
-    ],
+    "Adults": [],
     "Children": [
       {
         "Interests": [
