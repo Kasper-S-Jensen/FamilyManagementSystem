@@ -30,3 +30,18 @@ C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\
 C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Session03\S3Ex07Server\obj\Debug\net5.0\ref\S3Ex07Server.dll
 C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Session03\S3Ex07Server\obj\Debug\net5.0\S3Ex07Server.pdb
 C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Session03\S3Ex07Server\obj\Debug\net5.0\S3Ex07Server.genruntimeconfig.cache
+D:\Dokumenter D\Git\DNP1_Assignments\Session03\S3Ex07Server\bin\Debug\net5.0\S3Ex07Server.exe
+D:\Dokumenter D\Git\DNP1_Assignments\Session03\S3Ex07Server\bin\Debug\net5.0\S3Ex07Server.deps.json
+D:\Dokumenter D\Git\DNP1_Assignments\Session03\S3Ex07Server\bin\Debug\net5.0\S3Ex07Server.runtimeconfig.json
+D:\Dokumenter D\Git\DNP1_Assignments\Session03\S3Ex07Server\bin\Debug\net5.0\S3Ex07Server.runtimeconfig.dev.json
+D:\Dokumenter D\Git\DNP1_Assignments\Session03\S3Ex07Server\bin\Debug\net5.0\S3Ex07Server.dll
+D:\Dokumenter D\Git\DNP1_Assignments\Session03\S3Ex07Server\bin\Debug\net5.0\ref\S3Ex07Server.dll
+D:\Dokumenter D\Git\DNP1_Assignments\Session03\S3Ex07Server\bin\Debug\net5.0\S3Ex07Server.pdb
+D:\Dokumenter D\Git\DNP1_Assignments\Session03\S3Ex07Server\obj\Debug\net5.0\S3Ex07Server.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dokumenter D\Git\DNP1_Assignments\Session03\S3Ex07Server\obj\Debug\net5.0\S3Ex07Server.AssemblyInfoInputs.cache
+D:\Dokumenter D\Git\DNP1_Assignments\Session03\S3Ex07Server\obj\Debug\net5.0\S3Ex07Server.AssemblyInfo.cs
+D:\Dokumenter D\Git\DNP1_Assignments\Session03\S3Ex07Server\obj\Debug\net5.0\S3Ex07Server.csproj.CoreCompileInputs.cache
+D:\Dokumenter D\Git\DNP1_Assignments\Session03\S3Ex07Server\obj\Debug\net5.0\S3Ex07Server.dll
+D:\Dokumenter D\Git\DNP1_Assignments\Session03\S3Ex07Server\obj\Debug\net5.0\ref\S3Ex07Server.dll
+D:\Dokumenter D\Git\DNP1_Assignments\Session03\S3Ex07Server\obj\Debug\net5.0\S3Ex07Server.pdb
+D:\Dokumenter D\Git\DNP1_Assignments\Session03\S3Ex07Server\obj\Debug\net5.0\S3Ex07Server.genruntimeconfig.cache

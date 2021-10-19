@@ -30,3 +30,18 @@ C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\
 C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Session03\S3Ex01\obj\Debug\net5.0\ref\S3Ex01.dll
 C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Session03\S3Ex01\obj\Debug\net5.0\S3Ex01.pdb
 C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Session03\S3Ex01\obj\Debug\net5.0\S3Ex01.genruntimeconfig.cache
+D:\Dokumenter D\Git\DNP1_Assignments\Session03\S3Ex01\bin\Debug\net5.0\S3Ex01.exe
+D:\Dokumenter D\Git\DNP1_Assignments\Session03\S3Ex01\bin\Debug\net5.0\S3Ex01.deps.json
+D:\Dokumenter D\Git\DNP1_Assignments\Session03\S3Ex01\bin\Debug\net5.0\S3Ex01.runtimeconfig.json
+D:\Dokumenter D\Git\DNP1_Assignments\Session03\S3Ex01\bin\Debug\net5.0\S3Ex01.runtimeconfig.dev.json
+D:\Dokumenter D\Git\DNP1_Assignments\Session03\S3Ex01\bin\Debug\net5.0\S3Ex01.dll
+D:\Dokumenter D\Git\DNP1_Assignments\Session03\S3Ex01\bin\Debug\net5.0\ref\S3Ex01.dll
+D:\Dokumenter D\Git\DNP1_Assignments\Session03\S3Ex01\bin\Debug\net5.0\S3Ex01.pdb
+D:\Dokumenter D\Git\DNP1_Assignments\Session03\S3Ex01\obj\Debug\net5.0\S3Ex01.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dokumenter D\Git\DNP1_Assignments\Session03\S3Ex01\obj\Debug\net5.0\S3Ex01.AssemblyInfoInputs.cache
+D:\Dokumenter D\Git\DNP1_Assignments\Session03\S3Ex01\obj\Debug\net5.0\S3Ex01.AssemblyInfo.cs
+D:\Dokumenter D\Git\DNP1_Assignments\Session03\S3Ex01\obj\Debug\net5.0\S3Ex01.csproj.CoreCompileInputs.cache
+D:\Dokumenter D\Git\DNP1_Assignments\Session03\S3Ex01\obj\Debug\net5.0\S3Ex01.dll
+D:\Dokumenter D\Git\DNP1_Assignments\Session03\S3Ex01\obj\Debug\net5.0\ref\S3Ex01.dll
+D:\Dokumenter D\Git\DNP1_Assignments\Session03\S3Ex01\obj\Debug\net5.0\S3Ex01.pdb
+D:\Dokumenter D\Git\DNP1_Assignments\Session03\S3Ex01\obj\Debug\net5.0\S3Ex01.genruntimeconfig.cache
