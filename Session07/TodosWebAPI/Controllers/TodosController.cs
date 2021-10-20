@@ -13,6 +13,7 @@ namespace TodosWebAPI.Controllers
     public class TodosController : ControllerBase
     {
         private ITodoData TodoData;
+        private IList<Todo> todos;
 
         public TodosController(ITodoData todoData)
         {
@@ -24,8 +25,8 @@ namespace TodosWebAPI.Controllers
         {
             try
             {
-                IList<Todo> todos = TodoData.GetTodos();
-                if (IsCompleted!=null)
+                todos = TodoData.GetTodos();
+                if (IsCompleted != null)
                 {
                     todos = todos.Where(todo => todo.IsCompleted == IsCompleted).ToList();
                 }
@@ -42,8 +43,73 @@ namespace TodosWebAPI.Controllers
                 Console.WriteLine(e);
                 return StatusCode(500, e.Message);
             }
-           
+        }
+        [HttpGet]
+        [Route("{id:int}")]
+        public async Task<ActionResult<Todo>> GetTodo([FromRoute] int id)
+        {
+            try
+            {
+                Todo todo;
+
+                todo = TodoData.Get(id);
             
+
+                return Ok(todo);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<Todo>> AddTodo([FromBody] Todo todo)
+        {
+            try
+            {
+                TodoData.AddTodo(todo);
+                return Created($"/{todo.TodoID}", todo);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
+        }
+
+        [HttpDelete]
+        [Route("{id:int}")]
+        public async Task<ActionResult<Todo>> RemoveTodo([FromRoute] int id)
+        {
+            try
+            {
+                TodoData.RemoveTodo(id);
+                
+                return StatusCode(999, "removed todo with ID: " + id);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
+        }
+
+        [HttpPatch]
+        [Route("{id:int}")]
+        public async Task<ActionResult<Todo>> UpdateTodo([FromBody] Todo todo)
+        {
+            try
+            {
+                TodoData.Update(todo);
+                return Created($"/{todo.TodoID}", todo);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
         }
     }
 }
