@@ -1,0 +1,47 @@
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session2\S2Ex06\bin\Debug\net5.0\S2Ex06.exe
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session2\S2Ex06\bin\Debug\net5.0\S2Ex06.deps.json
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session2\S2Ex06\bin\Debug\net5.0\S2Ex06.runtimeconfig.json
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session2\S2Ex06\bin\Debug\net5.0\S2Ex06.runtimeconfig.dev.json
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session2\S2Ex06\bin\Debug\net5.0\S2Ex06.dll
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session2\S2Ex06\bin\Debug\net5.0\ref\S2Ex06.dll
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session2\S2Ex06\bin\Debug\net5.0\S2Ex06.pdb
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session2\S2Ex06\obj\Debug\net5.0\S2Ex06.csproj.AssemblyReference.cache
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session2\S2Ex06\obj\Debug\net5.0\S2Ex06.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session2\S2Ex06\obj\Debug\net5.0\S2Ex06.AssemblyInfoInputs.cache
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session2\S2Ex06\obj\Debug\net5.0\S2Ex06.AssemblyInfo.cs
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session2\S2Ex06\obj\Debug\net5.0\S2Ex06.csproj.CoreCompileInputs.cache
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session2\S2Ex06\obj\Debug\net5.0\S2Ex06.dll
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session2\S2Ex06\obj\Debug\net5.0\ref\S2Ex06.dll
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session2\S2Ex06\obj\Debug\net5.0\S2Ex06.pdb
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session2\S2Ex06\obj\Debug\net5.0\S2Ex06.genruntimeconfig.cache
+C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Session2\S2Ex06\bin\Debug\net5.0\S2Ex06.exe
+C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Session2\S2Ex06\bin\Debug\net5.0\S2Ex06.deps.json
+C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Session2\S2Ex06\bin\Debug\net5.0\S2Ex06.runtimeconfig.json
+C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Session2\S2Ex06\bin\Debug\net5.0\S2Ex06.runtimeconfig.dev.json
+C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Session2\S2Ex06\bin\Debug\net5.0\S2Ex06.dll
+C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Session2\S2Ex06\bin\Debug\net5.0\ref\S2Ex06.dll
+C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Session2\S2Ex06\bin\Debug\net5.0\S2Ex06.pdb
+C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Session2\S2Ex06\obj\Debug\net5.0\S2Ex06.csproj.AssemblyReference.cache
+C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Session2\S2Ex06\obj\Debug\net5.0\S2Ex06.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Session2\S2Ex06\obj\Debug\net5.0\S2Ex06.AssemblyInfoInputs.cache
+C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Session2\S2Ex06\obj\Debug\net5.0\S2Ex06.AssemblyInfo.cs
+C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Session2\S2Ex06\obj\Debug\net5.0\S2Ex06.csproj.CoreCompileInputs.cache
+C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Session2\S2Ex06\obj\Debug\net5.0\S2Ex06.dll
+C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Session2\S2Ex06\obj\Debug\net5.0\ref\S2Ex06.dll
+C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Session2\S2Ex06\obj\Debug\net5.0\S2Ex06.pdb
+C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Session2\S2Ex06\obj\Debug\net5.0\S2Ex06.genruntimeconfig.cache
+D:\Dokumenter D\Git\DNP1_Assignments\Session2\S2Ex06\bin\Debug\net5.0\S2Ex06.exe
+D:\Dokumenter D\Git\DNP1_Assignments\Session2\S2Ex06\bin\Debug\net5.0\S2Ex06.deps.json
+D:\Dokumenter D\Git\DNP1_Assignments\Session2\S2Ex06\bin\Debug\net5.0\S2Ex06.runtimeconfig.json
+D:\Dokumenter D\Git\DNP1_Assignments\Session2\S2Ex06\bin\Debug\net5.0\S2Ex06.runtimeconfig.dev.json
+D:\Dokumenter D\Git\DNP1_Assignments\Session2\S2Ex06\bin\Debug\net5.0\S2Ex06.dll
+D:\Dokumenter D\Git\DNP1_Assignments\Session2\S2Ex06\bin\Debug\net5.0\ref\S2Ex06.dll
+D:\Dokumenter D\Git\DNP1_Assignments\Session2\S2Ex06\bin\Debug\net5.0\S2Ex06.pdb
+D:\Dokumenter D\Git\DNP1_Assignments\Session2\S2Ex06\obj\Debug\net5.0\S2Ex06.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dokumenter D\Git\DNP1_Assignments\Session2\S2Ex06\obj\Debug\net5.0\S2Ex06.AssemblyInfoInputs.cache
+D:\Dokumenter D\Git\DNP1_Assignments\Session2\S2Ex06\obj\Debug\net5.0\S2Ex06.AssemblyInfo.cs
+D:\Dokumenter D\Git\DNP1_Assignments\Session2\S2Ex06\obj\Debug\net5.0\S2Ex06.csproj.CoreCompileInputs.cache
+D:\Dokumenter D\Git\DNP1_Assignments\Session2\S2Ex06\obj\Debug\net5.0\S2Ex06.dll
+D:\Dokumenter D\Git\DNP1_Assignments\Session2\S2Ex06\obj\Debug\net5.0\ref\S2Ex06.dll
+D:\Dokumenter D\Git\DNP1_Assignments\Session2\S2Ex06\obj\Debug\net5.0\S2Ex06.pdb
+D:\Dokumenter D\Git\DNP1_Assignments\Session2\S2Ex06\obj\Debug\net5.0\S2Ex06.genruntimeconfig.cache

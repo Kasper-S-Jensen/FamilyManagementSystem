@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "S1Ex10/1.0.0": {
+        "runtime": {
+          "S1Ex10.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "S1Ex10/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

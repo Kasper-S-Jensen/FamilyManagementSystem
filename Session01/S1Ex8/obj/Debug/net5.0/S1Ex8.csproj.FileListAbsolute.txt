@@ -1,0 +1,16 @@
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session1\S1Ex8\bin\Debug\net5.0\S1Ex8.exe
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session1\S1Ex8\bin\Debug\net5.0\S1Ex8.deps.json
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session1\S1Ex8\bin\Debug\net5.0\S1Ex8.runtimeconfig.json
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session1\S1Ex8\bin\Debug\net5.0\S1Ex8.runtimeconfig.dev.json
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session1\S1Ex8\bin\Debug\net5.0\S1Ex8.dll
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session1\S1Ex8\bin\Debug\net5.0\ref\S1Ex8.dll
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session1\S1Ex8\bin\Debug\net5.0\S1Ex8.pdb
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session1\S1Ex8\obj\Debug\net5.0\S1Ex8.csproj.AssemblyReference.cache
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session1\S1Ex8\obj\Debug\net5.0\S1Ex8.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session1\S1Ex8\obj\Debug\net5.0\S1Ex8.AssemblyInfoInputs.cache
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session1\S1Ex8\obj\Debug\net5.0\S1Ex8.AssemblyInfo.cs
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session1\S1Ex8\obj\Debug\net5.0\S1Ex8.csproj.CoreCompileInputs.cache
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session1\S1Ex8\obj\Debug\net5.0\S1Ex8.dll
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session1\S1Ex8\obj\Debug\net5.0\ref\S1Ex8.dll
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session1\S1Ex8\obj\Debug\net5.0\S1Ex8.pdb
+C:\Users\Kasper\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\DNP1\Session1\S1Ex8\obj\Debug\net5.0\S1Ex8.genruntimeconfig.cache
