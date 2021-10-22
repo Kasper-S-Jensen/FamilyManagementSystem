@@ -1,4 +1,4 @@
-#nullable enable
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +17,7 @@ namespace Assignment02_WebAPI.Controllers
         private IAdultData familyData;
 
         private IList<Family> families;
-        private IList<Adult> adults;
+     
         private IList<Child> children;
 
         public FamilyController(IAdultData familyData)
@@ -27,7 +27,8 @@ namespace Assignment02_WebAPI.Controllers
 
         // GET: Family
         [HttpGet]
-        public async Task<ActionResult<IList<Family>>> GetFamilies([FromQuery] string? streetName, [FromQuery] int? houseNumber)
+        public async Task<ActionResult<IList<Family>>> GetFamilies([FromQuery] string? streetName,
+            [FromQuery] int? houseNumber)
         {
             try
             {
@@ -50,53 +51,14 @@ namespace Assignment02_WebAPI.Controllers
                 return StatusCode(500, e.Message);
             }
         }
-        
-        // GET: Family
-        [HttpGet]
-        public async Task<ActionResult<IList<Family>>> GetAdults([FromQuery] string? lastname)
-        {
-            try
-            {
-                adults = familyData.GetAdults();
-                if (lastname != null)
-                {
-                    adults = adults.Where(a => a.LastName == lastname).ToList();
-                }
-                
 
-                return Ok(adults);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                return StatusCode(500, e.Message);
-            }
-        }
-        
-        // GET: Family
-        [HttpGet]
-        public async Task<ActionResult<IList<Family>>> GetChildren([FromQuery] string? lastname)
-        {
-            try
-            {
-                children = familyData.GetChildren();
-                if (lastname != null)
-                {
-                    children = children.Where(c => c.LastName == lastname).ToList();
-                }
+       
 
-                return Ok(children);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                return StatusCode(500, e.Message);
-            }
-        }
         
+
         // POST: Family
         [HttpPost]
-        public async Task<ActionResult<Family>> AddFamily([FromBody] string streetName, [FromBody] int houseNumber)
+        public async Task<ActionResult<Family>> AddFamily([FromQuery] string streetName, [FromQuery] int houseNumber)
         {
             try
             {
@@ -105,7 +67,7 @@ namespace Assignment02_WebAPI.Controllers
                     StreetName = streetName,
                     HouseNumber = houseNumber
                 };
-                familyData.AddFamily(streetName,houseNumber);
+                familyData.AddFamily(streetName, houseNumber);
                 return Created($"/{toAdd.StreetName}", toAdd);
             }
             catch (Exception e)
@@ -114,27 +76,8 @@ namespace Assignment02_WebAPI.Controllers
                 return StatusCode(500, e.Message);
             }
         }
-        
-        // POST: Family
-        [HttpPost]
-        public async Task<ActionResult<Adult>> AddAdult([FromBody] string streetName, [FromBody] int houseNumber)
-        {
-            try
-            {
-                Family toAdd = new Family()
-                {
-                    StreetName = streetName,
-                    HouseNumber = houseNumber
-                };
-                familyData.AddFamily(streetName,houseNumber);
-                return Created($"/{toAdd.StreetName}", toAdd);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                return StatusCode(500, e.Message);
-            }
-        }
+
+      
 
         // PUT: Family/5
         [HttpPut("{id}")]
@@ -143,15 +86,23 @@ namespace Assignment02_WebAPI.Controllers
         }
 
         // DELETE: Family/5
-        [HttpDelete("{id}")]
-        public void RemoveFamily(int id)
+        [HttpDelete]
+       
+        public async Task<ActionResult<Family>>  RemoveFamily([FromQuery]string streetName,[FromQuery] int houseNumber)
         {
+            try
+            {
+                familyData.RemoveFamily(streetName,houseNumber);
+                
+                return StatusCode(999, "removed family with streetname: " + streetName + " and housenumber: "+houseNumber);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
         }
-        
-        // DELETE: Family/5
-        [HttpDelete("{id}")]
-        public void RemoveAdult(int id)
-        {
-        }
+
+      
     }
 }
