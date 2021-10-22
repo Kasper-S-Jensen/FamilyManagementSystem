@@ -45,3 +45,4 @@ D:\Dokumenter D\Git\DNP1_Assignments\Session03\S3Ex02\obj\Debug\net5.0\S3Ex02.dl
 D:\Dokumenter D\Git\DNP1_Assignments\Session03\S3Ex02\obj\Debug\net5.0\ref\S3Ex02.dll
 D:\Dokumenter D\Git\DNP1_Assignments\Session03\S3Ex02\obj\Debug\net5.0\S3Ex02.pdb
 D:\Dokumenter D\Git\DNP1_Assignments\Session03\S3Ex02\obj\Debug\net5.0\S3Ex02.genruntimeconfig.cache
+D:\Dokumenter D\Git\DNP1_Assignments\Session03\S3Ex02\obj\Debug\net5.0\S3Ex02.csproj.AssemblyReference.cache

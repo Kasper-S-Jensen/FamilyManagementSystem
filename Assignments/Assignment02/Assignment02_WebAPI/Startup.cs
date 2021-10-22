@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Assignment02_WebAPI.Data;
 using Assignment02_WebAPI.Data.Impl;
+using Assignment02_WebAPI.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -33,7 +34,8 @@ namespace Assignment02_WebAPI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "Assignment02_WebAPI", Version = "v1"});
             });
-            services.AddSingleton<IAdultData, AdultJSONData>();
+            services.AddScoped<IAdultData,AdultJSONData>();
+            services.AddScoped<FileContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,3 +1,4 @@
+#nullable enable
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +10,22 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Assignment02_WebAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class FamilyController : ControllerBase
     {
         private IAdultData familyData;
 
         private IList<Family> families;
-        // GET: api/Family
+        private IList<Adult> adults;
+        private IList<Child> children;
+
+        public FamilyController(IAdultData familyData)
+        {
+            this.familyData = familyData;
+        }
+
+        // GET: Family
         [HttpGet]
         public async Task<ActionResult<IList<Family>>> GetFamilies([FromQuery] string? streetName, [FromQuery] int? houseNumber)
         {
@@ -41,29 +50,107 @@ namespace Assignment02_WebAPI.Controllers
                 return StatusCode(500, e.Message);
             }
         }
-
-        // GET: api/Family/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        
+        // GET: Family
+        [HttpGet]
+        public async Task<ActionResult<IList<Family>>> GetAdults([FromQuery] string? lastname)
         {
-            return "value";
-        }
+            try
+            {
+                adults = familyData.GetAdults();
+                if (lastname != null)
+                {
+                    adults = adults.Where(a => a.LastName == lastname).ToList();
+                }
+                
 
-        // POST: api/Family
+                return Ok(adults);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
+        }
+        
+        // GET: Family
+        [HttpGet]
+        public async Task<ActionResult<IList<Family>>> GetChildren([FromQuery] string? lastname)
+        {
+            try
+            {
+                children = familyData.GetChildren();
+                if (lastname != null)
+                {
+                    children = children.Where(c => c.LastName == lastname).ToList();
+                }
+
+                return Ok(children);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
+        }
+        
+        // POST: Family
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<ActionResult<Family>> AddFamily([FromBody] string streetName, [FromBody] int houseNumber)
         {
+            try
+            {
+                Family toAdd = new Family()
+                {
+                    StreetName = streetName,
+                    HouseNumber = houseNumber
+                };
+                familyData.AddFamily(streetName,houseNumber);
+                return Created($"/{toAdd.StreetName}", toAdd);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
+        }
+        
+        // POST: Family
+        [HttpPost]
+        public async Task<ActionResult<Adult>> AddAdult([FromBody] string streetName, [FromBody] int houseNumber)
+        {
+            try
+            {
+                Family toAdd = new Family()
+                {
+                    StreetName = streetName,
+                    HouseNumber = houseNumber
+                };
+                familyData.AddFamily(streetName,houseNumber);
+                return Created($"/{toAdd.StreetName}", toAdd);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
         }
 
-        // PUT: api/Family/5
+        // PUT: Family/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
-        // DELETE: api/Family/5
+        // DELETE: Family/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void RemoveFamily(int id)
+        {
+        }
+        
+        // DELETE: Family/5
+        [HttpDelete("{id}")]
+        public void RemoveAdult(int id)
         {
         }
     }

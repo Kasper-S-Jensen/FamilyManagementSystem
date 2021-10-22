@@ -177,7 +177,6 @@ C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\
 C:\Users\kaspe\OneDrive - ViaUC\Diplomingenioer\3.sem\DNP\Solutions\Assignments\Session04\TodoProject\obj\Debug\net5.0\TodoProject.csproj.CopyComplete
 D:\Dokumenter D\Git\DNP1_Assignments\Session04\TodoProject\bin\Debug\net5.0\appsettings.Development.json
 D:\Dokumenter D\Git\DNP1_Assignments\Session04\TodoProject\bin\Debug\net5.0\appsettings.json
-D:\Dokumenter D\Git\DNP1_Assignments\Session04\TodoProject\bin\Debug\net5.0\todos.json
 D:\Dokumenter D\Git\DNP1_Assignments\Session04\TodoProject\bin\Debug\net5.0\TodoProject.StaticWebAssets.xml
 D:\Dokumenter D\Git\DNP1_Assignments\Session04\TodoProject\bin\Debug\net5.0\TodoProject.exe
 D:\Dokumenter D\Git\DNP1_Assignments\Session04\TodoProject\bin\Debug\net5.0\TodoProject.deps.json
@@ -233,4 +232,3 @@ D:\Dokumenter D\Git\DNP1_Assignments\Session04\TodoProject\obj\Debug\net5.0\ref\
 D:\Dokumenter D\Git\DNP1_Assignments\Session04\TodoProject\obj\Debug\net5.0\TodoProject.pdb
 D:\Dokumenter D\Git\DNP1_Assignments\Session04\TodoProject\obj\Debug\net5.0\TodoProject.genruntimeconfig.cache
 D:\Dokumenter D\Git\DNP1_Assignments\Session04\TodoProject\obj\Debug\net5.0\TodoProject.csproj.CopyComplete
-D:\Dokumenter D\Git\DNP1_Assignments\Session04\TodoProject\obj\Debug\net5.0\TodoProject.csproj.AssemblyReference.cache
