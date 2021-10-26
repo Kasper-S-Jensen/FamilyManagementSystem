@@ -3,7 +3,7 @@
 @using Assignment1.Models
 @using Assignment1.Persistence
 @using Microsoft.AspNetCore.Components
-@inject IAdultData adultData
+@inject IFamilyData familyData
 @inject NavigationManager NavigationManager
 @inject FileContext FileContext
 
@@ -122,7 +122,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        allFamilies = adultData.GetFamilies();
+        allFamilies = familyData.GetFamilies();
         familiesToShow = null;
     }
 
@@ -157,7 +157,7 @@
         errorMsg = "";
         try
         {
-            adultData.AddFamily(newFamily.StreetName, newFamily.HouseNumber);
+            familyData.AddFamily(newFamily.StreetName, newFamily.HouseNumber);
         }
         catch (Exception e)
         {
@@ -168,13 +168,13 @@
     private void AddNewAdult()
     {
         errorMsg2 = "";
-        int max = adultData.GetAdults().Max(adult => adult.Id);
+        int max = familyData.GetAdults().Max(adult => adult.Id);
         newAdult.Id = (++max);
         newAdult.JobTitle = newJob;
 
         try
         {
-            adultData.AddAdult(newAdult.FirstName, newAdult.LastName, newAdult.HairColor,
+            familyData.AddAdult(newAdult.FirstName, newAdult.LastName, newAdult.HairColor,
                 newAdult.EyeColor, newAdult.Age, newAdult.Weight, newAdult.Height,
                 newAdult.Sex, newJob.JobTitle, newJob.Salary, chosenFamily.StreetName, chosenFamily.HouseNumber);
         }

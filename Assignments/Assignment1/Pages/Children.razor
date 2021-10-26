@@ -4,7 +4,7 @@
 @using Assignment1.Models
 
 @inject NavigationManager NavigationManager
-@inject IAdultData AdultData
+@inject IFamilyData familyData
 @inject FileContext FileContext
 
 <div style="background: url(https://www.sampleposts.com/wp-content/uploads/2020/10/Children-Poems.jpg) " class="page-holder bg-cover">
@@ -93,7 +93,7 @@
     private void RemoveAdult(int childID)
     {
         Child childToRemove = allChildren.First(c => c.Id == childID);
-        AdultData.RemoveAdult(childID);
+        familyData.RemoveAdult(childID);
         allChildren.Remove(childToRemove);
         childrenToShow.Remove(childToRemove);
     }

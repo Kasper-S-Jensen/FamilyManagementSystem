@@ -36,7 +36,7 @@ namespace Assignment1
             services.AddServerSideBlazor();
             services.AddScoped<IUserService, InMemoryUserService>();
             services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
-            services.AddScoped<IAdultData, AdultJSONData>();
+            services.AddScoped<IFamilyData, FamilyJSONData>();
             services.AddScoped<FileContext>();
 
             services.AddAuthorization(options =>

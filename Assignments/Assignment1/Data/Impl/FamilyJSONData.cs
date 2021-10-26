@@ -10,14 +10,14 @@ using Assignment1.Persistence;
 
 namespace Assignment1.Data.Impl
 {
-    public class AdultJSONData : IAdultData
+    public class FamilyJSONData : IFamilyData
     {
         private FileContext familyFile;
         IList<Adult> adults = new List<Adult>();
         IList<Family> families = new List<Family>();
         IList<Child> children = new List<Child>();
 
-        public AdultJSONData(FileContext familyFile)
+        public FamilyJSONData(FileContext familyFile)
         {
             this.familyFile = familyFile;
         }

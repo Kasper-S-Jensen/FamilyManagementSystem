@@ -13,98 +13,98 @@ namespace Assignment1.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
+#line 1 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
+#line 2 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
+#line 3 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
+#line 4 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
+#line 5 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
+#line 6 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
+#line 7 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
+#line 8 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
+#line 9 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
 using Assignment1;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
+#line 10 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
 using Assignment1.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Adults.razor"
+#line 2 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Adults.razor"
 using Assignment1.Data;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Adults.razor"
+#line 3 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Adults.razor"
 using Assignment1.Persistence;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Adults.razor"
+#line 4 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Adults.razor"
 using Assignment1.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Adults.razor"
+#line 5 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Adults.razor"
 using Microsoft.Net.Http.Headers;
 
 #line default
@@ -119,7 +119,7 @@ using Microsoft.Net.Http.Headers;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 152 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Adults.razor"
+#line 151 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Adults.razor"
        
 
     FileContext familyfile;
@@ -145,14 +145,14 @@ using Microsoft.Net.Http.Headers;
 
     private void Updatefamilies()
     {
-        allFamilies = AdultData.GetFamilies();
+        allFamilies = familyData.GetFamilies();
         familiesToShow = null;
         distinctAllFamilies = allFamilies.Distinct().ToList();
     }
 
     private void UpdateChildren()
     {
-        allChildren = AdultData.GetChildren();
+        allChildren = familyData.GetChildren();
         childrenToShow = null;
     }
 
@@ -188,8 +188,8 @@ using Microsoft.Net.Http.Headers;
 
     private void RemoveAdult(int adultId)
     {
-        Adult adultToRemove = AdultData.GetAdult(adultId);
-        AdultData.RemoveAdult(adultId);
+        Adult adultToRemove = familyData.GetAdult(adultId);
+        familyData.RemoveAdult(adultId);
     }
 
     async Task RemoveFamily(string streetName, int houseNumber)
@@ -199,7 +199,7 @@ using Microsoft.Net.Http.Headers;
         Console.WriteLine(currentFamily.HouseNumber + currentFamily.StreetName);
 
         Family familyToRemove = allFamilies.FirstOrDefault(f => (currentFamily.StreetName.Equals(f.StreetName) &&currentFamily.HouseNumber==f.HouseNumber && currentFamily.StreetName != null));
-        AdultData.RemoveFamily(streetName, houseNumber);
+        familyData.RemoveFamily(streetName, houseNumber);
         allFamilies.Remove(familyToRemove);
         familiesToShow.Remove(familyToRemove);
     }
@@ -211,7 +211,7 @@ using Microsoft.Net.Http.Headers;
 #nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JSRuntime { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private FileContext FileContext { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAdultData AdultData { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IFamilyData familyData { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
     }
 }

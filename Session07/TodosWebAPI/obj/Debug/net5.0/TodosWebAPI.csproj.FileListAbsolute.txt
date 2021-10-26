@@ -28,3 +28,33 @@ D:\Dokumenter D\Git\DNP1_Assignments\Session07\TodosWebAPI\obj\Debug\net5.0\ref\
 D:\Dokumenter D\Git\DNP1_Assignments\Session07\TodosWebAPI\obj\Debug\net5.0\TodosWebAPI.pdb
 D:\Dokumenter D\Git\DNP1_Assignments\Session07\TodosWebAPI\obj\Debug\net5.0\TodosWebAPI.genruntimeconfig.cache
 D:\Dokumenter D\Git\DNP1_Assignments\Session07\TodosWebAPI\bin\Debug\net5.0\todos.json
+C:\Users\Kasper\Git\DNP1_Assignments\Session07\TodosWebAPI\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\Kasper\Git\DNP1_Assignments\Session07\TodosWebAPI\bin\Debug\net5.0\appsettings.json
+C:\Users\Kasper\Git\DNP1_Assignments\Session07\TodosWebAPI\bin\Debug\net5.0\todos.json
+C:\Users\Kasper\Git\DNP1_Assignments\Session07\TodosWebAPI\bin\Debug\net5.0\TodosWebAPI.exe
+C:\Users\Kasper\Git\DNP1_Assignments\Session07\TodosWebAPI\bin\Debug\net5.0\TodosWebAPI.deps.json
+C:\Users\Kasper\Git\DNP1_Assignments\Session07\TodosWebAPI\bin\Debug\net5.0\TodosWebAPI.runtimeconfig.json
+C:\Users\Kasper\Git\DNP1_Assignments\Session07\TodosWebAPI\bin\Debug\net5.0\TodosWebAPI.runtimeconfig.dev.json
+C:\Users\Kasper\Git\DNP1_Assignments\Session07\TodosWebAPI\bin\Debug\net5.0\TodosWebAPI.dll
+C:\Users\Kasper\Git\DNP1_Assignments\Session07\TodosWebAPI\bin\Debug\net5.0\ref\TodosWebAPI.dll
+C:\Users\Kasper\Git\DNP1_Assignments\Session07\TodosWebAPI\bin\Debug\net5.0\TodosWebAPI.pdb
+C:\Users\Kasper\Git\DNP1_Assignments\Session07\TodosWebAPI\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Users\Kasper\Git\DNP1_Assignments\Session07\TodosWebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Kasper\Git\DNP1_Assignments\Session07\TodosWebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Kasper\Git\DNP1_Assignments\Session07\TodosWebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Kasper\Git\DNP1_Assignments\Session07\TodosWebAPI\obj\Debug\net5.0\TodosWebAPI.csproj.AssemblyReference.cache
+C:\Users\Kasper\Git\DNP1_Assignments\Session07\TodosWebAPI\obj\Debug\net5.0\TodosWebAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kasper\Git\DNP1_Assignments\Session07\TodosWebAPI\obj\Debug\net5.0\TodosWebAPI.AssemblyInfoInputs.cache
+C:\Users\Kasper\Git\DNP1_Assignments\Session07\TodosWebAPI\obj\Debug\net5.0\TodosWebAPI.AssemblyInfo.cs
+C:\Users\Kasper\Git\DNP1_Assignments\Session07\TodosWebAPI\obj\Debug\net5.0\TodosWebAPI.csproj.CoreCompileInputs.cache
+C:\Users\Kasper\Git\DNP1_Assignments\Session07\TodosWebAPI\obj\Debug\net5.0\TodosWebAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Kasper\Git\DNP1_Assignments\Session07\TodosWebAPI\obj\Debug\net5.0\TodosWebAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Kasper\Git\DNP1_Assignments\Session07\TodosWebAPI\obj\Debug\net5.0\staticwebassets\TodosWebAPI.StaticWebAssets.Manifest.cache
+C:\Users\Kasper\Git\DNP1_Assignments\Session07\TodosWebAPI\obj\Debug\net5.0\staticwebassets\TodosWebAPI.StaticWebAssets.xml
+C:\Users\Kasper\Git\DNP1_Assignments\Session07\TodosWebAPI\obj\Debug\net5.0\scopedcss\bundle\TodosWebAPI.styles.css
+C:\Users\Kasper\Git\DNP1_Assignments\Session07\TodosWebAPI\obj\Debug\net5.0\TodosWebAPI.RazorTargetAssemblyInfo.cache
+C:\Users\Kasper\Git\DNP1_Assignments\Session07\TodosWebAPI\obj\Debug\net5.0\TodosWebAPI.csproj.CopyComplete
+C:\Users\Kasper\Git\DNP1_Assignments\Session07\TodosWebAPI\obj\Debug\net5.0\TodosWebAPI.dll
+C:\Users\Kasper\Git\DNP1_Assignments\Session07\TodosWebAPI\obj\Debug\net5.0\ref\TodosWebAPI.dll
+C:\Users\Kasper\Git\DNP1_Assignments\Session07\TodosWebAPI\obj\Debug\net5.0\TodosWebAPI.pdb
+C:\Users\Kasper\Git\DNP1_Assignments\Session07\TodosWebAPI\obj\Debug\net5.0\TodosWebAPI.genruntimeconfig.cache

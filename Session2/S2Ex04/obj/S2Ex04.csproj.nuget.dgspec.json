@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Dokumenter D\\Git\\DNP1_Assignments\\Session2\\S2Ex04\\S2Ex04.csproj": {}
+    "C:\\Users\\Kasper\\Git\\DNP1_Assignments\\Session2\\S2Ex04\\S2Ex04.csproj": {}
   },
   "projects": {
-    "D:\\Dokumenter D\\Git\\DNP1_Assignments\\Session2\\S2Ex04\\S2Ex04.csproj": {
+    "C:\\Users\\Kasper\\Git\\DNP1_Assignments\\Session2\\S2Ex04\\S2Ex04.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Dokumenter D\\Git\\DNP1_Assignments\\Session2\\S2Ex04\\S2Ex04.csproj",
+        "projectUniqueName": "C:\\Users\\Kasper\\Git\\DNP1_Assignments\\Session2\\S2Ex04\\S2Ex04.csproj",
         "projectName": "S2Ex04",
-        "projectPath": "D:\\Dokumenter D\\Git\\DNP1_Assignments\\Session2\\S2Ex04\\S2Ex04.csproj",
-        "packagesPath": "C:\\Users\\kaspe\\.nuget\\packages\\",
-        "outputPath": "D:\\Dokumenter D\\Git\\DNP1_Assignments\\Session2\\S2Ex04\\obj\\",
+        "projectPath": "C:\\Users\\Kasper\\Git\\DNP1_Assignments\\Session2\\S2Ex04\\S2Ex04.csproj",
+        "packagesPath": "C:\\Users\\Kasper\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kasper\\Git\\DNP1_Assignments\\Session2\\S2Ex04\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kaspe\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Kasper\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -52,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

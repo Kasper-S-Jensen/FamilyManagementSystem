@@ -3,7 +3,7 @@ using Assignment1.Models;
 
 namespace Assignment1.Data
 {
-    public interface IAdultData
+    public interface IFamilyData
     {
         IList<Adult> GetAdults();
         IList<Family> GetFamilies();

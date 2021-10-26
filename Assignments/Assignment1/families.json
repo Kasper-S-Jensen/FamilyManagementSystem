@@ -1218,5 +1218,12 @@
         "Age": 4
       }
     ]
+  },
+  {
+    "StreetName": "qwefdwaf",
+    "HouseNumber": 234,
+    "Adults": [],
+    "Children": [],
+    "Pets": []
   }
 ]

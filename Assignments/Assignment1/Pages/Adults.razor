@@ -5,7 +5,7 @@
 @using Microsoft.Net.Http.Headers
 
 @inject NavigationManager NavigationManager
-@inject IAdultData AdultData
+@inject IFamilyData familyData
 @inject FileContext FileContext
 @inject IJSRuntime JSRuntime
 
@@ -14,8 +14,8 @@
 
 
 <EditForm Model="@currentFamily">
-    <InputSelect class="form-control col-sm-4" Value="@currentFamily.StreetName"
-                 ValueChanged="@((string arg) => FilterByFamily(arg))"
+    <InputSelect class="form-control col-sm-4"   Value="@currentFamily.StreetName"
+                 ValueChanged="@((string arg) => { FilterByFamily(arg); StateHasChanged(); })"
                  ValueExpression="@(() => currentFamily.StreetName)">
         <option value="none">-- Select streetname --</option>
 
@@ -32,7 +32,7 @@
     }
     else
     {
-    <InputSelect class="form-control col-sm-4" @bind-Value="@currentFamily.HouseNumber" @onclick="@(() => Filterfamilies())">
+    <InputSelect class="form-control col-sm-4" @bind-Value="@currentFamily.HouseNumber" @onch="@(() => Filterfamilies())">
         <option value="none">-- Select housenumber --</option>
         @foreach (var number in houseNumbers)
         {
@@ -174,14 +174,14 @@ else
 
     private void Updatefamilies()
     {
-        allFamilies = AdultData.GetFamilies();
+        allFamilies = familyData.GetFamilies();
         familiesToShow = null;
         distinctAllFamilies = allFamilies.Distinct().ToList();
     }
 
     private void UpdateChildren()
     {
-        allChildren = AdultData.GetChildren();
+        allChildren = familyData.GetChildren();
         childrenToShow = null;
     }
 
@@ -217,8 +217,8 @@ else
 
     private void RemoveAdult(int adultId)
     {
-        Adult adultToRemove = AdultData.GetAdult(adultId);
-        AdultData.RemoveAdult(adultId);
+        Adult adultToRemove = familyData.GetAdult(adultId);
+        familyData.RemoveAdult(adultId);
     }
 
     async Task RemoveFamily(string streetName, int houseNumber)
@@ -228,7 +228,7 @@ else
         Console.WriteLine(currentFamily.HouseNumber + currentFamily.StreetName);
 
         Family familyToRemove = allFamilies.FirstOrDefault(f => (currentFamily.StreetName.Equals(f.StreetName) &&currentFamily.HouseNumber==f.HouseNumber && currentFamily.StreetName != null));
-        AdultData.RemoveFamily(streetName, houseNumber);
+        familyData.RemoveFamily(streetName, houseNumber);
         allFamilies.Remove(familyToRemove);
         familiesToShow.Remove(familyToRemove);
     }

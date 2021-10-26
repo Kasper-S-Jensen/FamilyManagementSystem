@@ -10,7 +10,7 @@ namespace Assignment1.Persistence
     {
         public IList<Family> Families { get; private set; }
 
-        private readonly string familiesFile = "C:\\Users\\kaspe\\OneDrive - ViaUC\\Diplomingenioer\\3.sem\\DNP\\Solutions\\Assignments\\Assignments\\Assignment1\\families.json";
+        private readonly string familiesFile = "families.json";
        
 
         public FileContext()
