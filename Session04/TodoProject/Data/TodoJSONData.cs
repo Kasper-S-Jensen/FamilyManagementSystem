@@ -2,6 +2,7 @@
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using System.Threading.Tasks;
 using TodoProject.Models;
 
 namespace TodoProject.Data
@@ -26,13 +27,13 @@ namespace TodoProject.Data
             }
         }
 
-        public IList<Todo> GetTodos()
+        public async Task<IList<Todo>> GetTodosAsync()
         {
             List<Todo> todolist = new List<Todo>(todos);
             return todolist;
         }
 
-        public void AddTodo(Todo todo)
+        public async Task AddTodoAsync(Todo todo)
         {
             int max = todos.Max(todo => todo.TodoID);
             todo.TodoID = (++max);
@@ -40,14 +41,14 @@ namespace TodoProject.Data
             WriteTodosToFile();
         }
 
-        public void RemoveTodo(int todoId)
+        public async Task RemoveTodoAsync(int todoId)
         {
             Todo toRemove = todos.First(t => t.TodoID == todoId);
             todos.Remove(toRemove);
             WriteTodosToFile();
         }
 
-        public void Update(Todo todo)
+        public async Task UpdateAsync(Todo todo)
         {
             Todo toUpdate = todos.First(t => t.TodoID == todo.TodoID);
             toUpdate.IsCompleted = todo.IsCompleted;
@@ -55,10 +56,11 @@ namespace TodoProject.Data
             WriteTodosToFile();
         }
 
-        public Todo Get(int id)
+        /*public async Task GetAAsync(int id)
         {
+            
             return todos.FirstOrDefault(t => t.TodoID == id);
-        }
+        }*/
 
         private void WriteTodosToFile()
         {

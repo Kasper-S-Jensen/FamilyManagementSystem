@@ -1,15 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using TodoProject.Models;
 
 namespace TodoProject.Data
 {
     public interface ITodoData
     {
-        IList<Todo> GetTodos();
-        void AddTodo(Todo todo);
-        void RemoveTodo(int todoId);
-        void Update(Todo todo);
-        Todo Get(int id);
+        Task<IList<Todo>> GetTodosAsync();
+        Task AddTodoAsync(Todo todo);
+        Task RemoveTodoAsync(int todoId);
+        Task UpdateAsync(Todo todo);
+        //Task GetAsync(int id);
     }
 }

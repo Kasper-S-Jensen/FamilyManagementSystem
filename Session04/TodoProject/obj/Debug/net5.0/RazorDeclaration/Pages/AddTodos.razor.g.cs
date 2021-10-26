@@ -109,9 +109,9 @@ using TodoProject.Models;
        
     private Todo newTodoItem = new Todo();
 
-    private void AddNewTodo()
+    private async Task AddNewTodo()
     {
-        TodoData.AddTodo(newTodoItem);
+        await TodoData.AddTodoAsync(newTodoItem);
         NavigationManager.NavigateTo("/Todos");
     }
 

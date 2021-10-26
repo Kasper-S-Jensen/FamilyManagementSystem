@@ -92,7 +92,6 @@ namespace Assignment02_WebAPI.Controllers
 
         // DELETE: Family/5
         [HttpDelete("{streetName}/{houseNumber:int}")]
-       
         public async Task<ActionResult<Family>>  RemoveFamily([FromRoute]string streetName,[FromRoute] int houseNumber)
         {
             try
