@@ -9,7 +9,7 @@ namespace Assignment02_WebAPI.Persistence
     {
         public IList<Family> Families { get; private set; }
 
-        private readonly string familiesFile = "D:\\Dokumenter D\\Git\\DNP1_Assignments\\Assignments\\Assignment02\\Assignment02_WebAPI\\families.json";
+        private readonly string familiesFile = "families.json";
        
 
         public FileContext()

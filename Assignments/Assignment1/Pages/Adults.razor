@@ -15,7 +15,7 @@
 
 <EditForm Model="@currentFamily">
     <InputSelect class="form-control col-sm-4"   Value="@currentFamily.StreetName"
-                 ValueChanged="@((string arg) => { FilterByFamily(arg); StateHasChanged(); })"
+                 ValueChanged="@((string arg) =>  FilterByFamily(arg) )"
                  ValueExpression="@(() => currentFamily.StreetName)">
         <option value="none">-- Select streetname --</option>
 
@@ -32,7 +32,7 @@
     }
     else
     {
-    <InputSelect class="form-control col-sm-4" @bind-Value="@currentFamily.HouseNumber" @onch="@(() => Filterfamilies())">
+    <InputSelect class="form-control col-sm-4" @bind-Value="@currentFamily.HouseNumber" @onclick="@(() => Filterfamilies())">
         <option value="none">-- Select housenumber --</option>
         @foreach (var number in houseNumbers)
         {

@@ -14,9 +14,9 @@ namespace Assignment02_WebAPI.Controllers
     public class AdultController : ControllerBase
     {
         private IList<Adult> adults;
-        private IAdultData adultData;
+        private IFamilyData adultData;
 
-        public AdultController(IAdultData adultData)
+        public AdultController(IFamilyData adultData)
         {
             this.adultData = adultData;
         }
@@ -45,21 +45,12 @@ namespace Assignment02_WebAPI.Controllers
         
         // POST: Family
         [HttpPost]
-        public async Task<ActionResult<Adult>> AddAdult([FromQuery] string firstName, [FromQuery] string lastName,
-            [FromQuery] string hairColor, [FromQuery] string eyeColor, [FromQuery] int age, [FromQuery] float weight,
-            [FromQuery] int height, [FromQuery] string sex, [FromQuery] string jobtitle, [FromQuery] int salary,
-            [FromQuery] string streetName, [FromQuery] int houseNumber)
+        public async Task<ActionResult<Family>> AddAdult([FromBody] Family family)
         {
             try
             {
-                Adult toAdd = new Adult()
-                {
-                    FirstName = firstName, 
-                    LastName = lastName
-                };
-                adultData.AddAdult(firstName, lastName, hairColor, eyeColor, age, weight, height, sex, jobtitle,
-                    salary, streetName, houseNumber);
-                return Created($"/{toAdd.FirstName}", toAdd);
+                adultData.AddAdult(family);
+                return Created($"/{family.Adults[0].FirstName}", family);
             }
             catch (Exception e)
             {

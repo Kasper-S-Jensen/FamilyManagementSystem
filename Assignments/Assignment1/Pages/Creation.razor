@@ -102,7 +102,9 @@
 @code {
     private Adult newAdult = new Adult();
     private Job newJob = new Job();
-
+    private Family chosenFamily = new Family();
+    
+    
     private Family newFamily = new Family()
     {
         Adults = new List<Adult>(),
@@ -110,7 +112,7 @@
         Pets = new List<Pet>()
     };
 
-    private Family chosenFamily = new Family();
+  
 
    
     
@@ -157,7 +159,7 @@
         errorMsg = "";
         try
         {
-            familyData.AddFamily(newFamily.StreetName, newFamily.HouseNumber);
+            familyData.AddFamily(newFamily);
         }
         catch (Exception e)
         {
@@ -172,11 +174,12 @@
         newAdult.Id = (++max);
         newAdult.JobTitle = newJob;
 
+        newAdult.JobTitle = newJob;
+        chosenFamily.Adults.Add(newAdult);
+        
         try
         {
-            familyData.AddAdult(newAdult.FirstName, newAdult.LastName, newAdult.HairColor,
-                newAdult.EyeColor, newAdult.Age, newAdult.Weight, newAdult.Height,
-                newAdult.Sex, newJob.JobTitle, newJob.Salary, chosenFamily.StreetName, chosenFamily.HouseNumber);
+            familyData.AddAdult(chosenFamily);
         }
         catch (Exception e)
         {

@@ -14,13 +14,13 @@ namespace Assignment02_WebAPI.Controllers
     [ApiController]
     public class FamilyController : ControllerBase
     {
-        private IAdultData familyData;
+        private IFamilyData familyData;
 
         private IList<Family> families;
      
         private IList<Child> children;
 
-        public FamilyController(IAdultData familyData)
+        public FamilyController(IFamilyData familyData)
         {
             this.familyData = familyData;
         }
@@ -56,17 +56,13 @@ namespace Assignment02_WebAPI.Controllers
 
         // POST: Family
         [HttpPost]
-        public async Task<ActionResult<Family>> AddFamily([FromQuery] string streetName, [FromQuery] int houseNumber)
+        public async Task<ActionResult<Family>> AddFamily([FromBody] Family family)
         {
             try
             {
-                Family toAdd = new Family()
-                {
-                    StreetName = streetName,
-                    HouseNumber = houseNumber
-                };
-                familyData.AddFamily(streetName, houseNumber);
-                return Created($"/{toAdd.StreetName}", toAdd);
+              
+                familyData.AddFamily(family);
+                return Created($"/{family.StreetName}", family);
             }
             catch (Exception e)
             {
@@ -78,17 +74,26 @@ namespace Assignment02_WebAPI.Controllers
       
 
         // PUT: Family/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut("{streetName}/{houseNumber:int}")]
+        public async Task<ActionResult<Family>> UpdateFamily( [FromBody] Family family)
         {
-            
+            try
+            {
+                familyData.Update(family);
+                return Created($"/{family.StreetName}/{family.HouseNumber}", family);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
             
         }
 
         // DELETE: Family/5
-        [HttpDelete]
+        [HttpDelete("{streetName}/{houseNumber:int}")]
        
-        public async Task<ActionResult<Family>>  RemoveFamily([FromQuery]string streetName,[FromQuery] int houseNumber)
+        public async Task<ActionResult<Family>>  RemoveFamily([FromRoute]string streetName,[FromRoute] int houseNumber)
         {
             try
             {

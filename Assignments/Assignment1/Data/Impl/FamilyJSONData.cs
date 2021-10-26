@@ -64,64 +64,46 @@ namespace Assignment1.Data.Impl
             return children;
         }
 
-        public void AddFamily(string streetName, int houseNumber)
+        public void AddFamily(Family family)
         {
-           
             
-            Family toAdd;
-            toAdd = new Family()
+            foreach (var existingFamily in familyFile.Families)
             {
-                StreetName = streetName,
-                HouseNumber = houseNumber,
-                Adults = new List<Adult>(),
-                Children = new List<Child>(),
-                Pets = new List<Pet>()
-            };
-            foreach (var family in familyFile.Families)
-            {
-                if (streetName.Equals(family.StreetName) && houseNumber==family.HouseNumber)
+                if (existingFamily.StreetName.Equals(family.StreetName) && existingFamily.HouseNumber==family.HouseNumber)
                 {
                     throw new Exception("Family already exists");
                 }
                 
             }
-            familyFile.Families.Add(toAdd);
+            familyFile.Families.Add(family);
             familyFile.SaveChanges();
            
            
         }
 
-        public void AddAdult(string firstName, string lastName, string hairColor, string eyeColor, int age, float weight, int height, string sex, string jobtitle, int salary, string streetName, int houseNumber)
+        public void AddAdult(Family family)
         {
-            Job jobToAdd = new Job()
+           
+
+            Adult toAdd= new Adult();
+            foreach (var adult in family.Adults)
             {
-                JobTitle = jobtitle,
-                Salary = salary
-            };
-            Adult toAdd = new Adult()
-            {
-                FirstName = firstName,
-                LastName = lastName,
-                HairColor = hairColor,
-                EyeColor = eyeColor,
-                Age = age,
-                Weight = weight,
-                Height = height,
-                Sex = sex,
-                JobTitle = jobToAdd
-            };
-            Family chosenFamily = GetFamily(streetName,houseNumber);
+                toAdd = adult;
+            }
+            
+            
+            Family chosenFamily = GetFamily(family.StreetName,family.HouseNumber);
             
                 if (chosenFamily.Adults.Count==2)
                 {
                     throw new Exception("Family already has max number of adults");
                 }
 
-                foreach (var family in familyFile.Families)
+                foreach (var excistingFamily in familyFile.Families)
                 {
-                    if (family.StreetName.Equals(chosenFamily.StreetName)&& family.HouseNumber==chosenFamily.HouseNumber)
+                    if (excistingFamily.StreetName.Equals(family.StreetName)&& excistingFamily.HouseNumber==family.HouseNumber)
                     {
-                        family.Adults.Add(toAdd);
+                        excistingFamily.Adults.Add(toAdd);
                     }
                 }
                 familyFile.SaveChanges();
@@ -160,6 +142,11 @@ namespace Assignment1.Data.Impl
             throw new System.NotImplementedException();
         }
 
+        public void Update(Family family)
+        {
+            throw new NotImplementedException();
+        }
+
         public Adult GetAdult(int id)
         {
             foreach (var family in familyFile.Families)
@@ -184,8 +171,10 @@ namespace Assignment1.Data.Impl
                 {
                     return family;
                 }
+               
+                
             }
-            return null;
+            throw new Exception("No such family exists");
         }
         
     }
