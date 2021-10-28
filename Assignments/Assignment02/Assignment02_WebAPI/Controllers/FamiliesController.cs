@@ -12,7 +12,7 @@ namespace Assignment02_WebAPI.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class FamilyController : ControllerBase
+    public class FamiliesController : ControllerBase
     {
         private IFamilyData familyData;
 
@@ -20,12 +20,12 @@ namespace Assignment02_WebAPI.Controllers
      
         private IList<Child> children;
 
-        public FamilyController(IFamilyData familyData)
+        public FamiliesController(IFamilyData familyData)
         {
             this.familyData = familyData;
         }
 
-        // GET: Family
+        // GET: Families
         [HttpGet]
         public async Task<ActionResult<IList<Family>>> GetFamilies([FromQuery] string? streetName,
             [FromQuery] int? houseNumber)
@@ -54,7 +54,7 @@ namespace Assignment02_WebAPI.Controllers
      
         
 
-        // POST: Family
+        // POST: Families
         [HttpPost]
         public async Task<ActionResult<Family>> AddFamily([FromBody] Family family)
         {
@@ -73,7 +73,7 @@ namespace Assignment02_WebAPI.Controllers
 
       
 
-        // PUT: Family/5
+        // PUT: Families/5
         [HttpPut("{streetName}/{houseNumber:int}")]
         public async Task<ActionResult<Family>> UpdateFamily( [FromBody] Family family)
         {
@@ -90,7 +90,7 @@ namespace Assignment02_WebAPI.Controllers
             
         }
 
-        // DELETE: Family/5
+        // DELETE: Families/5
         [HttpDelete("{streetName}/{houseNumber:int}")]
         public async Task<ActionResult<Family>>  RemoveFamily([FromRoute]string streetName,[FromRoute] int houseNumber)
         {
@@ -98,7 +98,7 @@ namespace Assignment02_WebAPI.Controllers
             {
                 familyData.RemoveFamily(streetName,houseNumber);
                 
-                return StatusCode(999, "removed family with streetname: " + streetName + " and housenumber: "+houseNumber);
+                return Ok();
             }
             catch (Exception e)
             {

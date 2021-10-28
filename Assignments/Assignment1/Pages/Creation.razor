@@ -1,11 +1,9 @@
 ﻿@page "/Creation"
 @using Assignment1.Data
 @using Assignment1.Models
-@using Assignment1.Persistence
 @using Microsoft.AspNetCore.Components
 @inject IFamilyData familyData
 @inject NavigationManager NavigationManager
-@inject FileContext FileContext
 
 <h1>The power of creation</h1>
 
@@ -124,42 +122,22 @@
 
     protected override async Task OnInitializedAsync()
     {
-        allFamilies = familyData.GetFamilies();
+        allFamilies = await familyData.GetFamiliesAsync();
         familiesToShow = null;
     }
-
-    private void FilterByFamily(string changeEventArgs)
-    {
-        chosenFamily.StreetName = changeEventArgs;
-
-
-        houseNumbers.Clear();
-        foreach (var family in allFamilies)
-        {
-            if (family.StreetName.Equals(chosenFamily.StreetName))
-            {
-                houseNumbers.Add(family.HouseNumber);
-            }
-        }
-    }
-
-    private void Filterfamilies()
-    {
-    // currentFamily.HouseNumber = s;
-        ExecuteFamilyFilter();
-    }
+    
 
     private void ExecuteFamilyFilter()
     {
         chosenFamily = allFamilies.FirstOrDefault(f => (chosenFamily.StreetName.Equals(f.StreetName) && chosenFamily.HouseNumber == f.HouseNumber && chosenFamily.StreetName != null));
     }
 
-    private void AddNewFamily()
+    private async Task AddNewFamily()
     {
         errorMsg = "";
         try
         {
-            familyData.AddFamily(newFamily);
+           await familyData.AddFamilyAsync(newFamily);
         }
         catch (Exception e)
         {
@@ -167,10 +145,13 @@
         }
     }
 
-    private void AddNewAdult()
+    private async Task AddNewAdult()
     {
         errorMsg2 = "";
-        int max = familyData.GetAdults().Max(adult => adult.Id);
+        IList<Adult> adultsSize;
+        adultsSize = await familyData.GetAdultsAsync();
+        int max = adultsSize.Max(adult => adult.Id);
+        
         newAdult.Id = (++max);
         newAdult.JobTitle = newJob;
 
@@ -179,7 +160,7 @@
         
         try
         {
-            familyData.AddAdult(chosenFamily);
+            await familyData.AddAdultAsync(chosenFamily);
         }
         catch (Exception e)
         {

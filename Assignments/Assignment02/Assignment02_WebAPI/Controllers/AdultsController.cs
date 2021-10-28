@@ -9,19 +9,19 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Assignment02_WebAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
-    public class AdultController : ControllerBase
+    public class AdultsController : ControllerBase
     {
         private IList<Adult> adults;
         private IFamilyData adultData;
 
-        public AdultController(IFamilyData adultData)
+        public AdultsController(IFamilyData adultData)
         {
             this.adultData = adultData;
         }
         
-        // GET: Adult
+        // GET: Adults
         [HttpGet]
         public async Task<ActionResult<IList<Adult>>> GetAdults([FromQuery] string? lastname)
         {
@@ -43,7 +43,7 @@ namespace Assignment02_WebAPI.Controllers
             }
         }
         
-        // POST: Family
+        // POST: Adults
         [HttpPost]
         public async Task<ActionResult<Family>> AddAdult([FromBody] Family family)
         {
@@ -58,7 +58,7 @@ namespace Assignment02_WebAPI.Controllers
                 return StatusCode(500, e.Message);
             }
         }
-        // DELETE: Family/5
+        // DELETE: Adults/5
         [HttpDelete]
         [Route("{id:int}")]
         public  async Task<ActionResult<Adult>>  RemoveAdult([FromRoute] int id)
@@ -67,7 +67,7 @@ namespace Assignment02_WebAPI.Controllers
             {
                 adultData.RemoveAdult(id);
                 
-                return StatusCode(999, "removed adult with ID: " + id);
+                return Ok(id);
             }
             catch (Exception e)
             {

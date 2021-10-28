@@ -115,7 +115,7 @@ using Microsoft.AspNetCore.Components;
         errorMessage = "";
         try
         {
-            ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
+            await ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
             username = "";
             password = "";
             NavigationManager.NavigateTo("/");

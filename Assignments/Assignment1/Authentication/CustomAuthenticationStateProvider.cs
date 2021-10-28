@@ -31,7 +31,7 @@ namespace Assignment1.Authentication
                 if (!string.IsNullOrEmpty(userAsJson))
                 {
                     User tmp = JsonSerializer.Deserialize<User>(userAsJson);
-                    ValidateLogin(tmp.UserName, tmp.Password);
+                   await ValidateLogin(tmp.UserName, tmp.Password);
                 }
             }
             else
@@ -43,7 +43,7 @@ namespace Assignment1.Authentication
             return await Task.FromResult(new AuthenticationState(cachedClaimsPrincipal));
         }
 
-        public void ValidateLogin(string username, string password)
+        public async Task ValidateLogin(string username, string password)
         {
             Console.WriteLine("Validating log in");
             if (string.IsNullOrEmpty(username)) throw new Exception("Enter username");
@@ -51,10 +51,10 @@ namespace Assignment1.Authentication
             ClaimsIdentity identity = new ClaimsIdentity();
             try
             {
-                User user = userService.ValidateUser(username, password);
+                User user = await userService.ValidateUserAsync(username, password);
                 identity = SetupClaimsForUser(user);
                 string serialisedData = JsonSerializer.Serialize(user);
-                jsRuntime.InvokeVoidAsync("sessionStorage.setItem", "currentUser", serialisedData);
+                await jsRuntime.InvokeVoidAsync("sessionStorage.setItem", "currentUser", serialisedData);
                 cachedUser = user;
             }
             catch (Exception e)

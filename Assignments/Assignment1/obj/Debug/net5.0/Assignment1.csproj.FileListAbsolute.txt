@@ -366,7 +366,6 @@ C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\obj\Debug\net5.0\As
 C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\obj\Debug\net5.0\Assignment1.csproj.CopyComplete
 D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\bin\Debug\net5.0\appsettings.Development.json
 D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\bin\Debug\net5.0\appsettings.json
-D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\bin\Debug\net5.0\families.json
 D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\bin\Debug\net5.0\Assignment1.StaticWebAssets.xml
 D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\bin\Debug\net5.0\Assignment1.exe
 D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\bin\Debug\net5.0\Assignment1.deps.json

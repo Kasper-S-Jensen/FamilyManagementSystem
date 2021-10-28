@@ -91,20 +91,13 @@ using Assignment1.Data;
 #nullable disable
 #nullable restore
 #line 3 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Adults.razor"
-using Assignment1.Persistence;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 4 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Adults.razor"
 using Assignment1.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Adults.razor"
+#line 4 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Adults.razor"
 using Microsoft.Net.Http.Headers;
 
 #line default
@@ -119,41 +112,28 @@ using Microsoft.Net.Http.Headers;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 152 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Adults.razor"
+#line 157 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Adults.razor"
        
-
-    FileContext familyfile;
 
     private IList<Family> familiesToShow;
     private IList<int> houseNumbers = new List<int>();
     private IList<Family> allFamilies;
-    private IList<Family> distinctAllFamilies;
-    private IList<Child> childrenToShow;
-    private IList<Child> allChildren;
 
     private Family currentFamily = new Family();
-    private string streetNamse;
 
     private string? filterByString;
 
 
     protected override async Task OnInitializedAsync()
     {
-        Updatefamilies();
-        UpdateChildren();
-    }
-
-    private void Updatefamilies()
-    {
-        allFamilies = familyData.GetFamilies();
+        allFamilies = await familyData.GetFamiliesAsync();
         familiesToShow = null;
-        distinctAllFamilies = allFamilies.Distinct().ToList();
     }
 
-    private void UpdateChildren()
+    private async Task Updatefamilies()
     {
-        allChildren = familyData.GetChildren();
-        childrenToShow = null;
+        allFamilies = await familyData.GetFamiliesAsync();
+        familiesToShow = null;
     }
 
     private void FilterByFamily(string changeEventArgs)
@@ -167,29 +147,24 @@ using Microsoft.Net.Http.Headers;
             {
                 houseNumbers.Add(family.HouseNumber);
             }
-           
         }
     }
 
     private void Filterfamilies()
     {
-       // currentFamily.HouseNumber = s;
-      
         ExecuteFamilyFilter();
-       
     }
 
     private void ExecuteFamilyFilter()
     {
-        Console.WriteLine(currentFamily.HouseNumber + " inseide executefamilyssd");
         familiesToShow = allFamilies.Where(f => (currentFamily.StreetName.Equals(f.StreetName) && currentFamily.HouseNumber == f.HouseNumber && currentFamily.StreetName != null)).ToList();
     }
 
 
-    private void RemoveAdult(int adultId)
+    private async Task RemoveAdult(int adultId)
     {
-        Adult adultToRemove = familyData.GetAdult(adultId);
-        familyData.RemoveAdult(adultId);
+        await familyData.RemoveAdultAsync(adultId);
+        await Updatefamilies();
     }
 
     async Task RemoveFamily(string streetName, int houseNumber)
@@ -198,10 +173,11 @@ using Microsoft.Net.Http.Headers;
             return;
         Console.WriteLine(currentFamily.HouseNumber + currentFamily.StreetName);
 
-        Family familyToRemove = allFamilies.FirstOrDefault(f => (currentFamily.StreetName.Equals(f.StreetName) &&currentFamily.HouseNumber==f.HouseNumber && currentFamily.StreetName != null));
-        familyData.RemoveFamily(streetName, houseNumber);
+        Family familyToRemove = allFamilies.FirstOrDefault(f => (currentFamily.StreetName.Equals(f.StreetName) && currentFamily.HouseNumber == f.HouseNumber && currentFamily.StreetName != null));
+        await familyData.RemoveFamilyAsync(streetName, houseNumber);
         allFamilies.Remove(familyToRemove);
         familiesToShow.Remove(familyToRemove);
+        await Updatefamilies();
     }
 
 
@@ -210,7 +186,6 @@ using Microsoft.Net.Http.Headers;
 #line hidden
 #nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JSRuntime { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private FileContext FileContext { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IFamilyData familyData { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
     }

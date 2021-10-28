@@ -413,21 +413,6 @@
         "Weight": 56.8,
         "Height": 172,
         "Sex": "F"
-      },
-      {
-        "JobTitle": {
-          "JobTitle": "Office Clerk",
-          "Salary": 41332
-        },
-        "Id": 8,
-        "FirstName": "Andi",
-        "LastName": "Wells",
-        "HairColor": "Brown",
-        "EyeColor": "Amber",
-        "Age": 42,
-        "Weight": 27.6,
-        "Height": 148,
-        "Sex": "F"
       }
     ],
     "Children": [
@@ -1134,21 +1119,6 @@
         "Weight": 81.8,
         "Height": 172,
         "Sex": "M"
-      },
-      {
-        "JobTitle": {
-          "JobTitle": "string",
-          "Salary": 0
-        },
-        "Id": 0,
-        "FirstName": "bob",
-        "LastName": "bobsen",
-        "HairColor": "string",
-        "EyeColor": "string",
-        "Age": 0,
-        "Weight": 0,
-        "Height": 0,
-        "Sex": "string"
       }
     ],
     "Children": [

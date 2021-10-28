@@ -97,13 +97,6 @@ using Assignment1.Models;
 #nullable disable
 #nullable restore
 #line 4 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Creation.razor"
-using Assignment1.Persistence;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 5 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Creation.razor"
 using Microsoft.AspNetCore.Components;
 
 #line default
@@ -118,7 +111,7 @@ using Microsoft.AspNetCore.Components;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 102 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Creation.razor"
+#line 100 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Creation.razor"
        
     private Adult newAdult = new Adult();
     private Job newJob = new Job();
@@ -144,7 +137,7 @@ using Microsoft.AspNetCore.Components;
 
     protected override async Task OnInitializedAsync()
     {
-        allFamilies = familyData.GetFamilies();
+        allFamilies = await familyData.GetFamiliesAsync();
         familiesToShow = null;
     }
 
@@ -174,12 +167,12 @@ using Microsoft.AspNetCore.Components;
         chosenFamily = allFamilies.FirstOrDefault(f => (chosenFamily.StreetName.Equals(f.StreetName) && chosenFamily.HouseNumber == f.HouseNumber && chosenFamily.StreetName != null));
     }
 
-    private void AddNewFamily()
+    private async Task AddNewFamily()
     {
         errorMsg = "";
         try
         {
-            familyData.AddFamily(newFamily);
+           await familyData.AddFamilyAsync(newFamily);
         }
         catch (Exception e)
         {
@@ -187,10 +180,13 @@ using Microsoft.AspNetCore.Components;
         }
     }
 
-    private void AddNewAdult()
+    private async Task AddNewAdult()
     {
         errorMsg2 = "";
-        int max = familyData.GetAdults().Max(adult => adult.Id);
+        IList<Adult> adultsSize;
+        adultsSize = await familyData.GetAdultsAsync();
+        int max = adultsSize.Max(adult => adult.Id);
+        
         newAdult.Id = (++max);
         newAdult.JobTitle = newJob;
 
@@ -199,7 +195,7 @@ using Microsoft.AspNetCore.Components;
         
         try
         {
-            familyData.AddAdult(chosenFamily);
+            await familyData.AddAdultAsync(chosenFamily);
         }
         catch (Exception e)
         {
@@ -211,7 +207,6 @@ using Microsoft.AspNetCore.Components;
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private FileContext FileContext { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IFamilyData familyData { get; set; }
     }

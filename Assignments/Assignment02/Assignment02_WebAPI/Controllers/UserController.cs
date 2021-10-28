@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Assignment02_WebAPI.Data;
+using Assignment02_WebAPI.Data.Impl;
 using Assignment02_WebAPI.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Assignment02_WebAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class UserController : ControllerBase
     {
@@ -19,16 +20,18 @@ namespace Assignment02_WebAPI.Controllers
         {
             this.userService = userService;
         }
-        
+
         // GET: User
         [HttpGet]
         public async Task<ActionResult> ValidateUser([FromQuery] string username, [FromQuery] string password)
         {
             try
             {
-               userService.ValidateUser(username,password);
-               
-                return Ok();
+                User user;
+                
+                user= userService.ValidateUser(username, password);
+             
+                return Ok(user);
             }
             catch (Exception e)
             {
