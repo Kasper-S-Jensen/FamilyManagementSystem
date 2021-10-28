@@ -115,13 +115,13 @@ using TodoProject.Data;
 
     protected override async Task OnInitializedAsync()
     {
-      //  todoToEdit = TodoData.GetTodoAsync(Id);
+        todoToEdit = await TodoData.GetAsync(Id);
     }
 
     private async Task Save()
     {
         await TodoData.UpdateAsync(todoToEdit);
-        NavMgr.NavigateTo("/ Todos");
+        NavMgr.NavigateTo("/Todos");
     }
 
 

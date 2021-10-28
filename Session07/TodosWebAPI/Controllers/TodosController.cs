@@ -44,8 +44,7 @@ namespace TodosWebAPI.Controllers
                 return StatusCode(500, e.Message);
             }
         }
-        [HttpGet]
-        [Route("{id:int}")]
+        [HttpGet ("{id:int}")]
         public async Task<ActionResult<Todo>> GetTodo([FromRoute] int id)
         {
             try
@@ -79,15 +78,14 @@ namespace TodosWebAPI.Controllers
             }
         }
 
-        [HttpDelete]
-        [Route("{id:int}")]
+        [HttpDelete ("{id:int}")]
         public async Task<ActionResult<Todo>> RemoveTodo([FromRoute] int id)
         {
             try
             {
                 TodoData.RemoveTodo(id);
                 
-                return StatusCode(999, "removed todo with ID: " + id);
+                return Ok(id);
             }
             catch (Exception e)
             {
@@ -96,8 +94,7 @@ namespace TodosWebAPI.Controllers
             }
         }
 
-        [HttpPatch]
-        [Route("{id:int}")]
+        [HttpPatch("{id:int}")]
         public async Task<ActionResult<Todo>> UpdateTodo([FromBody] Todo todo)
         {
             try

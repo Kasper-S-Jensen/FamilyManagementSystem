@@ -56,11 +56,10 @@ namespace TodoProject.Data
             WriteTodosToFile();
         }
 
-        /*public async Task GetAAsync(int id)
+        public async Task<Todo> GetAsync(int id)
         {
-            
             return todos.FirstOrDefault(t => t.TodoID == id);
-        }*/
+        }
 
         private void WriteTodosToFile()
         {

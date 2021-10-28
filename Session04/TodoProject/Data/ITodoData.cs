@@ -11,6 +11,6 @@ namespace TodoProject.Data
         Task AddTodoAsync(Todo todo);
         Task RemoveTodoAsync(int todoId);
         Task UpdateAsync(Todo todo);
-        //Task GetAsync(int id);
+        Task<Todo> GetAsync(int id);
     }
 }

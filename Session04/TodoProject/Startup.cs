@@ -28,7 +28,7 @@ namespace TodoProject
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<ITodoData, TodoJSONData>();
+            services.AddSingleton<ITodoData, CloudTodoData>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
