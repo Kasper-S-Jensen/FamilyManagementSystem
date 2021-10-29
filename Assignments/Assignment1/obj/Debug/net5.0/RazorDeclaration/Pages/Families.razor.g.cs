@@ -83,28 +83,28 @@ using Assignment1.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Adults.razor"
+#line 2 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Families.razor"
 using Assignment1.Data;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Adults.razor"
+#line 3 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Families.razor"
 using Assignment1.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Adults.razor"
+#line 4 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Families.razor"
 using Microsoft.Net.Http.Headers;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/Adults")]
-    public partial class Adults : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/Families")]
+    public partial class Families : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -112,22 +112,19 @@ using Microsoft.Net.Http.Headers;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 157 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Adults.razor"
+#line 157 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Families.razor"
        
 
     private IList<Family> familiesToShow;
     private IList<int> houseNumbers = new List<int>();
     private IList<Family> allFamilies;
-
     private Family currentFamily = new Family();
-
     private string? filterByString;
 
 
     protected override async Task OnInitializedAsync()
     {
-        allFamilies = await familyData.GetFamiliesAsync();
-        familiesToShow = null;
+       await Updatefamilies();
     }
 
     private async Task Updatefamilies()
@@ -136,9 +133,9 @@ using Microsoft.Net.Http.Headers;
         familiesToShow = null;
     }
 
-    private void FilterByFamily(string changeEventArgs)
+    private void FilterByFamily(string streetName)
     {
-        currentFamily.StreetName = changeEventArgs;
+        currentFamily.StreetName = streetName;
 
         houseNumbers.Clear();
         foreach (var family in allFamilies)
@@ -150,7 +147,7 @@ using Microsoft.Net.Http.Headers;
         }
     }
 
-    private void Filterfamilies()
+    private void FilterFamilies()
     {
         ExecuteFamilyFilter();
     }
@@ -167,7 +164,7 @@ using Microsoft.Net.Http.Headers;
         await Updatefamilies();
     }
 
-    async Task RemoveFamily(string streetName, int houseNumber)
+    private async Task RemoveFamily(string streetName, int houseNumber)
     {
         if (!await JSRuntime.InvokeAsync<bool>("confirm", $"Are you sure you want to remove the family at '{currentFamily.StreetName} {currentFamily.HouseNumber}', and all of its members?"))
             return;

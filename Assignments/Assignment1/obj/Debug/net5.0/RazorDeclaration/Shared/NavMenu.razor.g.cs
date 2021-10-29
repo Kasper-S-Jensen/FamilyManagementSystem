@@ -107,8 +107,6 @@ using Assignment1.Authentication;
 #line 40 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
-
-
     private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
     private void ToggleNavMenu()

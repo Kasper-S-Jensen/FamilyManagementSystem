@@ -1,4 +1,4 @@
-﻿@page "/Adults"
+﻿@page "/Families"
 @using Assignment1.Data
 @using Assignment1.Models
 @using Microsoft.Net.Http.Headers
@@ -37,7 +37,7 @@ else
         }
         else
         {
-            <InputSelect class="form-control col-sm-4" @bind-Value="@currentFamily.HouseNumber" @onclick="@(() => Filterfamilies())">
+            <InputSelect class="form-control col-sm-4" @bind-Value="@currentFamily.HouseNumber" @onclick="@(() => FilterFamilies())">
                 <option value="none">-- Select housenumber --</option>
                 @foreach (var number in houseNumbers)
                 {
@@ -94,7 +94,7 @@ else
                             </tr>
                         }
                         <td colspan="2">
-                            <p class="font-weight-bold">Family pets:</p> @family.petsToString()
+                            <p class="font-weight-bold">Family pets:</p> @family.PetsToString()
                         </td>
                     }
                     </tbody>
@@ -139,8 +139,8 @@ else
                                     <td>@child.FirstName</td>
                                     <td>@child.LastName</td>
                                     <td>@child.Age</td>
-                                    <td>@child.InterestToString()</td>
-                                    <td>@child.petsToString()</td>
+                                    <td>@child.InterestsToString()</td>
+                                    <td>@child.PetsToString()</td>
                                 </tr>
                             }
                         }
@@ -159,16 +159,13 @@ else
     private IList<Family> familiesToShow;
     private IList<int> houseNumbers = new List<int>();
     private IList<Family> allFamilies;
-
     private Family currentFamily = new Family();
-
     private string? filterByString;
 
 
     protected override async Task OnInitializedAsync()
     {
-        allFamilies = await familyData.GetFamiliesAsync();
-        familiesToShow = null;
+       await Updatefamilies();
     }
 
     private async Task Updatefamilies()
@@ -177,9 +174,9 @@ else
         familiesToShow = null;
     }
 
-    private void FilterByFamily(string changeEventArgs)
+    private void FilterByFamily(string streetName)
     {
-        currentFamily.StreetName = changeEventArgs;
+        currentFamily.StreetName = streetName;
 
         houseNumbers.Clear();
         foreach (var family in allFamilies)
@@ -191,7 +188,7 @@ else
         }
     }
 
-    private void Filterfamilies()
+    private void FilterFamilies()
     {
         ExecuteFamilyFilter();
     }
@@ -208,7 +205,7 @@ else
         await Updatefamilies();
     }
 
-    async Task RemoveFamily(string streetName, int houseNumber)
+    private async Task RemoveFamily(string streetName, int houseNumber)
     {
         if (!await JSRuntime.InvokeAsync<bool>("confirm", $"Are you sure you want to remove the family at '{currentFamily.StreetName} {currentFamily.HouseNumber}', and all of its members?"))
             return;

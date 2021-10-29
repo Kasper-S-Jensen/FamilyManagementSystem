@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations;
 namespace Assignment1.Models {
 public class Family {
     
-    //public int Id { get; set; }
     public string StreetName { get; set; }
     public int HouseNumber{ get; set; }
     public List<Adult> Adults { get; set; }
@@ -15,7 +14,7 @@ public class Family {
         Adults = new List<Adult>();     
     }
     
-    public string petsToString()
+    public string PetsToString()
     {
         string ss = "";
         foreach (var pet in Pets)

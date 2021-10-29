@@ -116,57 +116,17 @@ using Microsoft.AspNetCore.Components;
     private Adult newAdult = new Adult();
     private Job newJob = new Job();
     private Family chosenFamily = new Family();
-    
-    
     private Family newFamily = new Family()
     {
         Adults = new List<Adult>(),
         Children = new List<Child>(),
         Pets = new List<Pet>()
     };
-
-  
-
-   
-    
     private string errorMsg;
     private string errorMsg2;
-    private IList<Family> familiesToShow;
-    private IList<Family> allFamilies;
-    private IList<int> houseNumbers = new List<int>();
-
-    protected override async Task OnInitializedAsync()
-    {
-        allFamilies = await familyData.GetFamiliesAsync();
-        familiesToShow = null;
-    }
-
-    private void FilterByFamily(string changeEventArgs)
-    {
-        chosenFamily.StreetName = changeEventArgs;
 
 
-        houseNumbers.Clear();
-        foreach (var family in allFamilies)
-        {
-            if (family.StreetName.Equals(chosenFamily.StreetName))
-            {
-                houseNumbers.Add(family.HouseNumber);
-            }
-        }
-    }
-
-    private void Filterfamilies()
-    {
-    // currentFamily.HouseNumber = s;
-        ExecuteFamilyFilter();
-    }
-
-    private void ExecuteFamilyFilter()
-    {
-        chosenFamily = allFamilies.FirstOrDefault(f => (chosenFamily.StreetName.Equals(f.StreetName) && chosenFamily.HouseNumber == f.HouseNumber && chosenFamily.StreetName != null));
-    }
-
+    
     private async Task AddNewFamily()
     {
         errorMsg = "";
@@ -183,9 +143,16 @@ using Microsoft.AspNetCore.Components;
     private async Task AddNewAdult()
     {
         errorMsg2 = "";
-        IList<Adult> adultsSize;
-        adultsSize = await familyData.GetAdultsAsync();
-        int max = adultsSize.Max(adult => adult.Id);
+        IList<Adult> adultsSize = await familyData.GetAdultsAsync();
+        int max = 0;
+        foreach (var adult in adultsSize)
+        {
+            if (adult.Id > max)
+            {
+                max = adult.Id;
+            }
+        }
+       
         
         newAdult.Id = (++max);
         newAdult.JobTitle = newJob;
