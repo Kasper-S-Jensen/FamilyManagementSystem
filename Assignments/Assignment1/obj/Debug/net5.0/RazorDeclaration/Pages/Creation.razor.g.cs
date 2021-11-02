@@ -12,98 +12,91 @@ namespace Assignment1.Pages
     using System.Linq;
     using System.Threading.Tasks;
 #nullable restore
-#line 1 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
+#line 1 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
+#line 2 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
+#line 3 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
+#line 4 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
+#line 5 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
+#line 6 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
+#line 7 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
+#line 8 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
+#line 9 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
 using Assignment1;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
+#line 10 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
 using Assignment1.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Creation.razor"
+#line 2 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Creation.razor"
 using Assignment1.Data;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Creation.razor"
+#line 3 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Creation.razor"
 using Assignment1.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Creation.razor"
-using Assignment1.Persistence;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 5 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Creation.razor"
+#line 4 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Creation.razor"
 using Microsoft.AspNetCore.Components;
 
 #line default
@@ -118,66 +111,28 @@ using Microsoft.AspNetCore.Components;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 102 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Creation.razor"
+#line 100 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Creation.razor"
        
     private Adult newAdult = new Adult();
     private Job newJob = new Job();
-
+    private Family chosenFamily = new Family();
     private Family newFamily = new Family()
     {
         Adults = new List<Adult>(),
         Children = new List<Child>(),
         Pets = new List<Pet>()
     };
-
-    private Family chosenFamily = new Family();
-
-   
-    
     private string errorMsg;
     private string errorMsg2;
-    private IList<Family> familiesToShow;
-    private IList<Family> allFamilies;
-    private IList<int> houseNumbers = new List<int>();
-
-    protected override async Task OnInitializedAsync()
-    {
-        allFamilies = familyData.GetFamilies();
-        familiesToShow = null;
-    }
-
-    private void FilterByFamily(string changeEventArgs)
-    {
-        chosenFamily.StreetName = changeEventArgs;
 
 
-        houseNumbers.Clear();
-        foreach (var family in allFamilies)
-        {
-            if (family.StreetName.Equals(chosenFamily.StreetName))
-            {
-                houseNumbers.Add(family.HouseNumber);
-            }
-        }
-    }
-
-    private void Filterfamilies()
-    {
-    // currentFamily.HouseNumber = s;
-        ExecuteFamilyFilter();
-    }
-
-    private void ExecuteFamilyFilter()
-    {
-        chosenFamily = allFamilies.FirstOrDefault(f => (chosenFamily.StreetName.Equals(f.StreetName) && chosenFamily.HouseNumber == f.HouseNumber && chosenFamily.StreetName != null));
-    }
-
-    private void AddNewFamily()
+    
+    private async Task AddNewFamily()
     {
         errorMsg = "";
         try
         {
-            familyData.AddFamily(newFamily.StreetName, newFamily.HouseNumber);
+           await familyData.AddFamilyAsync(newFamily);
         }
         catch (Exception e)
         {
@@ -185,18 +140,29 @@ using Microsoft.AspNetCore.Components;
         }
     }
 
-    private void AddNewAdult()
+    private async Task AddNewAdult()
     {
         errorMsg2 = "";
-        int max = familyData.GetAdults().Max(adult => adult.Id);
+        IList<Adult> adultsSize = await familyData.GetAdultsAsync();
+        int max = 0;
+        foreach (var adult in adultsSize)
+        {
+            if (adult.Id > max)
+            {
+                max = adult.Id;
+            }
+        }
+       
+        
         newAdult.Id = (++max);
         newAdult.JobTitle = newJob;
 
+        newAdult.JobTitle = newJob;
+        chosenFamily.Adults.Add(newAdult);
+        
         try
         {
-            familyData.AddAdult(newAdult.FirstName, newAdult.LastName, newAdult.HairColor,
-                newAdult.EyeColor, newAdult.Age, newAdult.Weight, newAdult.Height,
-                newAdult.Sex, newJob.JobTitle, newJob.Salary, chosenFamily.StreetName, chosenFamily.HouseNumber);
+            await familyData.AddAdultAsync(chosenFamily);
         }
         catch (Exception e)
         {
@@ -208,7 +174,6 @@ using Microsoft.AspNetCore.Components;
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private FileContext FileContext { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IFamilyData familyData { get; set; }
     }

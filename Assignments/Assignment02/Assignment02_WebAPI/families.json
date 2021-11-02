@@ -263,21 +263,6 @@
         "Weight": 131.6,
         "Height": 177,
         "Sex": "M"
-      },
-      {
-        "JobTitle": {
-          "JobTitle": "Service Advisor",
-          "Salary": 72532
-        },
-        "Id": 6,
-        "FirstName": "Anastasia",
-        "LastName": "Fitzgerald",
-        "HairColor": "Black",
-        "EyeColor": "Brown",
-        "Age": 44,
-        "Weight": 99.8,
-        "Height": 147,
-        "Sex": "F"
       }
     ],
     "Children": [
@@ -412,21 +397,6 @@
         "Age": 52,
         "Weight": 56.8,
         "Height": 172,
-        "Sex": "F"
-      },
-      {
-        "JobTitle": {
-          "JobTitle": "Office Clerk",
-          "Salary": 41332
-        },
-        "Id": 8,
-        "FirstName": "Andi",
-        "LastName": "Wells",
-        "HairColor": "Brown",
-        "EyeColor": "Amber",
-        "Age": 42,
-        "Weight": 27.6,
-        "Height": 148,
         "Sex": "F"
       }
     ],
@@ -1181,42 +1151,5 @@
       }
     ],
     "Pets": []
-  },
-  {
-    "StreetName": "Lichtenbergsgade",
-    "HouseNumber": 4,
-    "Adults": [],
-    "Children": [
-      {
-        "Interests": [
-          {
-            "Type": "Sleeping",
-            "Description": "Cartoons are for children, comics are for adults"
-          },
-          {
-            "Type": "Blive kl\u00F8et i nakken",
-            "Description": "Drive super duper fast"
-          }
-        ],
-        "Pets": [],
-        "Id": 26,
-        "FirstName": "Arnold",
-        "LastName": "Lisby",
-        "HairColor": "Grey",
-        "EyeColor": "Black",
-        "Age": 4,
-        "Weight": 5,
-        "Height": 20,
-        "Sex": "M"
-      }
-    ],
-    "Pets": [
-      {
-        "Id": 10,
-        "Species": "Ragdoll, Zeus of Olympus",
-        "Name": "Zeus of Olympus",
-        "Age": 4
-      }
-    ]
   }
 ]

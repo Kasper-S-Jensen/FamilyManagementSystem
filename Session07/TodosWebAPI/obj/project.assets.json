@@ -193,19 +193,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Kasper\\.nuget\\packages\\": {}
+    "C:\\Users\\kaspe\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kasper\\Git\\DNP1_Assignments\\Session07\\TodosWebAPI\\TodosWebAPI.csproj",
+      "projectUniqueName": "D:\\Dokumenter D\\Git\\DNP1_Assignments\\Session07\\TodosWebAPI\\TodosWebAPI.csproj",
       "projectName": "TodosWebAPI",
-      "projectPath": "C:\\Users\\Kasper\\Git\\DNP1_Assignments\\Session07\\TodosWebAPI\\TodosWebAPI.csproj",
-      "packagesPath": "C:\\Users\\Kasper\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kasper\\Git\\DNP1_Assignments\\Session07\\TodosWebAPI\\obj\\",
+      "projectPath": "D:\\Dokumenter D\\Git\\DNP1_Assignments\\Session07\\TodosWebAPI\\TodosWebAPI.csproj",
+      "packagesPath": "C:\\Users\\kaspe\\.nuget\\packages\\",
+      "outputPath": "D:\\Dokumenter D\\Git\\DNP1_Assignments\\Session07\\TodosWebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Kasper\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\kaspe\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -252,7 +252,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

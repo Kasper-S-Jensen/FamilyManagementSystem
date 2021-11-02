@@ -9,19 +9,19 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Assignment02_WebAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
-    public class AdultController : ControllerBase
+    public class AdultsController : ControllerBase
     {
         private IList<Adult> adults;
-        private IAdultData adultData;
+        private IFamilyData adultData;
 
-        public AdultController(IAdultData adultData)
+        public AdultsController(IFamilyData adultData)
         {
             this.adultData = adultData;
         }
         
-        // GET: Adult
+        // GET: Adults
         [HttpGet]
         public async Task<ActionResult<IList<Adult>>> GetAdults([FromQuery] string? lastname)
         {
@@ -43,23 +43,14 @@ namespace Assignment02_WebAPI.Controllers
             }
         }
         
-        // POST: Family
+        // POST: Adults
         [HttpPost]
-        public async Task<ActionResult<Adult>> AddAdult([FromQuery] string firstName, [FromQuery] string lastName,
-            [FromQuery] string hairColor, [FromQuery] string eyeColor, [FromQuery] int age, [FromQuery] float weight,
-            [FromQuery] int height, [FromQuery] string sex, [FromQuery] string jobtitle, [FromQuery] int salary,
-            [FromQuery] string streetName, [FromQuery] int houseNumber)
+        public async Task<ActionResult<Family>> AddAdult([FromBody] Family family)
         {
             try
             {
-                Adult toAdd = new Adult()
-                {
-                    FirstName = firstName, 
-                    LastName = lastName
-                };
-                adultData.AddAdult(firstName, lastName, hairColor, eyeColor, age, weight, height, sex, jobtitle,
-                    salary, streetName, houseNumber);
-                return Created($"/{toAdd.FirstName}", toAdd);
+                adultData.AddAdult(family);
+                return Created($"/{family.Adults[0].FirstName}", family);
             }
             catch (Exception e)
             {
@@ -67,7 +58,7 @@ namespace Assignment02_WebAPI.Controllers
                 return StatusCode(500, e.Message);
             }
         }
-        // DELETE: Family/5
+        // DELETE: Adults/5
         [HttpDelete]
         [Route("{id:int}")]
         public  async Task<ActionResult<Adult>>  RemoveAdult([FromRoute] int id)
@@ -76,7 +67,7 @@ namespace Assignment02_WebAPI.Controllers
             {
                 adultData.RemoveAdult(id);
                 
-                return StatusCode(999, "removed adult with ID: " + id);
+                return Ok(id);
             }
             catch (Exception e)
             {

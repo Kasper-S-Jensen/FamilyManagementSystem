@@ -8,7 +8,7 @@ namespace Assignment1.Models
         public List<Interest> Interests { get; set; }
         public List<Pet> Pets { get; set; }
 
-        public string InterestToString()
+        public string InterestsToString()
         {
             string s = "";
             foreach (var interest in Interests)
@@ -24,7 +24,7 @@ namespace Assignment1.Models
             return s;
         }
 
-        public string petsToString()
+        public string PetsToString()
         {
             string ss = "";
             foreach (var pet in Pets)

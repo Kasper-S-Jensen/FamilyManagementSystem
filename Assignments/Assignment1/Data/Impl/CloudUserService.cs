@@ -1,0 +1,29 @@
+﻿using System;
+using System.Net.Http;
+using System.Text.Json;
+using System.Threading.Tasks;
+using Assignment1.Models;
+
+namespace Assignment1.Data.Impl
+{
+    public class CloudUserService : IUserService
+    {
+        private string path = "https://localhost:5003";
+        public async Task<User> ValidateUserAsync(string username, string Password)
+        {
+            using HttpClient client = new HttpClient();
+            HttpResponseMessage responseMessage = await client.GetAsync($"{path}/User?username={username}&password={Password}");
+
+            Console.WriteLine("repons" +responseMessage);
+            if (!responseMessage.IsSuccessStatusCode)
+                throw new Exception($"Error: {responseMessage.StatusCode}, {responseMessage.ReasonPhrase}");
+            string result = await responseMessage.Content.ReadAsStringAsync();
+            
+            Console.WriteLine("result: "+result);
+            User user = JsonSerializer.Deserialize<User>(result,
+                new JsonSerializerOptions {PropertyNamingPolicy = JsonNamingPolicy.CamelCase});
+
+            return user;
+        }
+    }
+}

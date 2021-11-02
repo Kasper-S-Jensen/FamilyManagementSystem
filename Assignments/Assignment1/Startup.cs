@@ -7,7 +7,6 @@ using Assignment1.Authentication;
 using Assignment1.Data;
 using Assignment1.Data.Impl;
 using Assignment1.Models;
-using Assignment1.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
@@ -34,10 +33,9 @@ namespace Assignment1
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddScoped<IUserService, InMemoryUserService>();
+            services.AddScoped<IUserService, CloudUserService>();
             services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
-            services.AddScoped<IFamilyData, FamilyJSONData>();
-            services.AddScoped<FileContext>();
+            services.AddScoped<IFamilyData, CloudFamilyData>();
 
             services.AddAuthorization(options =>
             {

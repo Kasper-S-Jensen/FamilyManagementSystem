@@ -1,47 +1,52 @@
-﻿@page "/Adults"
+﻿@page "/Families"
 @using Assignment1.Data
-@using Assignment1.Persistence
 @using Assignment1.Models
 @using Microsoft.Net.Http.Headers
 
 @inject NavigationManager NavigationManager
 @inject IFamilyData familyData
-@inject FileContext FileContext
 @inject IJSRuntime JSRuntime
 
 
 <h2>Families</h2>
 
+@if (allFamilies == null)
+{
+    <p>
+        <em>Please wait..</em>
+    </p>
+}
+else
+{
+    <EditForm Model="@currentFamily">
+        <InputSelect class="form-control col-sm-4" Value="@currentFamily.StreetName"
+                     ValueChanged="@((string arg) => FilterByFamily(arg))"
+                     ValueExpression="@(() => currentFamily.StreetName)">
+            <option value="none">-- Select streetname --</option>
 
-<EditForm Model="@currentFamily">
-    <InputSelect class="form-control col-sm-4"   Value="@currentFamily.StreetName"
-                 ValueChanged="@((string arg) => { FilterByFamily(arg); StateHasChanged(); })"
-                 ValueExpression="@(() => currentFamily.StreetName)">
-        <option value="none">-- Select streetname --</option>
-
-        @foreach (var family in allFamilies)
+            @foreach (var family in allFamilies)
+            {
+                <option value="@family.StreetName"> @family.StreetName</option>
+            }
+        </InputSelect>
+        @if (currentFamily.StreetName == null)
         {
-            <option value="@family.StreetName"> @family.StreetName</option>
+            <p>
+                <em>Please select a streetname</em>
+            </p>
         }
-    </InputSelect>
-    @if (currentFamily.StreetName == null)
-    {
-        <p>
-            <em>Please select a streetname</em>
-        </p>
-    }
-    else
-    {
-    <InputSelect class="form-control col-sm-4" @bind-Value="@currentFamily.HouseNumber" @onch="@(() => Filterfamilies())">
-        <option value="none">-- Select housenumber --</option>
-        @foreach (var number in houseNumbers)
+        else
         {
-            <option bind-value="@currentFamily.HouseNumber"> @number</option>
+            <InputSelect class="form-control col-sm-4" @bind-Value="@currentFamily.HouseNumber" @onclick="@(() => FilterFamilies())">
+                <option value="none">-- Select housenumber --</option>
+                @foreach (var number in houseNumbers)
+                {
+                    <option bind-value="@currentFamily.HouseNumber"> @number</option>
+                }
+            </InputSelect>
         }
-    </InputSelect>
-    }
-</EditForm>
-
+    </EditForm>
+}
 
 @if (familiesToShow == null)
 {
@@ -89,7 +94,7 @@ else
                             </tr>
                         }
                         <td colspan="2">
-                            <p class="font-weight-bold">Family pets:</p> @family.petsToString()
+                            <p class="font-weight-bold">Family pets:</p> @family.PetsToString()
                         </td>
                     }
                     </tbody>
@@ -134,8 +139,8 @@ else
                                     <td>@child.FirstName</td>
                                     <td>@child.LastName</td>
                                     <td>@child.Age</td>
-                                    <td>@child.InterestToString()</td>
-                                    <td>@child.petsToString()</td>
+                                    <td>@child.InterestsToString()</td>
+                                    <td>@child.PetsToString()</td>
                                 </tr>
                             }
                         }
@@ -151,43 +156,27 @@ else
 
 @code {
 
-    FileContext familyfile;
-
     private IList<Family> familiesToShow;
     private IList<int> houseNumbers = new List<int>();
     private IList<Family> allFamilies;
-    private IList<Family> distinctAllFamilies;
-    private IList<Child> childrenToShow;
-    private IList<Child> allChildren;
-
     private Family currentFamily = new Family();
-    private string streetNamse;
-
     private string? filterByString;
 
 
     protected override async Task OnInitializedAsync()
     {
-        Updatefamilies();
-        UpdateChildren();
+       await Updatefamilies();
     }
 
-    private void Updatefamilies()
+    private async Task Updatefamilies()
     {
-        allFamilies = familyData.GetFamilies();
+        allFamilies = await familyData.GetFamiliesAsync();
         familiesToShow = null;
-        distinctAllFamilies = allFamilies.Distinct().ToList();
     }
 
-    private void UpdateChildren()
+    private void FilterByFamily(string streetName)
     {
-        allChildren = familyData.GetChildren();
-        childrenToShow = null;
-    }
-
-    private void FilterByFamily(string changeEventArgs)
-    {
-        currentFamily.StreetName = changeEventArgs;
+        currentFamily.StreetName = streetName;
 
         houseNumbers.Clear();
         foreach (var family in allFamilies)
@@ -196,41 +185,37 @@ else
             {
                 houseNumbers.Add(family.HouseNumber);
             }
-           
         }
     }
 
-    private void Filterfamilies()
+    private void FilterFamilies()
     {
-       // currentFamily.HouseNumber = s;
-      
         ExecuteFamilyFilter();
-       
     }
 
     private void ExecuteFamilyFilter()
     {
-        Console.WriteLine(currentFamily.HouseNumber + " inseide executefamilyssd");
         familiesToShow = allFamilies.Where(f => (currentFamily.StreetName.Equals(f.StreetName) && currentFamily.HouseNumber == f.HouseNumber && currentFamily.StreetName != null)).ToList();
     }
 
 
-    private void RemoveAdult(int adultId)
+    private async Task RemoveAdult(int adultId)
     {
-        Adult adultToRemove = familyData.GetAdult(adultId);
-        familyData.RemoveAdult(adultId);
+        await familyData.RemoveAdultAsync(adultId);
+        await Updatefamilies();
     }
 
-    async Task RemoveFamily(string streetName, int houseNumber)
+    private async Task RemoveFamily(string streetName, int houseNumber)
     {
         if (!await JSRuntime.InvokeAsync<bool>("confirm", $"Are you sure you want to remove the family at '{currentFamily.StreetName} {currentFamily.HouseNumber}', and all of its members?"))
             return;
         Console.WriteLine(currentFamily.HouseNumber + currentFamily.StreetName);
 
-        Family familyToRemove = allFamilies.FirstOrDefault(f => (currentFamily.StreetName.Equals(f.StreetName) &&currentFamily.HouseNumber==f.HouseNumber && currentFamily.StreetName != null));
-        familyData.RemoveFamily(streetName, houseNumber);
+        Family familyToRemove = allFamilies.FirstOrDefault(f => (currentFamily.StreetName.Equals(f.StreetName) && currentFamily.HouseNumber == f.HouseNumber && currentFamily.StreetName != null));
+        await familyData.RemoveFamilyAsync(streetName, houseNumber);
         allFamilies.Remove(familyToRemove);
         familiesToShow.Remove(familyToRemove);
+        await Updatefamilies();
     }
 
 

@@ -138,7 +138,6 @@ D:\Dokumenter D\Git\DNP1_Assignments\Session05\S5Ex01\bin\Debug\net5.0\ref\S5Ex0
 D:\Dokumenter D\Git\DNP1_Assignments\Session05\S5Ex01\bin\Debug\net5.0\S5Ex01.pdb
 D:\Dokumenter D\Git\DNP1_Assignments\Session05\S5Ex01\bin\Debug\net5.0\S5Ex01.Views.dll
 D:\Dokumenter D\Git\DNP1_Assignments\Session05\S5Ex01\bin\Debug\net5.0\S5Ex01.Views.pdb
-D:\Dokumenter D\Git\DNP1_Assignments\Session05\S5Ex01\obj\Debug\net5.0\S5Ex01.csproj.AssemblyReference.cache
 D:\Dokumenter D\Git\DNP1_Assignments\Session05\S5Ex01\obj\Debug\net5.0\S5Ex01.GeneratedMSBuildEditorConfig.editorconfig
 D:\Dokumenter D\Git\DNP1_Assignments\Session05\S5Ex01\obj\Debug\net5.0\S5Ex01.AssemblyInfoInputs.cache
 D:\Dokumenter D\Git\DNP1_Assignments\Session05\S5Ex01\obj\Debug\net5.0\S5Ex01.AssemblyInfo.cs

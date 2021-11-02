@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Assignment02_WebAPI.Authentication;
 using Assignment02_WebAPI.Data;
 using Assignment02_WebAPI.Data.Impl;
 using Assignment02_WebAPI.Persistence;
@@ -36,10 +35,10 @@ namespace Assignment02_WebAPI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "Assignment02_WebAPI", Version = "v1"});
             });
-            services.AddScoped<IAdultData,AdultJSONData>();
+            services.AddScoped<IFamilyData,FamilyJSONData>();
             services.AddScoped<FileContext>();
             services.AddScoped<IUserService, InMemoryUserService>();
-           // services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
+           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,19 +1,21 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Assignment1.Models;
 
 namespace Assignment1.Data
 {
     public interface IFamilyData
     {
-        IList<Adult> GetAdults();
-        IList<Family> GetFamilies();
-        IList<Child> GetChildren();
-        void AddFamily(string streetName, int houseNumber);
-        void AddAdult(string firstName, string lastName, string hairColor, string eyeColor, int age, float weight, int height, string sex, string jobtitle, int salary, string streetName, int houseNumber);
-        void RemoveAdult(int ID);
-        void RemoveFamily(string streetName, int houseNumber);
-        void Update(Adult adult);
-        Adult GetAdult(int id);
-        Family GetFamily(string streetName, int houseNumber);
+        Task<IList<Adult>> GetAdultsAsync();
+        Task<IList<Family>> GetFamiliesAsync();
+        Task<IList<Child>> GetChildrenAsync();
+        Task AddFamilyAsync(Family family);
+        Task AddAdultAsync(Family family);
+        Task RemoveAdultAsync(int ID);
+        Task RemoveFamilyAsync(string streetName, int houseNumber);
+        Task UpdateAsync(Adult adult);
+        Task UpdateAsync(Family family);
+        Task<Adult> GetAdultAsync(int id);
+        Task<Family> GetFamilyAsync(string streetName, int houseNumber);
     }
 }

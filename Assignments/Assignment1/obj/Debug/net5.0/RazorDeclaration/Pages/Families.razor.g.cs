@@ -13,105 +13,98 @@ namespace Assignment1.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
+#line 1 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
+#line 2 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
+#line 3 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
+#line 4 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
+#line 5 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
+#line 6 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
+#line 7 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
+#line 8 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
+#line 9 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
 using Assignment1;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
+#line 10 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\_Imports.razor"
 using Assignment1.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Adults.razor"
+#line 2 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Families.razor"
 using Assignment1.Data;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Adults.razor"
-using Assignment1.Persistence;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 4 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Adults.razor"
+#line 3 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Families.razor"
 using Assignment1.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Adults.razor"
+#line 4 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Families.razor"
 using Microsoft.Net.Http.Headers;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/Adults")]
-    public partial class Adults : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/Families")]
+    public partial class Families : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -119,46 +112,30 @@ using Microsoft.Net.Http.Headers;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 151 "C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Adults.razor"
+#line 157 "D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\Pages\Families.razor"
        
-
-    FileContext familyfile;
 
     private IList<Family> familiesToShow;
     private IList<int> houseNumbers = new List<int>();
     private IList<Family> allFamilies;
-    private IList<Family> distinctAllFamilies;
-    private IList<Child> childrenToShow;
-    private IList<Child> allChildren;
-
     private Family currentFamily = new Family();
-    private string streetNamse;
-
     private string? filterByString;
 
 
     protected override async Task OnInitializedAsync()
     {
-        Updatefamilies();
-        UpdateChildren();
+       await Updatefamilies();
     }
 
-    private void Updatefamilies()
+    private async Task Updatefamilies()
     {
-        allFamilies = familyData.GetFamilies();
+        allFamilies = await familyData.GetFamiliesAsync();
         familiesToShow = null;
-        distinctAllFamilies = allFamilies.Distinct().ToList();
     }
 
-    private void UpdateChildren()
+    private void FilterByFamily(string streetName)
     {
-        allChildren = familyData.GetChildren();
-        childrenToShow = null;
-    }
-
-    private void FilterByFamily(string changeEventArgs)
-    {
-        currentFamily.StreetName = changeEventArgs;
+        currentFamily.StreetName = streetName;
 
         houseNumbers.Clear();
         foreach (var family in allFamilies)
@@ -167,41 +144,37 @@ using Microsoft.Net.Http.Headers;
             {
                 houseNumbers.Add(family.HouseNumber);
             }
-           
         }
     }
 
-    private void Filterfamilies()
+    private void FilterFamilies()
     {
-       // currentFamily.HouseNumber = s;
-      
         ExecuteFamilyFilter();
-       
     }
 
     private void ExecuteFamilyFilter()
     {
-        Console.WriteLine(currentFamily.HouseNumber + " inseide executefamilyssd");
         familiesToShow = allFamilies.Where(f => (currentFamily.StreetName.Equals(f.StreetName) && currentFamily.HouseNumber == f.HouseNumber && currentFamily.StreetName != null)).ToList();
     }
 
 
-    private void RemoveAdult(int adultId)
+    private async Task RemoveAdult(int adultId)
     {
-        Adult adultToRemove = familyData.GetAdult(adultId);
-        familyData.RemoveAdult(adultId);
+        await familyData.RemoveAdultAsync(adultId);
+        await Updatefamilies();
     }
 
-    async Task RemoveFamily(string streetName, int houseNumber)
+    private async Task RemoveFamily(string streetName, int houseNumber)
     {
         if (!await JSRuntime.InvokeAsync<bool>("confirm", $"Are you sure you want to remove the family at '{currentFamily.StreetName} {currentFamily.HouseNumber}', and all of its members?"))
             return;
         Console.WriteLine(currentFamily.HouseNumber + currentFamily.StreetName);
 
-        Family familyToRemove = allFamilies.FirstOrDefault(f => (currentFamily.StreetName.Equals(f.StreetName) &&currentFamily.HouseNumber==f.HouseNumber && currentFamily.StreetName != null));
-        familyData.RemoveFamily(streetName, houseNumber);
+        Family familyToRemove = allFamilies.FirstOrDefault(f => (currentFamily.StreetName.Equals(f.StreetName) && currentFamily.HouseNumber == f.HouseNumber && currentFamily.StreetName != null));
+        await familyData.RemoveFamilyAsync(streetName, houseNumber);
         allFamilies.Remove(familyToRemove);
         familiesToShow.Remove(familyToRemove);
+        await Updatefamilies();
     }
 
 
@@ -210,7 +183,6 @@ using Microsoft.Net.Http.Headers;
 #line hidden
 #nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JSRuntime { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private FileContext FileContext { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IFamilyData familyData { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
     }

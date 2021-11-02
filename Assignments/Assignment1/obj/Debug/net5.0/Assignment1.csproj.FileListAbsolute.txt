@@ -366,7 +366,6 @@ C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\obj\Debug\net5.0\As
 C:\Users\Kasper\Git\DNP1_Assignments\Assignments\Assignment1\obj\Debug\net5.0\Assignment1.csproj.CopyComplete
 D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\bin\Debug\net5.0\appsettings.Development.json
 D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\bin\Debug\net5.0\appsettings.json
-D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\bin\Debug\net5.0\families.json
 D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\bin\Debug\net5.0\Assignment1.StaticWebAssets.xml
 D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\bin\Debug\net5.0\Assignment1.exe
 D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\bin\Debug\net5.0\Assignment1.deps.json
@@ -384,8 +383,6 @@ D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\obj\Debug\net5.0\As
 D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\obj\Debug\net5.0\Assignment1.MvcApplicationPartsAssemblyInfo.cache
 D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\obj\Debug\net5.0\Assignment1.RazorComponent.input.cache
 D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\obj\Debug\net5.0\RazorDeclaration\App.razor.g.cs
-D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\obj\Debug\net5.0\RazorDeclaration\Pages\Adults.razor.g.cs
-D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\obj\Debug\net5.0\RazorDeclaration\Pages\Children.razor.g.cs
 D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\obj\Debug\net5.0\RazorDeclaration\Pages\Creation.razor.g.cs
 D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\obj\Debug\net5.0\RazorDeclaration\Pages\Index.razor.g.cs
 D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\obj\Debug\net5.0\RazorDeclaration\Pages\Login.razor.g.cs
@@ -398,8 +395,6 @@ D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\obj\Debug\net5.0\As
 D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\obj\Debug\net5.0\Assignment1.TagHelpers.output.cache
 D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\obj\Debug\net5.0\Assignment1.RazorCoreGenerate.cache
 D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\obj\Debug\net5.0\Razor\App.razor.g.cs
-D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\obj\Debug\net5.0\Razor\Pages\Adults.razor.g.cs
-D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\obj\Debug\net5.0\Razor\Pages\Children.razor.g.cs
 D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\obj\Debug\net5.0\Razor\Pages\Creation.razor.g.cs
 D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\obj\Debug\net5.0\Razor\Pages\Index.razor.g.cs
 D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\obj\Debug\net5.0\Razor\Pages\Login.razor.g.cs
@@ -424,3 +419,6 @@ D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\obj\Debug\net5.0\re
 D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\obj\Debug\net5.0\Assignment1.pdb
 D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\obj\Debug\net5.0\Assignment1.genruntimeconfig.cache
 D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\obj\Debug\net5.0\Assignment1.csproj.CopyComplete
+D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\obj\Debug\net5.0\Assignment1.csproj.AssemblyReference.cache
+D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\obj\Debug\net5.0\RazorDeclaration\Pages\Families.razor.g.cs
+D:\Dokumenter D\Git\DNP1_Assignments\Assignments\Assignment1\obj\Debug\net5.0\Razor\Pages\Families.razor.g.cs

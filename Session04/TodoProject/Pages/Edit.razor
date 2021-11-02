@@ -32,13 +32,13 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        todoToEdit = TodoData.Get(Id);
+        todoToEdit = await TodoData.GetAsync(Id);
     }
 
-    private void Save()
+    private async Task Save()
     {
-        TodoData.Update(todoToEdit);
-        NavMgr.NavigateTo("/ Todos");
+        await TodoData.UpdateAsync(todoToEdit);
+        NavMgr.NavigateTo("/Todos");
     }
 
 }
