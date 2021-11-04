@@ -8,19 +8,19 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\kaspe\\.nuget\\packages\\": {}
+    "C:\\Users\\Kasper\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Dokumenter D\\Git\\DNP1_Assignments\\Session03\\S3Ex02\\S3Ex02.csproj",
+      "projectUniqueName": "C:\\Users\\Kasper\\Git\\DNP1_Assignments\\Session03\\S3Ex02\\S3Ex02.csproj",
       "projectName": "S3Ex02",
-      "projectPath": "D:\\Dokumenter D\\Git\\DNP1_Assignments\\Session03\\S3Ex02\\S3Ex02.csproj",
-      "packagesPath": "C:\\Users\\kaspe\\.nuget\\packages\\",
-      "outputPath": "D:\\Dokumenter D\\Git\\DNP1_Assignments\\Session03\\S3Ex02\\obj\\",
+      "projectPath": "C:\\Users\\Kasper\\Git\\DNP1_Assignments\\Session03\\S3Ex02\\S3Ex02.csproj",
+      "packagesPath": "C:\\Users\\Kasper\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Kasper\\Git\\DNP1_Assignments\\Session03\\S3Ex02\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\kaspe\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Kasper\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -58,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

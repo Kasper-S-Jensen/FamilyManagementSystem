@@ -1,14 +1,15 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using TodosWebAPI.Models;
 
 namespace TodosWebAPI.Data
 {
     public interface ITodoData
     {
-        IList<Todo> GetTodos();
-        void AddTodo(Todo todo);
-        void RemoveTodo(int todoId);
-        void Update(Todo todo);
-        Todo Get(int id);
+        Task<IList<Todo>> GetTodosAsync();
+        Task<Todo> AddTodoAsync(Todo todo);
+        Task RemoveTodoAsync(int todoId);
+        Task<Todo> UpdateAsync(Todo todo);
+        Task<Todo> GetAsync(int id);
     }
 }
