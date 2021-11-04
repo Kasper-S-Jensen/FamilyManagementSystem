@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Dokumenter D\\Git\\DNP1_Assignments\\Session07\\TodosWebAPI\\TodosWebAPI.csproj": {}
+    "C:\\Users\\Kasper\\Git\\DNP1_Assignments\\Session07\\TodosWebAPI\\TodosWebAPI.csproj": {}
   },
   "projects": {
-    "D:\\Dokumenter D\\Git\\DNP1_Assignments\\Session07\\TodosWebAPI\\TodosWebAPI.csproj": {
+    "C:\\Users\\Kasper\\Git\\DNP1_Assignments\\Session07\\TodosWebAPI\\TodosWebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Dokumenter D\\Git\\DNP1_Assignments\\Session07\\TodosWebAPI\\TodosWebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Kasper\\Git\\DNP1_Assignments\\Session07\\TodosWebAPI\\TodosWebAPI.csproj",
         "projectName": "TodosWebAPI",
-        "projectPath": "D:\\Dokumenter D\\Git\\DNP1_Assignments\\Session07\\TodosWebAPI\\TodosWebAPI.csproj",
-        "packagesPath": "C:\\Users\\kaspe\\.nuget\\packages\\",
-        "outputPath": "D:\\Dokumenter D\\Git\\DNP1_Assignments\\Session07\\TodosWebAPI\\obj\\",
+        "projectPath": "C:\\Users\\Kasper\\Git\\DNP1_Assignments\\Session07\\TodosWebAPI\\TodosWebAPI.csproj",
+        "packagesPath": "C:\\Users\\Kasper\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kasper\\Git\\DNP1_Assignments\\Session07\\TodosWebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kaspe\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Kasper\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -38,6 +38,20 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
@@ -61,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
