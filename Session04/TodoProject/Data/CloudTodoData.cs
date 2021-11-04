@@ -20,10 +20,13 @@ namespace TodoProject.Data
             if (!responseMessage.IsSuccessStatusCode)
                 throw new Exception($"Error: {responseMessage.StatusCode}, {responseMessage.ReasonPhrase}");
             string result = await responseMessage.Content.ReadAsStringAsync();
-
-            List<Todo> todos = JsonSerializer.Deserialize<List<Todo>>(result,
-                new JsonSerializerOptions {PropertyNamingPolicy = JsonNamingPolicy.CamelCase});
-
+            Console.WriteLine(result);
+            List<Todo> todos = JsonSerializer.Deserialize<List<Todo>>(result);
+            foreach (var todo in todos)
+            {
+                Console.WriteLine(todo.TodoID);
+                Console.WriteLine(todo.Title);
+            }
             return todos;
         }
 
@@ -50,6 +53,7 @@ namespace TodoProject.Data
         {
             using HttpClient client = new HttpClient();
             string todoAsJson = JsonSerializer.Serialize(todo);
+            Console.WriteLine(todoAsJson);
             HttpContent content = new StringContent(todoAsJson,
                 Encoding.UTF8,
                 "application/json");

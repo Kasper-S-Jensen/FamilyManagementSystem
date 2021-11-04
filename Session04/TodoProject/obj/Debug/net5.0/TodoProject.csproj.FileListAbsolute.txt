@@ -232,3 +232,4 @@ D:\Dokumenter D\Git\DNP1_Assignments\Session04\TodoProject\obj\Debug\net5.0\ref\
 D:\Dokumenter D\Git\DNP1_Assignments\Session04\TodoProject\obj\Debug\net5.0\TodoProject.pdb
 D:\Dokumenter D\Git\DNP1_Assignments\Session04\TodoProject\obj\Debug\net5.0\TodoProject.genruntimeconfig.cache
 D:\Dokumenter D\Git\DNP1_Assignments\Session04\TodoProject\obj\Debug\net5.0\TodoProject.csproj.CopyComplete
+D:\Dokumenter D\Git\DNP1_Assignments\Session04\TodoProject\obj\Debug\net5.0\TodoProject.csproj.AssemblyReference.cache

@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using TodosWebAPI.DataAccess;
 using TodosWebAPI.Models;
 
-namespace TodosWebAPI.Data
+namespace TodosWebAPI.Data.Impl
 {
     public class SqliteTodoService : ITodoData
     {
@@ -21,6 +22,11 @@ namespace TodosWebAPI.Data
 
         public async Task<IList<Todo>> GetTodosAsync()
         {
+         
+            foreach (var todo in todoDbContext.Todos.ToList())
+            {
+                Console.WriteLine(todo.TodoID);
+            }
             return await todoDbContext.Todos.ToListAsync();
         }
 
@@ -53,13 +59,14 @@ namespace TodosWebAPI.Data
             }
             catch (Exception e)
             {
-                throw new Exception($"Did not find todo with id{todo.TodoID}");
+                throw new Exception($"Did not find todo with id {todo.TodoID}");
             }
         }
 
-        public Task<Todo> GetAsync(int id)
+        public async Task<Todo> GetAsync(int id)
         {
-            throw new System.NotImplementedException();
+            Todo todo = await todoDbContext.Todos.FirstOrDefaultAsync(todo1 => id == todo1.TodoID);
+            return todo;
         }
     }
 }
