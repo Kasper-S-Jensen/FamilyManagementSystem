@@ -7,17 +7,17 @@ namespace TodosWebAPI.Models
     {
         [Required]
         [Range(1, int.MaxValue, ErrorMessage = "Please enter a value bigger than {1}")]
-        [JsonPropertyName("userId")]
+        [JsonPropertyName("UserID")]
         public int UserID { get; set; }
 
-        [JsonPropertyName("id"),Key]
+        [JsonPropertyName("TodoID"),Key]
         public int TodoID { get; set; }
         
         [Required, MaxLength(128)] 
-        [JsonPropertyName("title")]
+        [JsonPropertyName("Title")]
         public string Title { get; set; }
         
-        [JsonPropertyName("completed"), Required]
+        [JsonPropertyName("IsCompleted"), Required]
         public bool IsCompleted { get; set; }
     }
 }

@@ -97,10 +97,11 @@ namespace TodosWebAPI.Controllers
         [HttpPatch("{id:int}")]
         public async Task<ActionResult<Todo>> UpdateTodo([FromBody] Todo todo)
         {
+            Console.WriteLine(todo.TodoID);
             try
             {
-               await TodoData.UpdateAsync(todo);
-                return Created($"/{todo.TodoID}", todo);
+              Todo updatedTodo = await TodoData.UpdateAsync(todo);
+                return Ok(updatedTodo);
             }
             catch (Exception e)
             {
