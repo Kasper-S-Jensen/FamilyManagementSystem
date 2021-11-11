@@ -12,12 +12,12 @@ namespace TodosWebAPI.Controllers
     [Route("[controller]")]
     public class TodosController : ControllerBase
     {
-        private ITodoData TodoData;
+        private ITodoService todoService;
         private IList<Todo> todos;
 
-        public TodosController(ITodoData todoData)
+        public TodosController(ITodoService todoService)
         {
-            TodoData = todoData;
+            this.todoService = todoService;
         }
 
         [HttpGet]
@@ -25,7 +25,7 @@ namespace TodosWebAPI.Controllers
         {
             try
             {
-                todos = await TodoData.GetTodosAsync();
+                todos = await todoService.GetTodosAsync();
                 if (IsCompleted != null)
                 {
                     todos = todos.Where(todo => todo.IsCompleted == IsCompleted).ToList();
@@ -51,7 +51,7 @@ namespace TodosWebAPI.Controllers
             {
                 Todo todo;
 
-                todo = await TodoData.GetAsync(id);
+                todo = await todoService.GetAsync(id);
             
 
                 return Ok(todo);
@@ -68,7 +68,7 @@ namespace TodosWebAPI.Controllers
         {
             try
             {
-              await  TodoData.AddTodoAsync(todo);
+              await  todoService.AddTodoAsync(todo);
                 return Created($"/{todo.TodoID}", todo);
             }
             catch (Exception e)
@@ -83,7 +83,7 @@ namespace TodosWebAPI.Controllers
         {
             try
             {
-                await TodoData.RemoveTodoAsync(id);
+                await todoService.RemoveTodoAsync(id);
                 
                 return Ok(id);
             }
@@ -100,7 +100,7 @@ namespace TodosWebAPI.Controllers
             Console.WriteLine(todo.TodoID);
             try
             {
-              Todo updatedTodo = await TodoData.UpdateAsync(todo);
+              Todo updatedTodo = await todoService.UpdateAsync(todo);
                 return Ok(updatedTodo);
             }
             catch (Exception e)

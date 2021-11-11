@@ -4,7 +4,7 @@ using TodosWebAPI.Models;
 
 namespace TodosWebAPI.Data
 {
-    public interface ITodoData
+    public interface ITodoService
     {
         Task<IList<Todo>> GetTodosAsync();
         Task<Todo> AddTodoAsync(Todo todo);

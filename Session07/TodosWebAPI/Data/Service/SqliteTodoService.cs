@@ -9,7 +9,7 @@ using TodosWebAPI.Models;
 
 namespace TodosWebAPI.Data.Impl
 {
-    public class SqliteTodoService : ITodoData
+    public class SqliteTodoService : ITodoService
     {
         private TodoDBContext todoDbContext;
         
@@ -42,7 +42,7 @@ namespace TodosWebAPI.Data.Impl
             Todo toRemove = await todoDbContext.Todos.FirstOrDefaultAsync(todo => todo.TodoID == todoId);
             if (toRemove!=null)
             {
-                todoDbContext.Remove(todoId);
+                todoDbContext.Remove(toRemove);
                await todoDbContext.SaveChangesAsync();
             }
         }

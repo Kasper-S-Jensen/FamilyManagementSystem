@@ -1,18 +1,19 @@
-﻿/*using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using System.Threading.Tasks;
 using TodosWebAPI.Models;
 
 namespace TodosWebAPI.Data
 {
-    public class TodoJSONData : ITodoData
+    public class TodoJsonService : ITodoService
     {
         private string todoFile = "todos.json";
         private IList<Todo> todos;
 
 
-        public TodoJSONData()
+        public TodoJsonService()
         {
             if (!File.Exists(todoFile))
             {
@@ -81,5 +82,30 @@ namespace TodosWebAPI.Data
 
             todos = ts.ToList();
         }
+
+        public Task<IList<Todo>> GetTodosAsync()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task<Todo> AddTodoAsync(Todo todo)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task RemoveTodoAsync(int todoId)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task<Todo> UpdateAsync(Todo todo)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task<Todo> GetAsync(int id)
+        {
+            throw new System.NotImplementedException();
+        }
     }
-}*/
+}
