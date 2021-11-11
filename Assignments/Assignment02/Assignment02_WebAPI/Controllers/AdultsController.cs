@@ -14,11 +14,11 @@ namespace Assignment02_WebAPI.Controllers
     public class AdultsController : ControllerBase
     {
         private IList<Adult> adults;
-        private IFamilyData adultData;
+        private IFamilyService adultService;
 
-        public AdultsController(IFamilyData adultData)
+        public AdultsController(IFamilyService adultService)
         {
-            this.adultData = adultData;
+            this.adultService = adultService;
         }
         
         // GET: Adults
@@ -27,7 +27,7 @@ namespace Assignment02_WebAPI.Controllers
         {
             try
             {
-                adults = adultData.GetAdults();
+                adults = await adultService.GetAdultsAsync();
                 if (lastname != null)
                 {
                     adults = adults.Where(a => a.LastName == lastname).ToList();
@@ -49,7 +49,7 @@ namespace Assignment02_WebAPI.Controllers
         {
             try
             {
-                adultData.AddAdult(family);
+               await adultService.AddAdultAsync(family);
                 return Created($"/{family.Adults[0].FirstName}", family);
             }
             catch (Exception e)
@@ -65,7 +65,7 @@ namespace Assignment02_WebAPI.Controllers
         {
             try
             {
-                adultData.RemoveAdult(id);
+              await  adultService.RemoveAdultAsync(id);
                 
                 return Ok(id);
             }

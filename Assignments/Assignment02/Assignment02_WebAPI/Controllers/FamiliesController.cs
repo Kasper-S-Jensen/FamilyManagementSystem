@@ -14,15 +14,15 @@ namespace Assignment02_WebAPI.Controllers
     [ApiController]
     public class FamiliesController : ControllerBase
     {
-        private IFamilyData familyData;
+        private IFamilyService familyService;
 
         private IList<Family> families;
      
         private IList<Child> children;
 
-        public FamiliesController(IFamilyData familyData)
+        public FamiliesController(IFamilyService familyService)
         {
-            this.familyData = familyData;
+            this.familyService = familyService;
         }
 
         // GET: Families
@@ -32,7 +32,7 @@ namespace Assignment02_WebAPI.Controllers
         {
             try
             {
-                families = familyData.GetFamilies();
+                families = await familyService.GetFamiliesAsync();
                 if (streetName != null)
                 {
                     families = families.Where(f => f.StreetName == streetName).ToList();
@@ -61,7 +61,7 @@ namespace Assignment02_WebAPI.Controllers
             try
             {
               
-                familyData.AddFamily(family);
+               await  familyService.AddFamilyAsync(family);
                 return Created($"/{family.StreetName}", family);
             }
             catch (Exception e)
@@ -79,7 +79,7 @@ namespace Assignment02_WebAPI.Controllers
         {
             try
             {
-                familyData.Update(family);
+               await familyService.UpdateAsync(family);
                 return Created($"/{family.StreetName}/{family.HouseNumber}", family);
             }
             catch (Exception e)
@@ -96,7 +96,7 @@ namespace Assignment02_WebAPI.Controllers
         {
             try
             {
-                familyData.RemoveFamily(streetName,houseNumber);
+               await familyService.RemoveFamilyAsync(streetName,houseNumber);
                 
                 return Ok();
             }

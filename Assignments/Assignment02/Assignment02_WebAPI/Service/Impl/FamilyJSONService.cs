@@ -1,19 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Assignment02_WebAPI.Models;
 using Assignment02_WebAPI.Persistence;
 
 namespace Assignment02_WebAPI.Data.Impl
 {
-    public class FamilyJSONData : IFamilyData
+    public class FamilyJsonService : IFamilyService
     {
          private FileContext familyFile;
         IList<Adult> adults = new List<Adult>();
         IList<Family> families = new List<Family>();
         IList<Child> children = new List<Child>();
 
-        public FamilyJSONData(FileContext familyFile)
+        public FamilyJsonService(FileContext familyFile)
         {
             this.familyFile = familyFile;
         }
@@ -172,6 +173,60 @@ namespace Assignment02_WebAPI.Data.Impl
             }
             throw new Exception("No such family exists");
         }
-        
+
+        public Task<IList<Adult>> GetAdultsAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IList<Family>> GetFamiliesAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IList<Child>> GetChildrenAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task AddFamilyAsync(Family family)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task AddAdultAsync(Family family)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task RemoveAdultAsync(int ID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task RemoveFamilyAsync(string streetName, int houseNumber)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task UpdateAsync(Adult adult)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task UpdateAsync(Family family)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Adult> GetAdultAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Family> GetFamilyAsync(string streetName, int houseNumber)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

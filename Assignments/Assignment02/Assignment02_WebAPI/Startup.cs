@@ -35,7 +35,7 @@ namespace Assignment02_WebAPI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "Assignment02_WebAPI", Version = "v1"});
             });
-            services.AddScoped<IFamilyData,FamilyJSONData>();
+            services.AddScoped<IFamilyService,FamilyJsonService>();
             services.AddScoped<FileContext>();
             services.AddScoped<IUserService, InMemoryUserService>();
            
