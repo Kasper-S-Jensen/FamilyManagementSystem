@@ -53,6 +53,7 @@ namespace TodosWebAPI.Data.Impl
             {
                 Todo toUpdate = await todoDbContext.Todos.FirstAsync(t => t.TodoID == todo.TodoID);
                 toUpdate.IsCompleted = todo.IsCompleted;
+                toUpdate.Title = todo.Title;
                 todoDbContext.Update(toUpdate);
                 await todoDbContext.SaveChangesAsync();
                 return toUpdate;
