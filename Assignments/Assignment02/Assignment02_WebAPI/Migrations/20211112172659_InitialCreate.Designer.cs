@@ -9,14 +9,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Assignment02_WebAPI.Migrations
 {
     [DbContext(typeof(FamilyDBContext))]
-    [Migration("20211111201311_InitialCreate")]
+    [Migration("20211112172659_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "5.0.11");
+                .HasAnnotation("ProductVersion", "5.0.12");
 
             modelBuilder.Entity("Assignment02_WebAPI.Models.Family", b =>
                 {
@@ -52,13 +52,13 @@ namespace Assignment02_WebAPI.Migrations
 
             modelBuilder.Entity("Assignment02_WebAPI.Models.Job", b =>
                 {
-                    b.Property<string>("JobTitle")
-                        .HasColumnType("TEXT");
-
                     b.Property<int>("Salary")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("JobTitle");
+                    b.Property<string>("JobTitle")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Salary", "JobTitle");
 
                     b.ToTable("Jobs");
                 });
@@ -181,12 +181,15 @@ namespace Assignment02_WebAPI.Migrations
                         .HasColumnType("INTEGER")
                         .HasColumnName("Adult_FamilyId");
 
-                    b.Property<string>("JobTitle1")
+                    b.Property<int?>("JobSalary")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("JobTitle")
                         .HasColumnType("TEXT");
 
                     b.HasIndex("FamilyId");
 
-                    b.HasIndex("JobTitle1");
+                    b.HasIndex("JobSalary", "JobTitle");
 
                     b.HasDiscriminator().HasValue("Adult");
                 });
@@ -235,11 +238,11 @@ namespace Assignment02_WebAPI.Migrations
                         .WithMany("Adults")
                         .HasForeignKey("FamilyId");
 
-                    b.HasOne("Assignment02_WebAPI.Models.Job", "JobTitle")
+                    b.HasOne("Assignment02_WebAPI.Models.Job", "Job")
                         .WithMany()
-                        .HasForeignKey("JobTitle1");
+                        .HasForeignKey("JobSalary", "JobTitle");
 
-                    b.Navigation("JobTitle");
+                    b.Navigation("Job");
                 });
 
             modelBuilder.Entity("Assignment02_WebAPI.Models.Child", b =>

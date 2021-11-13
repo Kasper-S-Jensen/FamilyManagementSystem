@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Dokumenter D\\Git\\DNP1_Assignments\\Assignments\\Assignment02\\Assignment02_WebAPI\\Assignment02_WebAPI.csproj": {}
+    "C:\\Users\\Kasper\\Git\\DNP1_Assignments\\Assignments\\Assignment02\\Assignment02_WebAPI\\Assignment02_WebAPI.csproj": {}
   },
   "projects": {
-    "D:\\Dokumenter D\\Git\\DNP1_Assignments\\Assignments\\Assignment02\\Assignment02_WebAPI\\Assignment02_WebAPI.csproj": {
+    "C:\\Users\\Kasper\\Git\\DNP1_Assignments\\Assignments\\Assignment02\\Assignment02_WebAPI\\Assignment02_WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Dokumenter D\\Git\\DNP1_Assignments\\Assignments\\Assignment02\\Assignment02_WebAPI\\Assignment02_WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Kasper\\Git\\DNP1_Assignments\\Assignments\\Assignment02\\Assignment02_WebAPI\\Assignment02_WebAPI.csproj",
         "projectName": "Assignment02_WebAPI",
-        "projectPath": "D:\\Dokumenter D\\Git\\DNP1_Assignments\\Assignments\\Assignment02\\Assignment02_WebAPI\\Assignment02_WebAPI.csproj",
-        "packagesPath": "C:\\Users\\kaspe\\.nuget\\packages\\",
-        "outputPath": "D:\\Dokumenter D\\Git\\DNP1_Assignments\\Assignments\\Assignment02\\Assignment02_WebAPI\\obj\\",
+        "projectPath": "C:\\Users\\Kasper\\Git\\DNP1_Assignments\\Assignments\\Assignment02\\Assignment02_WebAPI\\Assignment02_WebAPI.csproj",
+        "packagesPath": "C:\\Users\\Kasper\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kasper\\Git\\DNP1_Assignments\\Assignments\\Assignment02\\Assignment02_WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kaspe\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Kasper\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -40,17 +40,17 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[5.0.11, )"
+              "version": "[5.0.12, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.11, )"
+              "version": "[5.0.12, )"
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
-              "version": "[5.0.11, )"
+              "version": "[5.0.12, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
@@ -79,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

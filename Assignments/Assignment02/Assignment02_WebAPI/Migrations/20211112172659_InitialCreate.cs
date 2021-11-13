@@ -41,7 +41,7 @@ namespace Assignment02_WebAPI.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Jobs", x => x.JobTitle);
+                    table.PrimaryKey("PK_Jobs", x => new { x.Salary, x.JobTitle });
                 });
 
             migrationBuilder.CreateTable(
@@ -72,7 +72,8 @@ namespace Assignment02_WebAPI.Migrations
                     Height = table.Column<int>(type: "INTEGER", nullable: false),
                     Sex = table.Column<string>(type: "TEXT", nullable: false),
                     Discriminator = table.Column<string>(type: "TEXT", nullable: false),
-                    JobTitle1 = table.Column<string>(type: "TEXT", nullable: true),
+                    JobSalary = table.Column<int>(type: "INTEGER", nullable: true),
+                    JobTitle = table.Column<string>(type: "TEXT", nullable: true),
                     Adult_FamilyId = table.Column<int>(type: "INTEGER", nullable: true),
                     FamilyId = table.Column<int>(type: "INTEGER", nullable: true)
                 },
@@ -92,10 +93,10 @@ namespace Assignment02_WebAPI.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Persons_Jobs_JobTitle1",
-                        column: x => x.JobTitle1,
+                        name: "FK_Persons_Jobs_JobSalary_JobTitle",
+                        columns: x => new { x.JobSalary, x.JobTitle },
                         principalTable: "Jobs",
-                        principalColumn: "JobTitle",
+                        principalColumns: new[] { "Salary", "JobTitle" },
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -168,9 +169,9 @@ namespace Assignment02_WebAPI.Migrations
                 column: "FamilyId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Persons_JobTitle1",
+                name: "IX_Persons_JobSalary_JobTitle",
                 table: "Persons",
-                column: "JobTitle1");
+                columns: new[] { "JobSalary", "JobTitle" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Pets_ChildId",

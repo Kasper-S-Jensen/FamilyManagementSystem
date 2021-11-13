@@ -14,6 +14,12 @@ namespace Assignment02_WebAPI.Persistence
         private DbSet<Person> Persons { get; set; }
         private DbSet<User> Users { get; set; }
         
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Job>()
+                .HasKey(j => new { j.Salary, j.JobTitle });
+        }
+        
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) 
         {
             // name of database
