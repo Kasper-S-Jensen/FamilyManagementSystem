@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Assignment02_WebAPI.Data;
 using Assignment02_WebAPI.Data.Impl;
 using Assignment02_WebAPI.Persistence;
+using Assignment02_WebAPI.Repository;
+using Assignment02_WebAPI.Repository.Impl;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Hosting;
@@ -35,8 +37,9 @@ namespace Assignment02_WebAPI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "Assignment02_WebAPI", Version = "v1"});
             });
-            services.AddScoped<IFamilyService,FamilyJsonService>();
-            services.AddScoped<FileContext>();
+            services.AddScoped<IFamilyService,FamilyEFCService>();
+            services.AddScoped<FamilyDBContext>();
+            services.AddScoped<IFamilyRepository, FamilyRepositoryImpl>();
             services.AddScoped<IUserService, InMemoryUserService>();
            
         }

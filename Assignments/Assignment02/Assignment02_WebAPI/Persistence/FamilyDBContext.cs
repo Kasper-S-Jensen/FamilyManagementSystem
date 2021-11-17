@@ -5,14 +5,14 @@ namespace Assignment02_WebAPI.Persistence
 {
     public class FamilyDBContext : DbContext
     {
-        private DbSet<Adult> Adults { get; set; }
-        private DbSet<Child> Children { get; set; }
-        private DbSet<Family> Families { get; set; }
-        private DbSet<Interest> Interests { get; set; }
-        private DbSet<Job> Jobs { get; set; }
-        private DbSet<Pet> Pets { get; set; }
-        private DbSet<Person> Persons { get; set; }
-        private DbSet<User> Users { get; set; }
+        public DbSet<Adult> Adults { get; set; }
+        public DbSet<Child> Children { get; set; }
+        public DbSet<Family> Families { get; set; }
+        public DbSet<Interest> Interests { get; set; }
+        public DbSet<Job> Jobs { get; set; }
+        public DbSet<Pet> Pets { get; set; }
+        public DbSet<Person> Persons { get; set; }
+        public DbSet<User> Users { get; set; }
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

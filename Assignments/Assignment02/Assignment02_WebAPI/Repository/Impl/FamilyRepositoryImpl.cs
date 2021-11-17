@@ -1,6 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Assignment02_WebAPI.Models;
+using Assignment02_WebAPI.Persistence;
+using Microsoft.EntityFrameworkCore;
 
 namespace Assignment02_WebAPI.Repository.Impl
 {
@@ -11,9 +14,16 @@ namespace Assignment02_WebAPI.Repository.Impl
             throw new System.NotImplementedException();
         }
 
-        public Task<IList<Family>> GetFamiliesAsync()
+        public async Task<IList<Family>> GetFamiliesAsync()
         {
-            throw new System.NotImplementedException();
+            using (FamilyDBContext context = new FamilyDBContext())
+            {
+                IList<Family> families = await context.Families.Include(family => family.Adults)
+                    .ThenInclude(adult => adult.Job).Include(family => family.Children)
+                    .ThenInclude(child => child.Interests).Include(family => family.Children)
+                    .ThenInclude(child => child.Pets).Include(family => family.Pets).ToListAsync();
+                return families;
+            }
         }
 
         public Task<IList<Child>> GetChildrenAsync()
@@ -21,9 +31,22 @@ namespace Assignment02_WebAPI.Repository.Impl
             throw new System.NotImplementedException();
         }
 
-        public Task AddFamilyAsync(Family family)
+        public async Task AddFamilyAsync(Family family)
         {
-            throw new System.NotImplementedException();
+            using (FamilyDBContext context = new FamilyDBContext())
+            {
+                foreach (var existingFamily in context.Families)
+                {
+                    if (existingFamily.StreetName.Equals(family.StreetName) &&
+                        existingFamily.HouseNumber == family.HouseNumber)
+                    {
+                        throw new Exception("Family already exists");
+                    }
+                }
+
+                await context.Families.AddAsync(family);
+                await context.SaveChangesAsync();
+            }
         }
 
         public Task AddAdultAsync(Family family)

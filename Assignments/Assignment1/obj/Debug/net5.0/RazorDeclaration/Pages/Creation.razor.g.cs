@@ -152,8 +152,6 @@ using Microsoft.AspNetCore.Components;
                 max = adult.Id;
             }
         }
-       
-        
         newAdult.Id = (++max);
         newAdult.JobTitle = newJob;
 

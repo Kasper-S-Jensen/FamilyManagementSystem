@@ -74,8 +74,6 @@ namespace Assignment02_WebAPI.Data.Impl
             }
             familyFile.Families.Add(family);
             familyFile.SaveChanges();
-           
-           
         }
 
         public void AddAdult(Family family)

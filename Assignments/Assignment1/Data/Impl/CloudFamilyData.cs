@@ -18,6 +18,7 @@ namespace Assignment1.Data.Impl
             HttpResponseMessage responseMessage = await client.GetAsync($"{path}/Adults");
 
             if (!responseMessage.IsSuccessStatusCode)
+                
                 throw new Exception($"Error: {responseMessage.StatusCode}, {responseMessage.ReasonPhrase}");
             string result = await responseMessage.Content.ReadAsStringAsync();
 
@@ -55,7 +56,12 @@ namespace Assignment1.Data.Impl
             HttpResponseMessage response =
                 await client.PostAsync($"{path}/Families", content);
             if (!response.IsSuccessStatusCode)
-                throw new Exception($"Error: {response.StatusCode}, {response.ReasonPhrase}");
+            {
+                var errResponse = await response.Content.ReadAsStringAsync();
+                Console.WriteLine(errResponse);
+                throw new Exception(errResponse);
+                
+            }
         }
 
         public async Task AddAdultAsync(Family family)
