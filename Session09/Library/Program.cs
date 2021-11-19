@@ -110,7 +110,7 @@ namespace Library
                 {
                    Shelf = shelf,
                     Title = "The Shining",
-                    ISBN = 0450040186,
+                    ISBN = 0450040186,  
                     PublishDate = new DateTime(1980, 1, 28),
                     TotalPages = 659
                 };

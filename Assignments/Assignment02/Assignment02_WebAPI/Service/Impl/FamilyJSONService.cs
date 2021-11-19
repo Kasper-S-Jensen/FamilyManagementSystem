@@ -79,7 +79,6 @@ namespace Assignment02_WebAPI.Data.Impl
         public void AddAdult(Family family)
         {
            
-
             Adult toAdd= new Adult();
             foreach (var adult in family.Adults)
             {

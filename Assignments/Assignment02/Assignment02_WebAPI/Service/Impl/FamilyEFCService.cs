@@ -16,16 +16,12 @@ namespace Assignment02_WebAPI.Data.Impl
 
         public async Task<IList<Adult>> GetAdultsAsync()
         {
-            IList<Adult> adults;
-            adults = await repository.GetAdultsAsync();
-            return adults;
+            return await repository.GetAdultsAsync();
         }
 
         public async Task<IList<Family>> GetFamiliesAsync()
         {
-            IList<Family> families;
-            families = await repository.GetFamiliesAsync();
-            return families;
+            return await repository.GetFamiliesAsync();
         }
 
         public Task<IList<Child>> GetChildrenAsync()
@@ -65,12 +61,12 @@ namespace Assignment02_WebAPI.Data.Impl
 
         public Task<Adult> GetAdultAsync(int id)
         {
-            throw new System.NotImplementedException();
+            return repository.GetAdultAsync(id);
         }
 
         public Task<Family> GetFamilyAsync(string streetName, int houseNumber)
         {
-            throw new System.NotImplementedException();
+           return repository.GetFamilyAsync(streetName, houseNumber);
         }
     }
 }
