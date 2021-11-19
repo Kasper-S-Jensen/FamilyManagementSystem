@@ -1,4 +1,3 @@
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +16,7 @@ namespace Assignment02_WebAPI.Controllers
         private IFamilyService familyService;
 
         private IList<Family> families;
-     
+
         private IList<Child> children;
 
         public FamiliesController(IFamilyService familyService)
@@ -51,8 +50,7 @@ namespace Assignment02_WebAPI.Controllers
                 return StatusCode(500, e.Message);
             }
         }
-     
-        
+
 
         // POST: Families
         [HttpPost]
@@ -60,26 +58,24 @@ namespace Assignment02_WebAPI.Controllers
         {
             try
             {
-              
-               await  familyService.AddFamilyAsync(family);
+                await familyService.AddFamilyAsync(family);
                 return Created($"/{family.StreetName}", family);
             }
             catch (Exception e)
             {
-               // Console.WriteLine(e);
+                // Console.WriteLine(e);
                 return StatusCode(500, e.Message);
             }
         }
 
-      
 
         // PUT: Families/5
         [HttpPut("{streetName}/{houseNumber:int}")]
-        public async Task<ActionResult<Family>> UpdateFamily( [FromBody] Family family)
+        public async Task<ActionResult<Family>> UpdateFamily([FromBody] Family family)
         {
             try
             {
-               await familyService.UpdateAsync(family);
+                await familyService.UpdateAsync(family);
                 return Created($"/{family.StreetName}/{family.HouseNumber}", family);
             }
             catch (Exception e)
@@ -87,17 +83,16 @@ namespace Assignment02_WebAPI.Controllers
                 Console.WriteLine(e);
                 throw;
             }
-            
         }
 
         // DELETE: Families/5
         [HttpDelete("{streetName}/{houseNumber:int}")]
-        public async Task<ActionResult<Family>>  RemoveFamily([FromRoute]string streetName,[FromRoute] int houseNumber)
+        public async Task<ActionResult<Family>> RemoveFamily([FromRoute] string streetName, [FromRoute] int houseNumber)
         {
             try
             {
-               await familyService.RemoveFamilyAsync(streetName,houseNumber);
-                
+                await familyService.RemoveFamilyAsync(streetName, houseNumber);
+
                 return Ok();
             }
             catch (Exception e)
@@ -106,7 +101,5 @@ namespace Assignment02_WebAPI.Controllers
                 return StatusCode(500, e.Message);
             }
         }
-
-      
     }
 }
