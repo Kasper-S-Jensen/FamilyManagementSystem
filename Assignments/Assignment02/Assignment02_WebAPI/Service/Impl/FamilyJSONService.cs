@@ -7,7 +7,7 @@ using Assignment02_WebAPI.Persistence;
 
 namespace Assignment02_WebAPI.Data.Impl
 {
-    public class FamilyJsonService : IFamilyService
+    public class FamilyJsonService 
     {
          private FileContext familyFile;
         IList<Adult> adults = new List<Adult>();

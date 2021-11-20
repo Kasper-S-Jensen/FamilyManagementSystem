@@ -19,7 +19,7 @@ namespace Assignment02_WebAPI.Data.Impl
             return await repository.GetAdultsAsync();
         }
 
-        public async Task<IList<Family>> GetFamiliesAsync()
+        public async Task<IEnumerable<Family>> GetFamiliesAsync()
         {
             return await repository.GetFamiliesAsync();
         }

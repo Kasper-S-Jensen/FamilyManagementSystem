@@ -82,8 +82,8 @@ else
                                 <td>@adult.FirstName</td>
                                 <td>@adult.LastName</td>
                                 <td>@adult.Age</td>
-                                <td>@adult.JobTitle.JobTitle</td>
-                                <td>@adult.JobTitle.Salary</td>
+                                 <td>@adult.Job.JobTitle</td> 
+                                 <td>@adult.Job.Salary</td> 
                                 <AuthorizeView Policy="SecurityLevel5">
                                     <td>
                                         <button @onclick="@(() => RemoveAdult(adult.Id))" class="btn btn-light">

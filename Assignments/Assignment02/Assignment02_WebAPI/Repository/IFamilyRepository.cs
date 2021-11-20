@@ -7,7 +7,7 @@ namespace Assignment02_WebAPI.Repository
     public interface IFamilyRepository
     {
         Task<IList<Adult>> GetAdultsAsync();
-        Task<IList<Family>> GetFamiliesAsync();
+        Task<IEnumerable<Family>> GetFamiliesAsync();
         Task<IList<Child>> GetChildrenAsync();
         Task AddFamilyAsync(Family family);
         Task AddAdultAsync(Family family);

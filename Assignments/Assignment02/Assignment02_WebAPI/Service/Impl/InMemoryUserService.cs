@@ -5,7 +5,7 @@ using Assignment02_WebAPI.Models;
 
 namespace Assignment02_WebAPI.Data.Impl
 {
-    public class InMemoryUserService : IUserService
+    public class InMemoryUserService
     {
         private List<User> users;
         public InMemoryUserService()

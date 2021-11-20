@@ -29,7 +29,7 @@ namespace Assignment02_WebAPI.Controllers
             {
                 User user;
                 
-                user= userService.ValidateUser(username, password);
+                user= await userService.ValidateUserAsync(username, password);
              
                 return Ok(user);
             }

@@ -7,7 +7,7 @@ namespace Assignment02_WebAPI.Data
     public interface IFamilyService
     {
         Task<IList<Adult>> GetAdultsAsync();
-        Task<IList<Family>> GetFamiliesAsync();
+        Task<IEnumerable<Family>> GetFamiliesAsync();
         Task<IList<Child>> GetChildrenAsync();
         Task AddFamilyAsync(Family family);
         Task AddAdultAsync(Family family);

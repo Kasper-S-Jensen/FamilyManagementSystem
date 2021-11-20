@@ -16,7 +16,12 @@ namespace Assignment1.Data.Impl
 
             Console.WriteLine("repons" +responseMessage);
             if (!responseMessage.IsSuccessStatusCode)
-                throw new Exception($"Error: {responseMessage.StatusCode}, {responseMessage.ReasonPhrase}");
+            {
+                var errResponse = await responseMessage.Content.ReadAsStringAsync();
+                Console.WriteLine(errResponse);
+                throw new Exception(errResponse);
+            }
+
             string result = await responseMessage.Content.ReadAsStringAsync();
             
             Console.WriteLine("result: "+result);

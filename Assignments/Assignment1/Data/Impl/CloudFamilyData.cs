@@ -18,8 +18,12 @@ namespace Assignment1.Data.Impl
             HttpResponseMessage responseMessage = await client.GetAsync($"{path}/Adults");
 
             if (!responseMessage.IsSuccessStatusCode)
+            {
+                var errResponse = await responseMessage.Content.ReadAsStringAsync();
+                Console.WriteLine(errResponse);
+                throw new Exception(errResponse);
                 
-                throw new Exception($"Error: {responseMessage.StatusCode}, {responseMessage.ReasonPhrase}");
+            }
             string result = await responseMessage.Content.ReadAsStringAsync();
 
             List<Adult> adults = JsonSerializer.Deserialize<List<Adult>>(result,
@@ -34,10 +38,15 @@ namespace Assignment1.Data.Impl
             HttpResponseMessage responseMessage = await client.GetAsync($"{path}/Families");
 
             if (!responseMessage.IsSuccessStatusCode)
-                throw new Exception($"Error: {responseMessage.StatusCode}, {responseMessage.ReasonPhrase}");
+            {
+                var errResponse = await responseMessage.Content.ReadAsStringAsync();
+                Console.WriteLine(errResponse);
+                throw new Exception(errResponse);
+                
+            }
             string result = await responseMessage.Content.ReadAsStringAsync();
 
-            List<Family> families = JsonSerializer.Deserialize<List<Family>>(result,
+            IList<Family> families = JsonSerializer.Deserialize<List<Family>>(result,
                 new JsonSerializerOptions {PropertyNamingPolicy = JsonNamingPolicy.CamelCase});
 
             return families;
@@ -72,7 +81,12 @@ namespace Assignment1.Data.Impl
             HttpResponseMessage response =
                 await client.PostAsync($"{path}/Adults", content);
             if (!response.IsSuccessStatusCode)
-                throw new Exception($"Error: {response.StatusCode}, {response.ReasonPhrase}");
+            {
+                var errResponse = await response.Content.ReadAsStringAsync();
+                Console.WriteLine(errResponse);
+                throw new Exception(errResponse);
+                
+            }
         }
 
         public async Task RemoveAdultAsync(int ID)
@@ -80,7 +94,12 @@ namespace Assignment1.Data.Impl
             using HttpClient client = new HttpClient();
             HttpResponseMessage response = await client.DeleteAsync($"{path}/Adults/{ID}");
             if (!response.IsSuccessStatusCode)
-                throw new Exception($"Error: {response.StatusCode}, {response.ReasonPhrase}");
+            {
+                var errResponse = await response.Content.ReadAsStringAsync();
+                Console.WriteLine(errResponse);
+                throw new Exception(errResponse);
+                
+            }
         }
 
         public async Task RemoveFamilyAsync(string streetName, int houseNumber)
@@ -88,7 +107,12 @@ namespace Assignment1.Data.Impl
             using HttpClient client = new HttpClient();
             HttpResponseMessage response = await client.DeleteAsync($"{path}/Families/{streetName}/{houseNumber}");
             if (!response.IsSuccessStatusCode)
-                throw new Exception($"Error: {response.StatusCode}, {response.ReasonPhrase}");
+            {
+                var errResponse = await response.Content.ReadAsStringAsync();
+                Console.WriteLine(errResponse);
+                throw new Exception(errResponse);
+                
+            }
         }
 
         public async Task UpdateAsync(Adult adult)
@@ -112,7 +136,12 @@ namespace Assignment1.Data.Impl
             HttpResponseMessage responseMessage = await client.GetAsync($"{path}/Families/{streetName}{houseNumber}");
 
             if (!responseMessage.IsSuccessStatusCode)
-                throw new Exception($"Error: {responseMessage.StatusCode}, {responseMessage.ReasonPhrase}");
+            {
+                var errResponse = await responseMessage.Content.ReadAsStringAsync();
+                Console.WriteLine(errResponse);
+                throw new Exception(errResponse);
+                
+            }
             string result = await responseMessage.Content.ReadAsStringAsync();
 
             Family family = JsonSerializer.Deserialize<Family>(result,

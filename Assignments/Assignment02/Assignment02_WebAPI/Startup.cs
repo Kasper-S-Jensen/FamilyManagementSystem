@@ -7,6 +7,7 @@ using Assignment02_WebAPI.Data.Impl;
 using Assignment02_WebAPI.Persistence;
 using Assignment02_WebAPI.Repository;
 using Assignment02_WebAPI.Repository.Impl;
+using Assignment02_WebAPI.Service.Impl;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Hosting;
@@ -40,7 +41,8 @@ namespace Assignment02_WebAPI
             services.AddScoped<IFamilyService,FamilyEFCService>();
             services.AddScoped<FamilyDBContext>();
             services.AddScoped<IFamilyRepository, FamilyRepositoryImpl>();
-            services.AddScoped<IUserService, InMemoryUserService>();
+            services.AddScoped<IUserRepository, UserRepositoryImpl>();
+            services.AddScoped<IUserService, EFCUserService>();
            
         }
 

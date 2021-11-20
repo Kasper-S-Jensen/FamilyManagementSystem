@@ -153,9 +153,9 @@ using Microsoft.AspNetCore.Components;
             }
         }
         newAdult.Id = (++max);
-        newAdult.JobTitle = newJob;
+        newAdult.Job = newJob;
 
-        newAdult.JobTitle = newJob;
+        newAdult.Job = newJob;
         chosenFamily.Adults.Add(newAdult);
         
         try

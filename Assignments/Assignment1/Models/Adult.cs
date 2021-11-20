@@ -2,6 +2,6 @@ using Assignment1.Models;
 
 namespace Assignment1.Models {
 public class Adult : Person {
-    public Job JobTitle { get; set; }
+    public Job Job { get; set; }
 }
 }

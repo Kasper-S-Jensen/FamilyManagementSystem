@@ -22,10 +22,11 @@ namespace Assignment02_WebAPI.Repository.Impl
             }
         }
 
-        public async Task<IList<Family>> GetFamiliesAsync()
+        public async Task<IEnumerable<Family>> GetFamiliesAsync()
         {
             using (FamilyDBContext context = new FamilyDBContext())
             {
+               
                 IList<Family> families = await context.Families.Include(family => family.Adults)
                     .ThenInclude(adult => adult.Job).Include(family => family.Children)
                     .ThenInclude(child => child.Interests).Include(family => family.Children)
@@ -65,24 +66,18 @@ namespace Assignment02_WebAPI.Repository.Impl
                 toAdd = adult;
             }
 
+            Console.WriteLine(toAdd.Job.Salary + " now title "+toAdd.Job.JobTitle);
             using (FamilyDBContext context = new FamilyDBContext())
             {
-                
-                
                 Family chosenFamily = await GetFamilyAsync(family.StreetName, family.HouseNumber);
                 if (chosenFamily.Adults.Count == 2)
                 {
                     throw new Exception("Family already has max number of adults");
                 }
-                
-                foreach (var excistingFamily in context.Families)
-                {
-                    if (excistingFamily.StreetName.Equals(family.StreetName) &&
-                        excistingFamily.HouseNumber == family.HouseNumber)
-                    {
-                        excistingFamily.Adults.Add(toAdd);
-                    }
-                }
+
+                Family existingFamily = await context.Families.FirstOrDefaultAsync(family1 =>
+                    family1.HouseNumber == family.HouseNumber && family1.StreetName.Equals(family.StreetName));
+                existingFamily.Adults.Add(toAdd);
                 
                 await context.Adults.AddAsync(toAdd);
                 await context.SaveChangesAsync();

@@ -15,7 +15,7 @@ namespace Assignment02_WebAPI.Controllers
     {
         private IFamilyService familyService;
 
-        private IList<Family> families;
+        private IEnumerable<Family> families;
 
         private IList<Child> children;
 
@@ -26,7 +26,7 @@ namespace Assignment02_WebAPI.Controllers
 
         // GET: Families
         [HttpGet]
-        public async Task<ActionResult<IList<Family>>> GetFamilies([FromQuery] string? streetName,
+        public async Task<ActionResult<IEnumerable<Family>>> GetFamilies([FromQuery] string? streetName,
             [FromQuery] int? houseNumber)
         {
             try
