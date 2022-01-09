@@ -1,4 +1,8 @@
-# DNP1_Sessions
+# Family management system
+
+An assignment from my .NET programming class.
+A site that lets you manage a family, in the sense of adults, children, pets etc.
+
+Uses Blazor-server as front end, REST(full)API and EnityFrameworkCore for creating SQLite database.
 
 
-Work from all my sessions of DNP1 3rd Semester at VIA University College
