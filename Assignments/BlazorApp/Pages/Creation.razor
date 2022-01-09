@@ -1,0 +1,156 @@
+﻿@page "/Creation"
+@using BlazorApp.Data
+@using BlazorApp.Models
+@using Microsoft.AspNetCore.Components
+@inject IFamilyData familyData
+@inject NavigationManager NavigationManager
+
+<h1>The power of creation</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <h3>Add new family</h3>
+            <EditForm Model="@newFamily" OnValidSubmit="@AddNewFamily">
+                <DataAnnotationsValidator/>
+                <ValidationSummary/>
+                <div class="form-group">
+                    Streetname:<br/>
+                    <InputTextArea rows="1" @bind-Value="newFamily.StreetName"/>
+                </div>
+                <div class="form-group">
+                    House number:<br/>
+                    <InputNumber rows="1" @bind-Value="newFamily.HouseNumber"/>
+                </div>
+                <p class="actions">
+                    <button class="btn btn-outline-dark btn-primary" type="submit">Create</button>
+                </p>
+                <div style="color:red">@errorMsg</div>
+
+            </EditForm>
+        </div>
+        <div class="col-sm-6 justify-content-center">
+            <h3>Add new adult to family</h3>
+
+
+            <EditForm Model="@newAdult" OnValidSubmit="@AddNewAdult">
+                <DataAnnotationsValidator/>
+                <ValidationSummary/>
+                <p class="font-weight-bold">Adult information</p>
+                <div class="form-group">
+                    Firstname:<br/>
+                    <InputTextArea rows="1" @bind-Value="newAdult.FirstName"/>
+                </div>
+                <div class="form-group">
+                    Lastname:<br/>
+                    <InputTextArea rows="1" @bind-Value="newAdult.LastName"/>
+                </div>
+                <div class="form-group">
+                    Haircolor:<br/>
+                    <InputTextArea rows="1" @bind-Value="newAdult.HairColor"/>
+                </div>
+                <div class="form-group">
+                    Eyecolor:<br/>
+                    <InputTextArea rows="1" @bind-Value="newAdult.EyeColor"/>
+                </div>
+                <div class="form-group">
+                    Age:<br/>
+                    <InputNumber rows="1" @bind-Value="newAdult.Age"/>
+                </div>
+                <div class="form-group">
+                    Weight:<br/>
+                    <InputNumber rows="1" @bind-Value="newAdult.Weight"/>
+                </div>
+                <div class="form-group">
+                    Height:<br/>
+                    <InputNumber rows="1" @bind-Value="newAdult.Height"/>
+                </div>
+                <div class="form-group">
+                    Sex:<br/>
+                    <InputTextArea rows="1" @bind-Value="newAdult.Sex"/>
+                </div>
+                <p class="font-weight-bold">Job information</p>
+                <div class="form-group">
+                    Job:<br/>
+                    <InputTextArea rows="1" @bind-Value="newJob.JobTitle"/>
+                </div>
+                <div class="form-group">
+                    Salary:<br/>
+                    <InputNumber rows="1" @bind-Value="newJob.Salary"/>
+                </div>
+                <p class="font-weight-bold">Family information</p>
+                <div class="form-group">
+                    Streetname:<br/>
+                    <InputTextArea rows="1" @bind-Value="chosenFamily.StreetName"/>
+                </div>
+                <div class="form-group">
+                    House number:<br/>
+                    <InputNumber rows="1" @bind-Value="chosenFamily.HouseNumber"/>
+                </div>
+
+                <p class="actions">
+                    <button class="btn btn-outline-dark btn-primary" type="submit">Create</button>
+                    <div style="color:red">@errorMsg2</div>
+                </p>
+            </EditForm>
+        </div>
+    </div>
+</div>
+
+@code {
+    private Adult newAdult = new Adult();
+    private Job newJob = new Job();
+    private Family chosenFamily = new Family();
+    private Family newFamily = new Family()
+    {
+        Adults = new List<Adult>(),
+        Children = new List<Child>(),
+        Pets = new List<Pet>()
+    };
+    private string errorMsg;
+    private string errorMsg2;
+
+
+    
+    private async Task AddNewFamily()
+    {
+        errorMsg = "";
+        try
+        {
+           await familyData.AddFamilyAsync(newFamily);
+        }
+        catch (Exception e)
+        {
+            errorMsg = e.Message;
+        }
+    }
+
+    private async Task AddNewAdult()
+    {
+        errorMsg2 = "";
+        IList<Adult> adultsSize = await familyData.GetAdultsAsync();
+        int max = 0;
+        foreach (var adult in adultsSize)
+        {
+            if (adult.Id > max)
+            {
+                max = adult.Id;
+            }
+        }
+        newAdult.Id = (++max);
+        newAdult.Job = newJob;
+
+        newAdult.Job = newJob;
+        chosenFamily.Adults.Add(newAdult);
+        
+        try
+        {
+            await familyData.AddAdultAsync(chosenFamily);
+        }
+        catch (Exception e)
+        {
+            errorMsg2 = e.Message;
+        }
+    }
+
+}
